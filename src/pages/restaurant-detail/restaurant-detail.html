@@ -1,0 +1,441 @@
+<div class="poster" *ngIf="restaurantDetails">
+  <img [src]="restaurantDetails?(restaurantDetails.ThaumnailImg?cloudinaryLogoUrl+restaurantDetails.ThaumnailImg:'assets/images/homebanner.jpg'):'assets/images/homebanner.jpg'"
+    alt="poster">
+  <div class="mask"></div>
+</div>
+<!-- skeleton screen start -->
+<div class="fakeposter" *ngIf="!restaurantDetails">
+ 
+</div>
+<!-- skeleton screen end -->
+
+<div class="resDetails" *ngIf="restaurantDetails">
+  <div class="resWrapper">
+
+    <div class="resActions clearfix">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="float-left"><a class="icon-global icon-backarrow" (click)="backToSearch()"></a></div>
+            <div class="float-right"><span class="icon-right-space icon-recommend-big"></span><span class="icon-global icon-favourite" (click)="UpdateRestoLike()"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vendorHeader">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4 offset-1">
+            <div class="vendorImage">
+              <span class="rating"><span class="text">5.0</span></span>
+              <img [src]="restaurantDetails?(restaurantDetails.HeroImg?cloudinaryHeroUrl+restaurantDetails.HeroImg:'assets/images/homebanner.jpg'):'assets/images/homebanner.jpg'"
+                alt="poster">
+              <!-- <img [src]="Rest_hero" alt="poster">
+              <img [src]="Rest_img" alt="poster"> -->
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="vendorDetails">
+              <div class="itemDish"><span class="veg"><img src="assets/images/common/veg-icon.svg" alt="veg" ></span><span class="nonveg"><img src="assets/images/common/non-veg-icon.svg" alt="Non veg" ></span></div>
+              <h1 class="vendorTitle">{{restaurantDetails?.Name}}</h1>
+              <div class="vendorCuisines">{{restaurantDetails?.Tagline}}</div>
+              <div class="vendorMenu">
+                <a class="menuBtn" [ngClass]="{'menuBtnGrey':restaurantDetails.MenuImages==null}"  (click)="openSlideshow('menu')">Menu</a>
+                <span class="callIcon" (click)="launchDialer()"><img src="assets/images/common/call-icon.svg" alt="call me" ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vendorMoreDetails container-fluid">
+    <section class="costSec">
+      <div class="row">
+        <div class="col-6">
+          <div class="block">
+            <div class="icon-common icon-price float-left"></div>
+            <div class="float-left">
+              <span class="title"><strong>cost for 2</strong></span>
+              <span class="subTitle">{{restaurantDetails?.CostForTwo}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block">
+            <div class="icon-common icon-hours float-left"></div>
+            <div class="float-left">
+              <span class="title"><strong>Opening hrs</strong></span>
+              <span class="subTitle">{{restaurantDetails?.OpenHours}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="specialSec">
+      <div class="row">
+        <div class="col-6">
+          <div class="block">
+            <div class="offer-box" (click)="openModal('cuisines')">
+              <div class="image"><span class="icon-global icon-cuisines"></span></div>
+              <div class="offerText"><strong>{{cuisines?cuisines.length:0}}</strong> Cuisines</div>
+            </div>
+
+            <div class="offer-box" (click)="openModal('reviews')">
+              <div class="image"><span class="icon-global icon-reviews"></span></div>
+              <div class="offerText"><strong>{{Review_count}}</strong> Reviews</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="block">
+            <div class="offer-box" (click)="openModal('amenities')">
+              <div class="image"><span class="icon-global icon-amenities"></span></div>
+              <div class="offerText"><strong>{{amenities?amenities.length:0}}</strong> Amenities</div>
+            </div>
+            <div class="offer-box " (click)="openModal('offers')">
+              <div class="image"><span class="icon-global icon-offers"></span></div>
+              <div class="offerText"><strong>{{rest_offers_count}}</strong> Offers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="suitableSec">
+      <div class="row">
+
+        <div class="col-12">
+          <div class="secTitle">Suitable for</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="block suitItem clearfix" *ngIf="restaurantDetails?.SuitableFor.split(',')[0]!== undefined">
+            <div class="icon-common icon-Meeting float-left"></div>
+            <div class="float-left">
+              <span class="title">{{restaurantDetails?.SuitableFor.split(',')[0]}}</span>
+            </div>
+          </div>
+          <div class="block suitItem clearfix" *ngIf="restaurantDetails?.SuitableFor.split(',')[1]!== undefined">
+            <div class="icon-common icon-family float-left"></div>
+            <div class="float-left">
+              <span class="title">{{restaurantDetails?.SuitableFor.split(',')[1]}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block suitItem clearfix" *ngIf="restaurantDetails?.SuitableFor.split(',')[2]!== undefined">
+            <div class="icon-common icon-party float-left"></div>
+            <div class="float-left">
+              <span class="title">{{restaurantDetails?.SuitableFor.split(',')[2]}}</span>
+            </div>
+          </div>
+          <div class="block suitItem clearfix" *ngIf="restaurantDetails?.SuitableFor.split(',')[3]!== undefined">
+            <div class="icon-common icon-delivery float-left"></div>
+            <div class="float-left">
+              <span class="title">{{restaurantDetails?.SuitableFor.split(',')[3]}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paymentSec">
+      <div class="secTitle">Payment Option</div>
+      <div class="secCnt">
+        <div class="paymentItem" *ngIf="restaurantDetails?.PaymentOptions.split(',')[0]!==undefined">
+          <div class="icon-common icon-cash"></div>
+          <div class="type">{{restaurantDetails?.PaymentOptions.split(',')[0]}}</div>
+        </div>
+
+
+        <div class=" paymentItem" *ngIf="restaurantDetails?.PaymentOptions.split(',')[1]!==undefined">
+          <div class="icon-common icon-card"></div>
+          <div class="type">{{restaurantDetails?.PaymentOptions.split(',')[1]}}</div>
+        </div>
+
+        <div class="paymentItem" *ngIf="restaurantDetails?.PaymentOptions.split(',')[2]!==undefined">
+          <div class="icon-common icon-wallet"></div>
+          <div class="type">{{restaurantDetails?.PaymentOptions.split(',')[2]}}</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="paymentSec">
+      <div class="row">
+        <div class="col-12">
+          <div class="secTitle">Gallery</div>
+          <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let slide of restoGallery" class="slide">
+              <img src="{{ cloudinaryGalleryUrl + slide }}" alt="" (click)="openSlideshow('gallery')">
+            </div>
+          </ngx-slick>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-12">
+          <div class="block">
+            <div class="Images">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="addressSec">
+      <div class="secTitle">Address</div>
+      <div class="row">
+        <div class="col-12">
+          <div class="block">
+            <div class="location">
+              {{Rest_Address}}
+            </div>
+            <div class="map">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <div id="map" #map style="width:100%;height:300px">
+
+                    </div>
+
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="secFooter">
+      <div class="row">
+        <div class="col-12">
+          <button ion-button block class="blueBtn" *ngIf="isFlowOrSearch" (click)="selectThisRestaurant(restaurantDetails)">Select this Place</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- skeleton screen start  -->
+<div class="fakeresDetails" *ngIf="!restaurantDetails">
+  <div class="resWrapper">
+
+    <div class="resActions clearfix">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="float-left"></div>
+            <div class="float-right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vendorHeader">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4 offset-1">
+            <div class="vendorImage">
+              <span class="rating" style="width: 30px"></span>
+              
+              <!-- <img [src]="Rest_hero" alt="poster">
+              <img [src]="Rest_img" alt="poster"> -->
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="vendorDetails">
+              <div class="itemDish" style="width:40px;"></div>
+              <h1 class="vendorTitle" style="width: 80%"></h1>
+              <div class="vendorCuisines" style="width: 60%"></div>
+              <div class="vendorMenu">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vendorMoreDetails container-fluid">
+    <section class="costSec">
+      <div class="row">
+        <div class="col-6">
+          <div class="block">
+            <div class="icon-common icon-price float-left"></div>
+            <div class="float-left">
+              <span class="title" style="width:80px"></span>
+              <span class="subTitle" style="width: 30px"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block">
+            <div class="icon-common icon-hours float-left"></div>
+            <div class="float-left">
+              <span class="title" style="width:100px"></span>
+              <span class="subTitle" style="width:80px"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="specialSec">
+      <div class="row">
+        <div class="col-6">
+          <div class="block">
+            <div class="offer-box">
+             
+            </div>
+
+            <div class="offer-box">
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="block">
+            <div class="offer-box">
+             
+            </div>
+            <div class="offer-box ">
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="suitableSec">
+      <div class="row">
+
+        <div class="col-12">
+          <div class="secTitle"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="block suitItem clearfix">
+            <div class="icon-common icon-Meeting float-left"></div>
+            <div class="float-left">
+              <span class="title" style="width:20px"></span>
+            </div>
+          </div>
+          <div class="block suitItem clearfix">
+            <div class="icon-common icon-family float-left"></div>
+            <div class="float-left">
+              <span class="title" style="width:20px"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block suitItem clearfix">
+            <div class="icon-common icon-party float-left"></div>
+            <div class="float-left">
+              <span class="title" style="width:20px"></span>
+            </div>
+          </div>
+          <div class="block suitItem clearfix">
+            <div class="icon-common icon-delivery float-left"></div>
+            <div class="float-left">
+              <span class="title" style="width:20px"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paymentSec">
+      <div class="secTitle" style="width:100px;"></div>
+      <div class="secCnt">
+        <div class="paymentItem">
+          <div class="icon-common icon-cash"></div>
+          <div class="type"></div>
+        </div>
+
+
+        <div class=" paymentItem">
+          <div class="icon-common icon-card"></div>
+          <div class="type"></div>
+        </div>
+
+        <div class="paymentItem">
+          <div class="icon-common icon-wallet"></div>
+          <div class="type"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="paymentSec">
+      <div class="row">
+        <div class="col-12">
+          <div class="secTitle" style="width: 100px"></div>
+         
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-12">
+          <div class="block">
+            <div class="Images">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="addressSec">
+      <div class="secTitle" style="width: 100px"></div>
+      <div class="row">
+        <div class="col-12">
+          <div class="block">
+            <div class="location" style="width: 60%">
+              
+            </div>
+            <div class="map">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <div id="map" #map style="width:100%;height:300px">
+
+                    </div>
+
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="secFooter">
+      <div class="row">
+        <div class="col-12">
+          <button ion-button block class="blueBtn"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- skeleton screen end -->

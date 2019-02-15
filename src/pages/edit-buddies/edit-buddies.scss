@@ -1,0 +1,135 @@
+.buddiesDetails {
+    .buddiesHeader {
+        margin-bottom: 15px;
+        .heading{
+            @include font($font-proxima-semibold,
+            normal,
+            #159ADC,
+            12px); 
+            margin-bottom:8px;
+            letter-spacing: 0.77px;
+        }
+        input{
+            border:none;
+            border-bottom:1px solid #ccc;
+            padding-bottom:5px;
+            width:100%;
+            @include font($font-proxima, normal, #5F5F5F, 14px);
+        }
+        .editTitle {
+            @include font($font-proxima, normal, #549428, 14px);
+            .editIcon {}
+        }
+    }
+    .section {
+        margin-bottom: 28px;
+        .title {
+            @include font($font-proxima-semibold, normal, #5F5F5F, 14px);
+            margin-bottom: 10px
+        }
+        .addnew{
+            @include font($font-proxima, normal, #159ADC, 14px);
+            background:url('../assets/images/common/Add label icon.svg') no-repeat left 3px;
+            padding-left:25px;
+            margin:15px 0;
+            line-height: 24px;
+            letter-spacing: 0.77px;
+        }
+        .item-inner{
+            padding: 0;
+            border-bottom:none;
+        }
+        .label-md{
+            margin:0;
+        }
+        .contactsComponent{
+            &.editBuddies{
+                height: calc(100vh - 350px);
+                overflow: auto;
+            }
+           
+            .member {
+                padding: 0;
+                background: url(../assets/images/footer/more/right-arrow.svg) no-repeat 95% 50%;
+            }
+        }
+        // .contactsComponent .member{
+        //     margin-bottom:0;
+        // }
+        .deleteGroup{
+            margin-bottom:25px;
+        }
+    }
+
+    .buddyactions{
+        padding: 0 15px;
+        margin-top: 12px;
+        @include font($font-proxima, normal, #549428, 13px);
+    }
+
+
+   
+}
+
+.buddiesDetails .eventDate {
+    position: relative;
+    padding-left: 54px;
+    margin-bottom: 18px;
+    .icon {
+        position: absolute;
+        width: 44px;
+        height: 54px;
+        left: 0;
+        &.calander {
+            background: url("../assets/images/footer/Calender-Icon.svg") no-repeat center top;
+        }
+        .month {
+            @include font($font-proxima,
+            normal,
+            #fff,
+            12px);
+            display: block;
+            text-align: center;
+            margin: 14px 0 5px;
+            text-transform: uppercase;
+        }
+        .date {
+            @include font($font-proxima-semibold,
+            normal,
+            #159ADC,
+            18px);
+            display: block;
+            text-align: center;
+        }
+    }
+    .title {
+        @include font($font-proxima,
+        normal,
+        #5F5F5F,
+        18px);
+        margin-bottom: 10px;
+    }
+    .subTitle {
+        @include font($font-proxima,
+        normal,
+        #000,
+        14px);
+        background: #FFC001;
+        padding: 3px 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.memoryCnt {
+    .slide {
+        width: 44px;
+        height: 44px;
+        margin-right: 10px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

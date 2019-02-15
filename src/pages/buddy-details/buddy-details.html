@@ -1,0 +1,32 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="backToMoreHomePage()"></a>
+      <span class="pageLabel">My Buddies Details</span>
+    </div>
+  </div>
+</div>
+
+<div class="buddiesDetails pageScroll">
+  <div class="container-fluid">
+    <div class="buddiesHeader">
+      {{buddy.BuddiesListName}} <span class="editTitle" (click)="navigateToEditBuddies()"><span class="editIcon"></span>Edit</span>
+    </div>
+
+    <div class="section">
+      <div class="title">
+        Members ({{Buddies_count}})
+      </div>
+      <ul class="contactsComponent">
+        <li class="member" *ngFor="let buddy of buddiesListWithPhotos" text-wrap>
+          <span class="image"> <img  src="{{buddy.profileImg?buddy.profileImg:'assets/images/Single Contact Icon.svg'}}"></span>
+          <div class="contactDetails">
+          <span class="buddieName">{{buddy.name}}</span>
+          <span class="buddieName">{{buddy.phone}}</span>
+        </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

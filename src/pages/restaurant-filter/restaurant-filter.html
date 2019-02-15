@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="customOverlay full" *ngIf="isSearchActive">
+    <div class="filterWrapper">
+      <div class="filterHeader">
+        <div class="title">Filter</div>
+        <div class="close-icon-white" (click)="setStatus(false)" ></div>
+      </div>
+    
+      <div class="filterCnt clearfix">
+        <div class="menu float-left">
+          <ul class="menuItems">
+            <li class="item active">Cuisines</li>
+            <li class="item">Price</li>
+            <li class="item"> Amenities</li>
+            <li class="item">Type of Place</li>
+            <li class="item">Location </li>
+            <li class="item">Trends</li>
+            <li class="item">Ambience</li>
+            <li class="item">Allergic to</li>
+          </ul>
+        </div>
+        <div class="options float-left">
+          <ul class="optionItems">
+            <li class="item"><input type="radio" name="cuisines" value="Chinese" id="Chinese"><label class="optLable" for="Chinese">Chinese</label></li>
+            <li class="item"><input type="radio" name="cuisines" value="Mexican" id="Mexican"><label class="optLable" for="Mexican">Mexican</label></li>
+           
+    
+            <li class="item"><input type="checkbox" name="cuisines" id="cuisines"><label class="optLable" for="cuisines">Chinese</label></li>
+            
+    
+          </ul>
+        </div>
+      </div>
+      <div class="filterFooter">
+        <span class="icon-refresh"></span>
+        <button class="blueBtn">Apply</button>
+      </div>
+    </div>
+  
+  </div>
+</ion-content>

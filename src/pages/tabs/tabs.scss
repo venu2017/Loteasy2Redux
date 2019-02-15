@@ -1,0 +1,227 @@
+.tabs-md .tab-button-text{
+  font-size: 0.8em;
+}
+
+.ion-ios-customicon1-outline,
+.ion-ios-customicon1,.ion-md-customicon1,.ion-md-customicon1-outline {
+background: url('../assets/images/Message.svg') no-repeat center -12px;
+height:30px
+
+}
+
+.ion-ios-customicon2-outline,
+.ion-ios-customicon2,.ion-md-customicon2,.ion-md-customicon2-outline {
+background:url('../assets/images/footer/Memories.svg') no-repeat center -5px;
+height:30px
+
+}
+
+.ion-ios-customicon3-outline,
+.ion-ios-customicon3,.ion-md-customicon3,.ion-md-customicon3-outline {
+background: url('../assets/images/loteasy.svg') no-repeat center top ;
+height:51px
+
+}
+
+.ion-ios-customicon4-outline,
+.ion-ios-customicon4,.ion-md-customicon4,.ion-md-customicon4-outline {
+
+background: url('../assets/images/Events.svg') no-repeat center -5px;
+height:30px
+}
+
+.ion-ios-customicon5-outline,
+.ion-ios-customicon5,.ion-md-customicon5,.ion-md-customicon5-outline {
+background:url('../assets/images/more.svg') no-repeat center -7px;
+height:30px
+}
+.tabs-md .tab-button-icon{
+min-width: 100%;
+}
+
+.tabs-md .tab-button[aria-selected=true] .ion-md-customicon5  {
+background:url('../assets/images/more-active.svg') no-repeat center -7px;
+}
+.tabs-md .tab-button[aria-selected=true] .ion-md-customicon4  {
+background:url('../assets/images/Events-active.svg') no-repeat center -7px;
+}
+.tabs-md .tab-button[aria-selected=true] .ion-md-customicon2  {
+background:url('../assets/images/footer/Memories-active.svg') no-repeat center -5px;
+}
+.tabs-md .tab-button[aria-selected=true] .ion-md-customicon1 {
+background: url('../assets/images/Message-active.svg') no-repeat center -12px;
+}
+
+
+
+.tabs-md .tabbar{
+background-color: #ffc001;
+height: 58spx;
+font-size: 12px;
+
+}
+
+.tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text{
+margin-top: 0;
+margin-bottom: 0;
+}
+
+.tabs .tabs-md {
+&.active {
+    &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #000;
+        left: 0;
+        bottom: -11px;
+
+    }
+}
+.label {
+   
+  
+}
+}
+
+.tabs-md .tab-button[aria-selected=true]{
+position:relative;
+color: #000;
+&:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  left: 0;
+  bottom: 1px;
+
+}
+
+.tab-button-text{
+@include font($font-proxima-semibold,
+normal,
+#000,
+11px);
+transform: inherit;
+transition: inherit;
+}
+}
+
+.badge-md-danger.badge{
+display: block;
+padding: 5px;
+font-size: 0.8em;
+font-weight: normal;
+line-height: 1;
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: 50%;
+position: absolute;
+top: 3px;
+/* left: 12px; */
+width: 18px;
+height: 18px;
+right: 11px;
+font-size: 11px;
+}
+.badge-md-danger{
+color: black;
+background-color: #fff;
+}
+.tabs-md .tab-button-text {
+font-size: 11px;
+color:#000;
+transition: inherit;
+transform: inherit;
+}
+
+.nofifyMask{
+position: fixed;
+width:100%;
+height: 100%;
+top:0;
+left: 0;
+z-index: 3;
+background: rgba(0, 0, 0, .4)
+}
+.notificationWrapper{
+position: fixed;
+width:100%;
+bottom:69px;
+z-index: 101; 
+.notifyblock{
+    background: #ffffff;
+    padding:10px;
+    margin:0 5px;
+    position: relative;
+    .closeIcon{
+        background: url("../assets/images/common/close-icon.svg") no-repeat center;
+        position: absolute;
+        padding: 10px;
+        top: 5px;
+        right: 12px;
+    }
+    .arrowDown {
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #fff;
+        position: absolute;
+        bottom:-8px;
+        left:15px;
+      }
+    .notifytime{
+        @include font($font-proxima,
+        normal,
+        #5F5F5F,
+        11px);
+        margin-bottom:10px;
+    }
+    .conent{
+        @include font($font-proxima-semibold,
+        normal,
+        #333,
+        12px);
+        margin-bottom:10px;
+    }
+
+    .invitemodule{
+        display: flex;
+        span{
+            -webkit-flex: 1 1 auto;  /* Safari 6.1+ */
+            -ms-flex: 1 1 auto;  /* IE 10 */    
+            flex: 1 1 auto;
+        }
+        .divider{
+            border-left:1px solid #ccc
+        }
+        .moduleName{
+            @include font($font-proxima-semibold,
+            normal,
+            #159ADC,
+            12px);
+        }
+        .plantime{
+            @include font($font-proxima,
+            normal,
+            #5F5F5F,
+            12px);
+        }
+    }
+    .btnSection {
+        margin: 15px 0 5px;
+        .cancel{
+            margin-right: 15px;
+        }
+        button{
+            margin-left:15px;
+        }
+    }
+
+  }
+
+}

@@ -1,0 +1,83 @@
+<div class="editLocation">
+        <ion-searchbar  placeholder="Type Location here..." 
+        [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()"></ion-searchbar>
+
+        <ion-grid *ngIf="!showCurrentLocation" no-padding>
+                <ion-row>
+                    <ion-col>
+                            <ion-list [hidden]="autocompleteItems.length == 0">
+                                    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+    
+    
+                                        <img item-start src="assets/images/common/Add label icon.svg" style="width: 26px;height: 25px;">
+                                   
+                                     <p style="font-size: 15px; font-weight: bold;">{{ item.description.split(',')[0] }}</p> 
+                                     <p>{{ item.description.split(',')[1] }},{{ item.description.split(',')[2] }},{{ item.description.split(',')[3] }}</p> 
+                                    </ion-item>
+                                  </ion-list> 
+                    </ion-col>
+                </ion-row>
+         </ion-grid>
+        <!-- <div class="locationType">
+            <span class="backIcon"></span>
+
+         
+            <input type="text" placeholder="Type Location Here">
+        </div> -->
+        <div class="container-fluid">
+            <div class="getlocation" (click)="getCurrentLocation()">
+                Get current Location
+            </div>
+        </div>
+    
+    
+        <div class="locationList saved">
+            <div class="container-fluid">
+                <div class="title">Saved Locations</div>
+                <div class="noData" *ngIf="savedLocations.length<1">No result founds</div>
+                <div class="locationItem"  *ngFor="let addr of savedLocations; let i=index"  (click)="onLocationSelected(addr.AddressLine1,addr.AddressLine2,addr.AddressLine3)">
+                    <div class="locTitle">
+                           <ng-template [ngIf]="addr.UserAddressType == 1">  <span class="addressicon"></span><span class="label">Home</span></ng-template>
+                            <ng-template [ngIf]="addr.UserAddressType == 2">  <span class="addressicon"></span><span class="label">Office</span></ng-template>
+                            <ng-template [ngIf]="addr.UserAddressType == 3">  <span class="addressicon"></span><span class="label">Others</span></ng-template>
+                    </div>
+                    <div class="address">
+                        {{addr.AddressLine1}},{{addr.AddressLine2}},{{addr.AddressLine3}}       
+                    
+                    </div>
+                </div>
+    
+               
+            </div>
+        </div>
+    
+    
+        <div class="locationList recent">
+            <div class="container-fluid">
+                <div class="title">Recent Locations</div>
+                <div class="noData" *ngIf="addressList.length<1">No result founds</div>
+                <div class="locationItem" *ngFor="let address of addressList; let i=index" >
+               
+                    <div class="address" (click)="RecentLocation(address)">
+                            <p style="font-size: 15px; font-weight: bold;">{{ address.Address.split(',')[0] }}</p> 
+                            <p>{{ address.Address.split(',')[1] }},{{ address.Address.split(',')[2] }},{{ address.Address.split(',')[3] }}</p> 
+
+                         
+                                 
+                    
+                    </div>
+                    <div class="addAddress" *ngIf="address.SavedType=='icon'" (click)="onSaveToFavAddresses(address.Address)">
+
+
+                    </div>
+
+                    <div class="savedAddress" *ngIf="address.SavedType!='icon'">Saved</div>
+                </div>
+    
+        
+            </div>
+        </div>
+    
+    </div>
+    
+

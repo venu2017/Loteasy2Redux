@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="13px" viewBox="0 0 24 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>smoke icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.599999964">
+        <g id="smoke-icon">
+            <g>
+                <path d="M22.5,12.5 L22.5,8.5 L1.5,8.5 C0.94771525,8.5 0.5,8.94771525 0.5,9.5 L0.5,11.5 C0.5,12.0522847 0.94771525,12.5 1.5,12.5 L22.5,12.5 Z" id="Rectangle-38" stroke="#3D3D3D"></path>
+                <polygon id="path-1" fill="#3D3D3D" points="5 9 6 9 6 12 5 12"></polygon>
+                <polygon id="path-2" fill="#3D3D3D" points="20 9 21 9 21 12 20 12"></polygon>
+                <path d="M22.0321867,7 C23.1631706,6.21918365 23.302906,5.23921279 22.4513931,4.06008745 C21.1741236,2.29139942 20.4354799,2.24389779 21.5353908,0" id="Path-10" stroke="#3D3D3D" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

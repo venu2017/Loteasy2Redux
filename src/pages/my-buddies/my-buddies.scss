@@ -1,0 +1,142 @@
+.mybuddies {
+    .imgOptions {
+        margin-bottom: 16px;
+        position: relative;
+        .controls {
+            margin-right: 15px;
+            display: inline-block;
+            vertical-align: top;
+            a {
+                display: block;
+            }
+            .icon {
+                display: block;
+                width: 15px;
+                height: 15px;
+                margin: 0 auto 5px;
+                &.searchIcon {
+                    background: url("../assets/images/common/search-icon.svg") no-repeat center top;
+                }
+                &.addnewIcon {
+                    background: url("../assets/images/common/addnew-icon.svg") no-repeat center top;
+                }
+                &.editIcon {
+                    background: url("../assets/images/common/edit-icon.svg") no-repeat center top;
+                }
+                &.deleteIcon {
+                    background: url("../assets/images/common/delete-icon.svg") no-repeat center top;
+                }
+            }
+            .label {
+                display: block;
+                text-align: center;
+                @include font($font-proxima,
+                normal,
+                #5F5F5F,
+                10px);
+            }
+        }
+    }
+    .title {
+        @include font($font-proxima-semibold,
+        normal,
+        $text-color-default,
+        14px);
+        margin-bottom: 0;
+    }
+    .other {
+        background: #f8f8f8;
+        padding: 10px 0;
+    }
+    .list-md .item-block .item-inner {
+        padding: 9px 0;
+        border-bottom: none;
+    }
+    .label-md {
+        margin: 0;
+    }
+    .contactsComponent {
+        .member {
+            margin-bottom: 0;
+            padding:0;
+            background: url(../assets/images/footer/more/right-arrow.svg) no-repeat 95% 50%;
+        }
+
+    }
+}
+
+.addbuddies {
+    .buddiesProfile {
+        text-align: center;
+        margin: 10px 0 30px;
+    }
+    .cameraSec {
+        &:before {
+            border-bottom: 1px solid rgba(61, 61, 61, 0.2);
+            content: "";
+            position: absolute;
+            width: 100%;
+        }
+        .camera {
+            position: relative;
+            height: 30px;
+            .cameraIcon {
+                position: absolute;
+                right: 15px;
+                top: -15px;
+                background: url("../assets/images/footer/upload-picture-icon.svg") no-repeat left top;
+                width: 31px;
+                height: 31px;
+            }
+        }
+    }
+    .contactsDisplay {
+        height: 180px;
+        overflow: auto;
+    }
+}
+
+.buddyform {
+    margin-top: 25px;
+    .formField {
+        margin-bottom: 25px;
+        position: relative;
+        input {
+            display: block;
+            padding: 8px 0;
+            border: none;
+            border-bottom: 1px solid rgba(61, 61, 61, 0.4);
+            width: 100%;
+            color: #646464;
+        }
+        .selectbox {
+            input {
+                border-width: 0;
+                border-bottom: 1px solid rgba(61, 61, 61, 0.4);
+                width: 100%;
+                padding-bottom: 8px;
+                background: url("../assets/images/footer/Drop-Down-icon.svg") no-repeat right 15px;
+            }
+        }
+        .input-label {
+            @include font($font-proxima-semibold,
+            normal,
+            #159ADC,
+            10px);
+            letter-spacing: 0.77px;
+        }
+    }
+}
+
+.inviteesMain {
+    overflow-y: scroll !important;
+}
+
+.btnSection.clearfix.fixed-button-bottom{
+    text-align: center;
+}
+
+.checkbox-md .checkbox-checked {
+    border-color: #ffc001 !important;
+    background-color: #ffc001 !important;
+}

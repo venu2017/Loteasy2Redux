@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="7px" viewBox="0 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Non veg icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="7" height="7"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="'Fun'ch-with-friends-Style-Guide" transform="translate(-2987.000000, -1147.000000)">
+            <g id="Group-44" transform="translate(2839.000000, 847.000000)">
+                <g id="Non-veg-icon" transform="translate(148.000000, 300.000000)">
+                    <g id="Rectangle-11">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#F30909" stroke-width="0.5" x="0.25" y="0.25" width="6.5" height="6.5"></rect>
+                    </g>
+                    <rect id="Rectangle-11" fill="#F30909" x="2" y="2" width="3" height="3"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

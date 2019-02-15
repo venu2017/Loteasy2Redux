@@ -1,0 +1,40 @@
+.buddiesDetails {
+    .buddiesHeader {
+        @include font($font-proxima-semibold, normal, #5F5F5F, 18px);
+        margin-bottom: 28px;
+        .editTitle {
+            @include font($font-proxima, normal, #549428, 14px);
+            margin-left:10px;
+            .editIcon {
+                width: 18px;
+                height: 18px;
+               display: inline-block;
+               vertical-align: middle;
+                background: url(../assets/images/common/edit-green.svg) no-repeat left top;
+            }
+        }
+    }
+    .section {
+        margin-bottom: 28px;
+        .title {
+            @include font($font-proxima-semibold, normal, #5F5F5F, 14px);
+            margin-bottom: 18px
+        }
+    }
+}
+
+.memoryCnt {
+    .slide {
+        width: 44px;
+        height: 44px;
+        margin-right: 10px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .buddiesDetails .section .contactsComponent .member{
+        padding: 0;
+        background: none !important;
+    }
+}

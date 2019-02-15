@@ -1,0 +1,178 @@
+.inviteSummery {
+    .summerySec {
+        .innerSec {
+            padding-left: 25px;
+            margin-bottom: 20px;
+            &.time {
+                background: url("../assets/images/common/time-icon.svg") no-repeat left top;
+            }
+            &.restaurant {
+                background: url("../assets/images/common/restaurant-icon.svg") no-repeat left top;
+            }
+            &.invitees {
+                background: url("../assets/images/memories/members-icon.svg") no-repeat left top;
+            }
+            &.occassion {
+                background: url("../assets/images/common/occassion-icon.svg") no-repeat left top;
+            }
+            .header {
+                margin-bottom: 5px;
+                .title {
+                    @include font($font-proxima-semibold,
+                    normal,
+                    #3D3D3D,
+                    14px);
+                    letter-spacing: 0.52px;
+                }
+                .edit {
+                    background: url("../assets/images/common/edit-green.svg") no-repeat left top;
+                    @include font($font-proxima,
+                    normal,
+                    #549428,
+                    12px);
+                    padding-left: 22px;
+                    margin-left: 20px;
+                }
+            }
+            .subHeader {
+                margin-bottom: 8px;
+                @include font($font-proxima,
+                normal,
+                #3D3D3D,
+                18px);
+                letter-spacing: 0.99px;
+            }
+            .address{
+                letter-spacing: 1.02px;
+            }
+            .bold {
+                font-family: $font-proxima-semibold;
+            }
+        }
+       
+        .selectbox input {
+            border-width: 0;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+        .inviteMembers {
+            margin: 15px 0 15px;
+            overflow-x: auto;
+            height: 44px;
+            white-space: nowrap;
+            .memberPhoto {
+                position: relative;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                display: inline-block;
+                margin-right: 18px;
+                vertical-align: top;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+   
+    .loteasyMember {
+        background: url("../assets/images/common/loteasy-icon.svg") no-repeat left top;
+        position: absolute;
+        right: -8px;
+        bottom: 0;
+        width: 16px;
+        height: 16px;
+    }
+
+    .estimated {
+        @include font($font-proxima-semibold,
+        normal,
+        #3D3D3D,
+        14px);
+        text-align: center;
+        margin: 0 0 15px;
+        letter-spacing: 0.99px;
+    }
+  
+}
+
+.memberItem {
+    margin: 10px 0;
+    .memberPhoto {
+        width: 44px;
+        height: 44px;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 15px;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+        }
+    }
+    .memberDetails {
+        display: inline-block;
+        vertical-align: top;
+        .name {
+            margin: 3px 0;
+            display: block;
+            @include font($font-proxima,
+            normal,
+            #5f5f5f,
+            14px);
+        }
+        .phone {
+            display: block;
+            @include font($font-proxima,
+            normal,
+            #5f5f5f,
+            11px);
+        }
+    }
+    .userOptions {
+        position: absolute;
+        right: 10px;
+        top: 34px;
+        .call {
+            display: inline-block;
+            vertical-align: middle;
+            background: url("../assets/images/common/phone-icon.svg") no-repeat left top;
+            width: 14px;
+            height: 17px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .chat {
+            display: inline-block;
+            vertical-align: middle;
+            background: url("../assets/images/common/phone-icon.svg") no-repeat left top;
+            width: 14px;
+            height: 17px;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        .line {
+            color: #5f5f5f;
+        }
+    }
+}
+
+/deep/ .ui-dialog {
+    width: 95% !important;
+    height: auto !important;
+    margin: 0 10px !important;
+    left: inherit !important;
+    box-shadow: none;
+}
+
+/deep/ .ui-corner-all {
+    border-radius: 0;
+}
+
+/deep/ .ui-widget-content {
+    border: none;
+}

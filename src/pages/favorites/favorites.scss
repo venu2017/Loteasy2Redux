@@ -1,0 +1,17 @@
+.favourites {
+    .nav-tabs {
+        border: none;
+        .nav-link {
+            border: none;
+            @include font($font-proxima, null, #3D3D3D, 14px);
+            &.active {
+                border-bottom: 3px solid #FFC001;
+                @include font($font-proxima-semibold, null, #3D3D3D, 14px);
+            }
+        }
+        .nav-item {
+            width: 50%;
+            text-align: center;
+        }
+    }
+}

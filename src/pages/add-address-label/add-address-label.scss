@@ -1,0 +1,55 @@
+
+
+
+.newaddress{
+    form{
+        .form-group{
+            position: relative;
+            margin:25px 0 0;
+            input{
+               
+                width: 100%;
+                display: block;
+                border: none;
+                padding: 3px  0;
+                border-bottom: solid 1px #ccc;
+                border-radius: 0;
+                &:focus, &:valid{
+                    border-bottom:1px solid #159ADC;
+                }
+                &:focus + label,
+                &:valid + label {
+                  top: -12px;
+                  @include font($font-proxima-semibold,
+                  normal,
+                  #159ADC,
+                  14px);
+                
+                }
+            }
+            label {
+              display: block;
+              position: absolute;
+              -webkit-transition: all 0.4s ease;
+              transition: all 0.4s ease;
+              top:3px;
+              margin: 0;
+              @include font($font-proxima,
+              normal,
+              #5F5F5F,
+              14px);
+            }
+            .form-control:focus{
+                box-shadow: none;
+            }
+            
+
+            
+        }
+
+        .btnSection{
+            margin-top:20px;
+        }
+        
+    }
+}

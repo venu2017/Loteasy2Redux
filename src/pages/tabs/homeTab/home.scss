@@ -1,0 +1,237 @@
+.blockWrapper {
+    position: absolute;
+    bottom: 80px;
+    z-index: 2;
+    /*overflow: hidden;*/
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+
+.defaultMask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.homeSection {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //background: url("../../assets/images/homebanner.jpg") no-repeat center -60px / cover;
+    opacity: 0.85;
+    padding:15px 15px 70px;
+    z-index: 3;
+}
+.catchupAlert{
+    width:21px;
+    height: 21px;
+    background: url("../assets/images/common/catup-alert.svg") no-repeat left top;
+    display: block;
+    position: absolute;
+    left: 23px;
+    top: 25px;
+}
+
+.nofifyMask{
+    position: fixed;
+    width:100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, .4)
+}
+.notificationWrapper{
+    position: fixed;
+    width:100%;
+    bottom:69px;
+    z-index: 101; 
+    .notifyblock{
+        background: #ffffff;
+        padding:10px;
+        margin:0 5px;
+        position: relative;
+        .closeIcon{
+            background: url("../assets/images/common/close-icon.svg") no-repeat center;
+            position: absolute;
+            padding:5px;
+            top:5px;
+            right: 5px;
+        }
+        .arrowDown {
+            width: 0; 
+            height: 0; 
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #fff;
+            position: absolute;
+            bottom:-8px;
+            left:15px;
+          }
+        .notifytime{
+            @include font($font-proxima,
+            normal,
+            #5F5F5F,
+            11px);
+            margin-bottom:10px;
+        }
+        .conent{
+            @include font($font-proxima-semibold,
+            normal,
+            #333,
+            12px);
+            margin-bottom:10px;
+        }
+
+        .invitemodule{
+            display: flex;
+            span{
+                -webkit-flex: 1 1 auto;  /* Safari 6.1+ */
+                -ms-flex: 1 1 auto;  /* IE 10 */    
+                flex: 1 1 auto;
+            }
+            .divider{
+                border-left:1px solid #ccc
+            }
+            .moduleName{
+                @include font($font-proxima-semibold,
+                normal,
+                #159ADC,
+                12px);
+            }
+            .plantime{
+                @include font($font-proxima,
+                normal,
+                #5F5F5F,
+                12px);
+            }
+        }
+        .btnSection {
+            margin: 15px 0 5px;
+            .cancel{
+                margin-right: 15px;
+            }
+            button{
+                margin-left:15px;
+            }
+        }
+    }
+}
+
+.appbg{
+    background: url("../assets/images/Background Image 2.png") no-repeat center -40px / cover;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    z-index: 1;
+}
+
+.appusername{
+    @include font($font-proxima,
+    normal,
+    #ffc001,
+    18px);
+    margin-bottom:5px;
+}
+.appDes{
+    @include font($font-proxima,
+    normal,
+    #fff,
+    16px);
+}
+
+.mainModule{
+    height: 100%;
+    .appsection{
+        // display: flex;
+        // justify-content: center;
+        // flex-direction: column;
+        text-align: center;
+        height: 25%;
+        border-bottom:1px solid rgba(255, 255, 255, 0.38);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        &:last-child{
+            height: 15%;
+            border-bottom:none;
+        }
+        .icon{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right:8px;
+            width:100px;
+            height:80px;
+            &.reverse{
+                margin-left:8px;
+            }
+            &.friend{
+                background: url("../assets/images/Meet Friends now.svg") no-repeat center / contain;
+            }
+            &.hangout{
+                background: url("../assets/images/Start a Hangout.svg") no-repeat center / contain;
+            }
+            &.party{    
+                background: url("../assets/images/Party time.svg") no-repeat center / contain;
+            }
+        }
+        .appcontent{
+            display: inline-block;
+            vertical-align: middle;
+            margin-left:8px;
+            &.reverse{
+                margin-right:8px;
+            }
+            span{
+                display: block;
+                text-align: left;
+                &.normal{
+                    @include font($font-proxima,
+                    normal,
+                    #fff,
+                    16px);
+                    line-height: 6px;
+                }
+                &.high{
+                    @include font($font-proxima-semibold,
+                    normal,
+                    #fff,
+                    24px);   
+                }
+                &.low{
+                    @include font($font-proxima,
+                    normal,
+                    #fff,
+                    16px);
+                }
+                &.description{
+                    @include font($font-proxima-semibold,
+                    normal,
+                    #fff,
+                    10px);
+                    opacity:0.9;
+                    margin-top:5px;
+                }
+            }
+        }
+    }
+    .orderfood{
+        text-align: center;
+        @include font($font-proxima-altbold,
+        bold,
+    $color-brand,
+        14px);
+        letter-spacing: 0.99px;
+        margin:0 0 0;
+    }
+
+   
+}

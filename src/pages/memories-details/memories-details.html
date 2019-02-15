@@ -1,0 +1,91 @@
+<div class="uploadEvents">
+  <a class="uploadIcon" (click)="showCameraGaleeryOption()"></a>
+</div>
+
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateBackToMemories()">
+            <span>Memories</span>
+          </a>
+    </div>
+  </div>
+</div>
+
+<div class="memoriesView pageScroll">
+  <div class="memoriesPhotos">
+    <div class="container-fluid">
+
+      <div class="memoryName" *ngIf="!editSaveDeleteIconsView" >
+        <div class="eventDate">{{EventDate}}</div>
+        <div class="eventName" *ngIf="Event_caption!='NULL'">{{Event_caption}}</div>
+        <div class="more" (click)="showEditSaveDeleteIcons()">
+          <span class="moreIcon"></span>
+        </div>
+      </div>
+
+      <div class="imgOptions" *ngIf="editSaveDeleteIconsView">
+        <div class="controls save" (click)="saveImage()">
+          <span class="icon saveIcon"></span>
+          <span class="label">Save</span>
+        </div>
+        <div class="controls edit">
+          <span class="icon editIcon"></span>
+          <span class="label">Edit</span>
+        </div>
+        <div class="controls share" (click)="sharePhotosThruSocialMedia()">
+          <span class="icon shareIcon"></span>
+          <span class="label">Share</span>
+        </div>
+        <div class="controls delete" (click)="showDeletePhotosPrompt()">
+          <span class="icon deleteIcon"></span>
+          <span class="label">Delete</span>
+        </div>
+        <div class="closeoption">
+          <span class="closeIcon" (click)="showSharedImages()"></span>
+        </div>
+      </div>
+
+
+      <div class="photoWrapper">
+        <div class="img" *ngFor="let img of eventAlbumsWithInitialCheckedStatus;let i=index" (click)="navigateToPhotoSlider()">
+          <img src="{{cloudinaryMemoriesPath + img.photo}}" (click)="selectimg(img.photo)">
+          <div class="customCheckbox checkBoxImg"><input *ngIf="editSaveDeleteIconsView" type="checkbox" class="" (change)="selectimgfordelettion(img.photo)" [(ngModel)]="img.isChecked"></div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<p-dialog [(visible)]="cameraOrGalleryPopup" [showHeader]="false" [dismissableMask]="false"
+ appendTo="body" modal="true"
+  [responsive]="true" width="300" height="150">
+  <div class="uploadOptions clearfix">
+    <div class="chooseOption" (click)="captureImageFromCamera()">
+      <span class="icon cameraIcon"></span>
+      <span class="optionText">Camera</span>
+    </div>
+
+    <div class="chooseOption" (click)="captureImagesFromGallery()">
+      <span class="icon galleryIcon"></span>
+      <span class="optionText">Gallery</span>
+    </div>
+  </div>
+</p-dialog>
+
+
+<p-dialog [(visible)]="deletepopup" [showHeader]="false" dismissableMask="false" appendTo="body" modal="true" responsive="true"
+  width="300" height="150">
+  <div class="deleteDialog">
+    <div class="header">Delete or Remove</div>
+    <div class="subHeader">Delete the selected {{deletePhotosCount}} items?</div>
+    <div class="btnSection centerAlign clearfix">
+      <a class="cancelBtn left" (click)="deletepopup=false">cancel</a>
+      <button class="blueBtn right" (click)="deleteSelectedPhotos()">Delete</button>
+    </div>
+  </div>
+</p-dialog>

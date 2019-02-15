@@ -1,0 +1,80 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateBackToHomeTab()"></a>
+      <span class="pageLabel" *ngIf="Title_heading">{{Title_heading}}</span>
+      <span class="fakePageLabel" *ngIf="!Title_heading"></span>
+    </div>
+  </div>
+</div>
+
+
+<div  #navbar class="funchfriends pageScroll">
+  <div class="section">
+    <div class="container-fluid">
+      <div class="moduleSteps">
+        <div class="stepsHeader">Set Location and Time</div>
+        <div class="stepstatus step1"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+      <div class="moduleLocation">
+        <div class="secTitle">Your Location</div>
+        <div class="address">
+          <span class="city" *ngIf="city">{{city}}</span>
+          <span class="fakeCity" *ngIf="!city"></span>
+          <p class="fakeFormattedAddress" *ngIf="!formattedAddress"></p>
+          <p class="fakeFormattedAddress" *ngIf="!formattedAddress"></p>
+          <p class="fakeFormattedAddress" *ngIf="!formattedAddress"></p>
+           {{formattedAddress}}
+        </div>
+       
+        <div class="editaddress" (click)="navigateToEditLocation()">
+
+        <span class="editicon"></span>  Edit</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="section">
+    <div class="container-fluid">
+      <div class="secTitle">Date and Time</div>
+
+    </div>
+    <div text-center>
+      <hz-date-picker (onDateChange)="dateChangeHandler($event)"
+        [dpConfig]="datePickerConfig"></hz-date-picker>
+    </div>
+   
+  </div>
+  <div class="chooseTime text-center">
+      <button  class="btn btn-default btn-circle" (click)="chooseTime()">
+          <span *ngIf="!clockIcon" >{{_timeNow?_timeNow:showClockIcon()}}</span>
+           <ion-icon name="clock" *ngIf="clockIcon"></ion-icon>
+        </button>
+    <!-- <ion-datetime displayFormat="hh:mm A" #dateTime [(ngModel)]="_timeNow" placeholder="Choose Time"></ion-datetime> -->
+  </div>
+  <div class="section occassionSec" *ngIf="isFlowNamePlanAGetTogether">
+    <div class="container-fluid">
+      <div class="col-sm-12">
+        <div class="secTitle">Occassion</div>
+        <select class="customSelect" [(ngModel)]="selectedDevice"
+          (change)="onChange($event)" >
+          <option *ngFor="let title of Occasions_list"
+            [value]="title.AlbumCaption">
+            {{title.AlbumCaption}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="btnSection fixedButtons fixed-button-bottom">
+    <button class="blueBtn fullwidth" [disabled]="Check_timeDate() || !formattedAddress"
+      (click)="proceedToChooseInvitees()">Proceed</button>
+  </div>

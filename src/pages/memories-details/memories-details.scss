@@ -1,0 +1,192 @@
+.uploadEvents {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 43px;
+    height: 43px;
+    z-index: 1;
+    .uploadIcon {
+        background: url("../assets/images/memories/upload-icon.svg") no-repeat center top;
+        display: block;
+        width: 43px;
+        height: 43px;
+    }
+}
+
+.memoriesView {
+    .memoriesPhotos {
+        .memoryName {
+            // margin-bottom: 24px;
+            position: relative;
+            min-height: 48px;
+            .eventDate {
+                @include font($font-proxima,
+                normal,
+                #5F5F5F,
+                12px);
+                margin-bottom: 3px;
+                position: relative;
+            }
+            .eventName {
+                @include font($font-proxima,
+                normal,
+                #3D3D3D,
+                10px);
+                margin-bottom: 8px;
+                position: relative;
+            }
+            .more {
+                position: absolute;
+                right: 0;
+                top: 2px;
+                .moreIcon {
+                    padding:0px 10px;
+                    background: url("../assets/images/memories/more-icon.svg") no-repeat center center;
+                    height: 13px;
+                    width: 13px;
+                }
+            }
+        }
+        .photoWrapper {
+            .img {
+                width: 28%;
+                height: 70px;
+                display: inline-block;
+                position: relative;
+                margin: 0 21px 24px 0;
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .imgOptions {
+            // margin-bottom: 20px;
+            position: relative;
+            min-height: 56px;
+            .controls {
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: top;
+                padding:0 10px;
+                &:first-child{
+                    padding-left:0;
+                }
+                .icon {
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    margin: 0 auto 10px;
+                    &.saveIcon {
+                        background: url("../assets/images/memories/save-icon.svg") no-repeat center top;
+                    }
+                    &.editIcon {
+                        background: url("../assets/images/memories/edit-icon.svg") no-repeat center top;
+                    }
+                    &.deleteIcon {
+                        background: url("../assets/images/memories/delete-icon.svg") no-repeat center top;
+                    }
+                    &.shareIcon {
+                        background: url("../assets/images/memories/share.svg") no-repeat center top;
+                    }
+                }
+                .label {
+                    display: block;
+                    text-align: center;
+                    @include font($font-proxima,
+                    normal,
+                    #5F5F5F,
+                    10px);
+                }
+            }
+            .closeoption {
+                position: absolute;
+                right: 0;
+                top: 2px;
+                .closeIcon {
+                    padding: 0 10px;
+                    background: url("../assets/images/memories/close-icon.svg") no-repeat center 3px;
+                    height: 9px;
+                    width: 9px;
+                }
+            }
+        }
+    }
+}
+
+.checkBoxImg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+   &.customCheckbox input[type='checkbox']::before{
+    width:15px;
+    height: 15px;
+    }
+}
+
+.uploadOptions {
+    margin: 30px 0;
+    .chooseOption {
+        width: 50%;
+        float: left;
+        text-align: center;
+        .icon {
+            width: 32px;
+            height: 32px;
+            display: block;
+            margin: 0 auto 5px;
+            &.cameraIcon {
+                background: url("../assets/images/footer/camera-icon-memory.svg") no-repeat center top;
+            }
+            &.galleryIcon {
+                background: url("../assets/images/footer/gallery-icon.svg") no-repeat center top;
+            }
+        }
+        .optionText {
+            @include font($font-proxima,
+            normal,
+            #5F5F5F,
+            14px);
+        }
+    }
+}
+
+.deleteDialog {
+    .header {
+        margin-bottom: 15px;
+        @include font($font-proxima,
+        normal,
+        #5F5F5F,
+        14px);
+    }
+    .subHeader {
+        margin-bottom: 15px;
+        @include font($font-proxima,
+        normal,
+        #5F5F5F,
+        12px);
+    }
+    .btnSection {}
+}
+
+/deep/ .ui-dialog {
+    width: 95% !important;
+    height: auto !important;
+    margin: 0 10px !important;
+    left: inherit !important;
+    box-shadow: none;
+}
+
+/deep/ .ui-corner-all {
+    border-radius: 0;
+}
+
+/deep/ .ui-widget-content {
+    border: none;
+}

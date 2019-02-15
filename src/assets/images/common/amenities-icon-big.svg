@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="29px" viewBox="0 0 31 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Amenities icon big</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Amenities-icon-big" transform="translate(0.000000, -4.000000)">
+            <g id="Rectangle" transform="translate(0.000000, 12.000000)">
+                <g id="path-1-link" fill="#FFC001">
+                    <polygon id="path-1" points="0 0.08653846 28.8141026 0.08653846 28.8141026 5.6328203 26.0699023 5.6334972 26.0699023 20.8804945 2.74420024 20.8804945 2.74420024 5.6290974 0 5.6290974"></polygon>
+                </g>
+                <polygon id="Shape" stroke="#FFC001" points="0.5 0.58653846 0.5 5.1290974 2.74420024 5.1290974 3.24420024 5.1290974 3.24420024 20.3804945 25.5699023 20.3804945 25.5699023 5.1336205 28.3141026 5.1329436 28.3141026 0.58653846"></polygon>
+            </g>
+            <path d="M13.6744584,12.5439177 C12.6413944,13.2944826 10.4111349,11.7582631 9.15091201,10.0237151 C7.89068909,8.28916705 7.70654044,6.2745849 8.7396045,5.52401993 C9.77266856,4.77345495 12.002928,6.30967445 13.2631509,8.0442225 C14.5233738,9.77877055 14.7075225,11.7933527 13.6744584,12.5439177 Z M15.2312759,11.6561514 C14.1254157,11.0176827 14.0979744,8.99488787 15.169984,7.13811269 C16.2419937,5.28133752 18.0075061,4.29370498 19.1133663,4.93217368 C20.2192265,5.57064238 20.2466678,7.59343721 19.1746582,9.45021239 C18.1026485,11.3069876 16.3371362,12.2946201 15.2312759,11.6561514 Z" id="Combined-Shape" stroke="#FFC001"></path>
+            <g id="Rectangle-5" transform="translate(14.498175, 9.511375) rotate(24.000000) translate(-14.498175, -9.511375) translate(3.998175, 4.011375)" stroke="#FFC001">
+                <rect id="Rectangle-path" x="0.0280478215" y="9.16556025" width="8.22051282" height="1" rx="0.5"></rect>
+                <rect id="Rectangle-path" transform="translate(17.203404, 4.025590) scale(-1, -1) rotate(-42.000000) translate(-17.203404, -4.025590) " x="13.0931471" y="3.52559025" width="8.22051282" height="1" rx="0.5"></rect>
+            </g>
+            <rect id="Rectangle-6" fill="#FFFFFF" fill-rule="nonzero" x="0" y="16.7074176" width="30.0392647" height="1.15521978"></rect>
+        </g>
+    </g>
+</svg>

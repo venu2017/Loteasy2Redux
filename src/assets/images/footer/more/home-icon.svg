@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>home icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="more-Styleguide" transform="translate(-1014.000000, -628.000000)">
+            <g id="home-icon" transform="translate(1014.000000, 628.000000)">
+                
+                <g id="Group-4" opacity="0.6" transform="translate(3.000000, 3.000000)" stroke="#3D3D3D">
+                    <path d="M12.5,5.83247058 L1.5,5.91615666 L1.5,14.5 L5.51066028,14.5 L5.49666344,9.5 L8.51167647,9.5 L8.49667831,14.5 L12.5,14.5 L12.5,5.83247058 Z" id="Rectangle-34"></path>
+                    <polyline id="Rectangle-4" stroke-linecap="round" transform="translate(7.071068, 7.071068) rotate(-45.000000) translate(-7.071068, -7.071068) " points="2.07106781 2.07106781 12.0710678 2.07106781 12.0710678 12.0710678"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

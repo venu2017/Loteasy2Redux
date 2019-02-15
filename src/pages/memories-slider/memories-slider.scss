@@ -1,0 +1,72 @@
+.memoryGallery {
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    .memoryName {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .imgOptions {
+        margin:20px 0;
+        position: relative;
+        &.showOptions{
+            visibility: visible;
+        }
+        &.hideOptions{
+            visibility: hidden;
+        }
+        .controls {
+            margin-right: 15px;
+            display: inline-block;
+            vertical-align: top;
+            padding:0 10px;
+            .icon {
+                display: block;
+                width: 15px;
+                height: 15px;
+                margin: 0 auto 10px;
+                &.saveIcon {
+                    background: url("../assets/images/memories/save-icon-white.svg") no-repeat center top;
+                }
+                &.editIcon {
+                    background: url("../assets/images/memories/edit-icon-white.svg") no-repeat center top;
+                }
+                &.deleteIcon {
+                    background: url("../assets/images/memories/delete-icon-white.svg") no-repeat center top;
+                }
+            }
+            .label {
+                display: block;
+                text-align: center;
+                @include font($font-proxima,
+                normal,
+                #fff,
+                10px);
+            }
+        }
+        .closeoption {
+            position: absolute;
+            right: 0;
+            top: 8px;
+            .closeIcon {
+                padding: 5px;
+                background: url("../assets/images/memories/close-icon.svg") no-repeat center top;
+                height: 9px;
+                width: 9px;
+            }
+        }
+    }
+    .memoryCnt {
+        .slide {
+            width: 100vw;
+            height: 60vh;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit:cover;
+            }
+        }
+    }
+}

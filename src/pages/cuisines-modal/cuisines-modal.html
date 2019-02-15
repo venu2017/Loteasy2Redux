@@ -1,0 +1,150 @@
+<div class="modal" role="dialog" id="cuisines" *ngIf="restoModalType=='Cuisines'">
+  <div class="modal-dialog full-dialog">
+    <div class="modal-content">
+      <div class="modal-body ">
+        <div class="container-fluid">
+          <div class="extraDetails cuisines">
+            <div class="header">
+              <div class="title">{{restoModalType?restoModalType:''}}</div>
+              <div class="subTitle">{{restoName?restoName:''}}</div>
+              <div class="close-modal" (click)="closeModal()"></div>
+            </div>
+            <ul class="list">
+              <li *ngFor="let item of restoModalData">{{item}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="amenities" role="dialog" *ngIf="restoModalType=='Amenities'">
+    <div class="modal-dialog full-dialog">
+      <div class="modal-content">
+        <div class="modal-body ">
+          <div class="container-fluid">
+            <div class="extraDetails amenities">
+              <div class="header">
+                <div class="title">{{restoModalType?restoModalType:''}}</div>
+                <div class="subTitle">{{restoName?restoName:''}}</div>
+                <div class="close-modal"  (click)="closeModal()"></div>
+              </div>
+              <ul class="extraAmenities clearfix">
+                <li *ngIf="restoModalData.indexOf('Wifi')>-1">
+                  <div class="icon icon-wifi"></div>
+                  <div class="label">Wifi</div>
+                </li>
+                <li *ngIf="restoModalData.indexOf('Parking')>-1">
+                  <div class="icon icon-parking"></div>
+                  <div class="label">Parking</div>
+                </li>
+                <li *ngIf="restoModalData.indexOf('Smoking')>-1">
+                  <div class="icon icon-smoking"></div>
+                  <div class="label">Smoking</div>
+                </li>
+                <li *ngIf="restoModalData.indexOf('Baby Care')>-1">
+                  <div class="icon icon-babycare"></div>
+                  <div class="label">Baby Care</div>
+                </li>
+              </ul>
+              <ul class="list">
+                <li *ngFor="let item of restoModalData"> {{item}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="offers" role="dialog" *ngIf="restoModalType=='Offers'">
+      <div class="modal-dialog full-dialog">
+        <div class="modal-content">
+          <div class="modal-body ">
+            <div class="container-fluid">
+              <div class="extraDetails offers">
+                <div class="header">
+                  <div class="title">{{restoModalType?restoModalType:''}}</div>
+                  <div class="subTitle">{{restoName?restoName:''}}</div>
+                  <div class="close-modal"  (click)="closeModal()"></div>
+                </div>
+                <ul class="list">
+                  <li *ngFor="let item of offers_array">{{item}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="reviews" role="dialog" *ngIf="restoModalType=='Reviews'">
+        <div class="modal-dialog full-dialog">
+          <div class="modal-content">
+            <div class="modal-body ">
+              <div class="container-fluid">
+                <div class="extraDetails reviews">
+                  <div class="header">
+                    <div class="title">Reviews</div>
+                    <div class="subTitle">{{restoName?restoName:''}}</div>
+                    <div class="close-modal"  (click)="closeModal()">Close</div>
+                  </div>
+                  <div class="starSec">
+                    <div class="heading">Your Reviews</div>
+                    <rating [(ngModel)]="rate" 
+                    readOnly="false" 
+                    max="5" 
+                    emptyStarIconName="star-outline"
+                    halfStarIconName="star-half"
+                    starIconName="star" 
+                    nullable="false"
+                    (ngModelChange)="ratingselected($event)">
+                    </rating>
+                  
+                  </div>
+      <div>
+
+        
+      </div>
+                  <div class="commentSec">
+                    <input type="text" [(ngModel)]="txtcomments" placeholder="Add your comment">
+                  </div>
+      
+                  <div class="recommandSec">
+                    <span class="icon-right-space icon-recommend"></span><a  (click)="createReview()" title="Give a Review">Recommend this restaurant</a>
+                  </div>
+                
+                 
+                              
+
+                                <div  class="allReviews"  (click)="toggleGroup('Reviews')" [ngClass]="{active: isGroupShown('Reviews')}">
+                                    <span> {{isGroupShown('Reviews') ? 'Hide all Reviews' : 'view all Reviews'}} 
+                                    
+                                  <ion-icon color="success" item-right [name]="isGroupShown('Reviews') ? 'arrow-dropup' : 'arrow-dropdown'"></ion-icon>
+                                </span>
+                    
+                                  </div>
+                    <div  *ngIf="isGroupShown('Reviews')">
+<div *ngIf="user_reviews.length<1">
+
+No reviews available for this {{restoName?restoName:''}}
+</div>
+   
+                                  <div  class="userReview" *ngFor="let item of user_reviews">
+                                      <div class="rating"><span>{{item.ReviewRating}}</span></div>
+                                      <div class="comment">{{item.ReviewText}}</div>
+                                      <div class="userName"><img class="userImage"  src="{{item.UserProfileImg}}"> {{item.user}}</div>
+                                    </div>
+                                  </div>
+                            <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+                    
+                   
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  

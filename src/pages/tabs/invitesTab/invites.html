@@ -1,0 +1,143 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateToHome()"></a>
+      <span class="pageLabel">Invites</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="inviteWrapper pageScroll">
+  <div class="eventbox" *ngFor="let Events of Upcoming_Events; let i=index">
+    <div class="eventSection">
+      <div class="container-fluid">
+
+
+        <div class="inviteDate">{{Events.Event_created_time}}</div>
+
+
+        <div class="heading normal"></div>
+        <div class="eventDate">
+          <div class="icon calander">
+            <span class="month">{{Events.EventMonth}}</span>
+            <span class="date">{{Events.EventDate}}</span>
+          </div>
+          <div class="title"
+            (click)="Redirectstatus(Events.EventName,Events.Eventid,Events.Eventtitle)">{{Events.EventName}}</div>
+          <div class="subTitle">{{Events.Eventtitle}}</div>
+        </div>
+        <div class="eventName"
+          (click)="Redirectstatus(Events.EventName,Events.Eventid,Events.Eventtitle)">{{Events.Eventsummary}}</div>
+        <div class="eventDetails">
+          <div class="eventBlock">
+            <div class="icon locationIcon"></div>
+            <div class="content"
+              (click)="Redirectstatus(Events.EventName,Events.Eventid,Events.Eventtitle)">
+              <div *ngIf="Events.Restname!='Dummy Restuarnt'; then
+                truthyTemplate else falsyTemplate"> </div>
+              <ng-template #truthyTemplate>
+
+                <span> {{Events.Restname}},{{Events.EventAddress}}</span>
+              </ng-template>
+              <ng-template #falsyTemplate>
+                {{Events.EventVenueAddress}}
+
+              </ng-template>
+              <!-- <span *ngIf="Events.Restname!='Dummy Restuarnt'"> {{Events.Restname}},</span>    {{Events.EventAddress}} -->
+              <div class="getlocaion"
+                (click)="Nvaigate_to_map(Events.Rest_map_lat,Events.Rest_map_long)">Get
+                location</div>
+            </div>
+          </div>
+          <div class="eventBlock">
+            <div class="icon timeIcon"></div>
+            <div class="content">{{Events.EventTime}}</div>
+
+          </div>
+          <div class="inviteSec">
+
+            <div class="eventBlock">
+              <div class="icon invitesIcon"></div>
+              <div class="content">
+                <span class="label">Invitees</span>
+                <span class="inviteAccept"><span class="activeNumber">{{Events.EventAcceptedcount}}</span>/{{Events.EventMembers}}</span>
+                <span class="arrow" data-toggle="collapse"
+                  [attr.data-target]="'#' + Events.Eventid"></span>
+              </div>
+            </div>
+            <div class="inviteMembers collapse" id={{Events.Eventid}}>
+              <ul *ngFor="let list of Events.Invitess_list">
+                <li class="memberItem">
+                  <div class="memberPhoto"><img src="{{list.Profilepic}}"></div>
+                  <div class="memberDetails">
+                    <span>{{list.Name}}</span>
+                    <span class="agree"><span class="{{list.Userclass}}"></span>{{list.Userstate}}</span>
+                  </div>
+                  <div class="declinestatus">{{list.Decline}}</div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="eventBlock">
+            <div class="icon priceIcon"></div>
+            <div class="content">{{Events.Event_cost}} for
+              {{Events.EventMembers+1}} members </div>
+          </div>
+          <div [ngSwitch]="Events.Event_state">
+
+
+            <div *ngSwitchCase="'3'" class="btnSection centerAlign">
+              <div *ngIf="Events.EventName=='You'; then truthyTemplate else
+                falsyTemplate"> </div>
+              <ng-template #truthyTemplate>
+                <button class="blueBtn"
+                  (click)="UpdateEventStatus(1,Events.Eventid,Events.EventName,index,Events.Event_state,Events.Event_status_state,Events.EventAcceptedcount,Events)">Confirm</button>
+              </ng-template>
+              <ng-template #falsyTemplate>
+                <button class="blueBtn"
+                  (click)="UpdateEventStatus(1,Events.Eventid,Events.EventName,index,Events.Event_state,Events.Event_status_state,Events.EventAcceptedcount,Events)">Join
+                  Back</button>
+              </ng-template>
+            </div>
+
+            <div *ngSwitchCase="'2'" class="btnSection centerAlign">
+              <div *ngIf="Events.EventName=='You'; then truthyTemplate else
+                falsyTemplate"> </div>
+              <ng-template #truthyTemplate>
+                <a href="#" class="cancelBtn"
+                  (click)="UpdateEventStatus(2,Events.Eventid,Events.EventName,index,Events.Event_state,Events.Event_status_state,Events.EventAcceptedcount,Events)">Cancel</a>
+              </ng-template>
+              <ng-template #falsyTemplate>
+                <a href="#" class="cancelBtn"
+                  (click)="UpdateEventStatus(2,Events.Eventid,Events.EventName,index,Events.Event_state,Events.Event_status_state,Events.EventAcceptedcount,Events)">Decline</a>
+              </ng-template>
+
+            </div>
+            <div *ngSwitchCase="'1'" class="btnSection centerAlign">
+              <div *ngIf="Events.EventName=='You'; then truthyTemplate else
+                falsyTemplate"> </div>
+              <ng-template #truthyTemplate>
+                <a href="#" class="cancelBtn left"
+                  (click)="UpdateEventStatus(2,Events.Eventid,Events.EventName,index,Events.Event_state,Events.Event_status_state,Events.EventAcceptedcount,Events)">Cancel</a>
+                <button class="blueBtn right"
+                  (click)="UpdateEventStatus(1,Events.Eventid,Events.EventName,index,Events.Event_state,Events.Event_status_state,Events.EventAcceptedcount,Events)">Confirm</button>
+              </ng-template>
+              <ng-template #falsyTemplate>
+                <a href="#" class="cancelBtn left"
+                  (click)="UpdateEventStatus(2,Events.Eventid,Events.EventName,index,Events.Event_state,Events.Event_status_state,Events.EventAcceptedcount,Events)">Decline</a>
+                <button class="blueBtn right"
+                  (click)="UpdateEventStatus(1,Events.Eventid,Events.EventName,index,Events.Event_state,Events.Event_status_state,Events.EventAcceptedcount,Events)">Accept</button>
+              </ng-template>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

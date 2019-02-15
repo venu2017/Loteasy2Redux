@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "449263978865",
+    "firebase_url": "https://loteasy2-1512807509207.firebaseio.com",
+    "project_id": "loteasy2-1512807509207",
+    "storage_bucket": "loteasy2-1512807509207.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449263978865:android:4976cbf47fee42d5",
+        "android_client_info": {
+          "package_name": "com.loteasy.versiontwo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449263978865-6hb73dh36pqit8g7qrauqrhl133f66hs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOzZ87CXGLP-_O4-1KLuvNLlRKJrcSeEo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

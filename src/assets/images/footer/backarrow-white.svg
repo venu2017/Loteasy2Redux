@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>back arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="back-arrow" fill="#fff">
+            <path d="M3.39393939,11.0376568 L3.39393939,2.96969697 C3.39393939,2.73539435 3.20399959,2.54545455 2.96969697,2.54545455 L2.96969697,2.54545455 L2.96969697,2.54545455 C2.73539435,2.54545455 2.54545455,2.73539435 2.54545455,2.96969697 L2.54545455,2.96969697 L2.54545455,11.4545455 C2.54545455,11.6218775 2.64233133,11.7665827 2.78305774,11.835634 C2.84286559,11.8678563 2.91129255,11.8861417 2.98399029,11.8861417 L2.98399029,11.8861417 L11.4688388,11.8861417 C11.7031414,11.8861417 11.8930812,11.6962019 11.8930812,11.4618993 C11.8930812,11.2275966 11.7031414,11.0376568 11.4688388,11.0376568 L3.39393939,11.0376568 Z" id="Combined-Shape" transform="translate(7.219268, 7.215798) rotate(-315.000000) translate(-7.219268, -7.215798) "></path>
+            <rect id="Rectangle-18" x="1.6969697" y="6.78787879" width="12" height="1" rx="0.5"></rect>
+        </g>
+    </g>
+</svg>

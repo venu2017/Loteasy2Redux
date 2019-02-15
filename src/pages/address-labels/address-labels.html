@@ -1,0 +1,58 @@
+<div class="BacktoHome">
+  <div class="container-fluid">
+    <div class="col-sm-12">
+      <div class="back"><a class="backIcon" (click)="navigateBackToOrderFoodHome()"></a> <span class="label">My Address Labels</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="myaddressBlock moduleBlock">
+  <div class="container-fluid">
+    <div class="noAddress">
+      <div class="description">Create Address Labels (e.g. Home, Office, College..) for food delivery.</div>
+      <div class="subhead">Browse menu. Place order. Track Order.</div>
+    </div>
+    <div class="addressList">
+      <!-- <ul>
+        <li>
+          
+          Home <span class="icon edit"></span> <span class="icon delete" (click)="deleteLocation()"></span>
+        </li>
+        <li>Office <span class="icon edit"></span> <span class="icon delete" (click)="deleteLocation()"></span></li>
+      </ul> -->
+      <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <a style="text-decoration:none" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa"></i>
+                    <span class="icon edit"></span> <span class="icon delete" (click)="deleteAddress()"></span>
+                    <span class="icon edit"></span> <span class="icon edit" (click)="editAddress()"></span>
+                  Collapsible Group Item #1
+                </a>
+              </h5>
+            </div>
+        
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+               Flat No:50107, Indu Fortune Fields, Phase 13, KPHB, Hyderabad-500072
+              </div>
+            </div>
+          </div>
+       
+        </div>
+    </div>
+    <div class="addAddress" (click)="navigateToCreateAddressLabel()"><span class="icon add"></span> Add New Label</div>
+  </div>
+</div>
+
+<p-dialog  [(visible)]="invitepopup" [showHeader]="false" dismissableMask="true" modal="modal">
+    <div class="dialogMask">
+      <div class="header">Delete Current Location</div>
+      <div class="subHeader">Are you sure you want to delete current location?</div>
+      <div  class="btnSection centerAlign  clearfix">
+        <a  class="cancelBtn left" (click)="invitepopup=false">Cancel</a>
+        <button  class="blueBtn right">Delete</button>
+      </div>
+    </div>
+  </p-dialog>

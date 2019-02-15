@@ -1,0 +1,144 @@
+.mapviewBtn{
+    position: absolute;
+    bottom: 10px;
+    right: 13px;
+    z-index: 99999;
+    padding-bottom: 11px;
+}
+
+.searchLocation {
+    .locationType {
+        position: fixed;
+        width:100%;
+        top:0;
+        height:56px;
+        background: #fff;
+        z-index: 100;
+        .searchbar-md .searchbar-search-icon {
+            background-image: url("../assets/images/backarrow-white.svg");
+            width: 14px;
+            height: 14px;
+            background-size: 14px;
+            top:15px;
+        }
+    }
+    .locationCnt{
+        margin-top:60px;
+       
+    }
+    .btnSection {
+        margin:20px auto 0;
+        width:80%;
+        text-align: center !important;
+    }
+
+    .searchResults {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        background: #fff;
+        top: 115px;
+        .newplace {
+            font-weight: bold;
+        }
+        ul li {
+            background: url('../assets/images/common/map-restaurant-icon.svg') no-repeat 15px 10px;
+            padding: 10px 0 10px 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        .address{
+            margin-bottom:5px;
+            &:last-child{
+                margin-bottom:0;
+            }
+        }
+    }
+    .taptomap {
+        margin: 10px 0 5px;
+        font-weight: bold;
+    }
+    .mapinfo {
+        font-size: 12px;
+        font-weight: bold;
+        padding:10px 15px;
+    }
+    .addressInfo{
+        padding:0 15px;
+        .headings{
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .selectedAddr{
+            background: url('../assets/images/common/map-restaurant-icon.svg') no-repeat left 10px;
+            padding:10px 0 10px 35px;
+            height: 60px !important;
+        }
+    }
+}
+
+
+
+
+ion-list ion-item>p:first-child {
+    color: blue;
+}
+
+.greyBtn {
+    width: 100px;
+    padding: 10px;
+    background-color: grey;
+}
+
+.no-scroll .scroll-content {
+    overflow: hidden;
+}
+
+.item-md p {
+    margin: 5px 3px 10px;
+}
+
+.list-md {
+    margin: 5px 0 0px;
+}
+
+.item-md {
+    font-weight: 500;
+} // .item-md h3, .item-md h4, .item-md h5, .item-md h6{
+//     margin: 15px 0;
+// }
+[padding] h3:first-child {
+    margin-top: 0.5em;
+}
+
+.headings {
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    left: 20px;
+}
+
+
+.ui-picklist-source-controls {
+    display: none !important;
+}
+
+.ui-picklist-target-controls {
+    display: none !important;
+}
+
+.ui-picklist-listwrapper {
+    width: 45% !important;
+}
+.mapview{
+    position: relative;
+    width: 97%;
+    margin: 0 auto;
+    height: auto;
+    min-height: 320px;
+}
+
+agm-map {
+    height: 320px;
+    width:100%;
+  }
+

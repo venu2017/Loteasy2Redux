@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>List View</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="List-View">
+            <g>
+                <rect id="Rectangle-40" fill="#159ADC" opacity="0.700000048" x="0" y="0" width="30" height="30" rx="5"></rect>
+                <g id="Group-69" transform="translate(6.000000, 8.000000)" fill="#FFFFFF">
+                    <circle id="Oval-24" cx="1.5" cy="7.5" r="1.5"></circle>
+                    <rect id="Rectangle-45" x="5" y="7" width="13" height="1.5" rx="0.75"></rect>
+                    <circle id="Oval-24" cx="1.5" cy="1.5" r="1.5"></circle>
+                    <rect id="Rectangle-45" x="5" y="1" width="13" height="1.5" rx="0.75"></rect>
+                    <circle id="Oval-24" cx="1.5" cy="13.5" r="1.5"></circle>
+                    <rect id="Rectangle-45" x="5" y="13" width="13" height="1.5" rx="0.75"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,120 @@
+<div class="myProfile pageScroll" *ngIf="!isNewAddressVisible">
+
+  <div class="backToHome withscroll">
+    <div class="container-fluid">
+      <div class="BacktoHomeLable">
+        <a class="backIcon" (click)="navigateBackToMorePage()"></a>
+        <span class="pageLabel">My Profile</span>
+      </div>
+    </div>
+  </div>        
+
+  <div class="profileWrapper">
+    <div class="profileImg">
+      <img [src]="profilePic" alt="profileimage">
+     
+    </div>
+  </div>
+
+
+  <div class="userDetails">
+    <div class="container-fluid">
+      <form>
+        <div class="form-group">
+          <label for="userName">Name</label>
+          <input type="text" class="form-control" id="userName" [ngModelOptions]="{standalone: true}" #name [(ngModel)]="placeholder.Name"
+            [placeholder]="placeholder.Name?placeholder.Name:'Name'">
+        </div>
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="email" class="form-control" id="Email" [ngModelOptions]="{standalone: true}" [(ngModel)]="placeholder.Email"
+            #email [placeholder]="userEmail?userEmail:emailPlaceholder">
+        </div>
+        <div class="form-group password-group">
+          <label for="password">Mobile number</label>
+          <input type="text" class="form-control" id="userMobile" [ngModelOptions]="{standalone: true}" [(ngModel)]="userMobile" disabled
+            #mobilenumber>
+          <!-- <a href="#" class="changepassword">Reset Password</a> -->
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+  <div class="savedLocatins">
+    <div class="container-fluid">
+      <div class="locations">
+        <div class="heading">Saved Locations</div>
+        <div class="newAddress" (click)="Newaddress()"><a><span class="plusIcon"></span>New Address</a></div>
+        <ul class="savedAddress">
+          <li class="location" [ngClass]="{'home':addr.UserAddressType==1, 'office':addr.UserAddressType==2,'Others':addr.UserAddressType==3}"
+            *ngFor="let addr of address">
+            <div class="heading clearfix">
+              <span class="leftSide">
+                      <ng-template [ngIf]="addr.UserAddressType == 1">  <span class="addressicon"></span>
+              <span class="label">Home</span>
+              </ng-template>
+              <ng-template [ngIf]="addr.UserAddressType == 2"> <span class="addressicon"></span><span class="label">Office</span></ng-template>
+              <ng-template [ngIf]="addr.UserAddressType == 3"> <span class="addressicon"></span><span class="label">Others</span></ng-template>
+
+              </span>
+              <span class="rightSide">
+                    <span class="icon editIcon"  (click)="EditAddress(addr)"></span><span class="icon deleteIcon"
+                (click)="deleteAddress(addr.UserAddressType)"></span>
+              </span>
+            </div>
+            <p class="address">{{addr.AddressLine1 + "," + addr.AddressLine2+","+addr.AddressLine3}}</p>
+          </li>
+        </ul>
+        <p *ngIf="!addr || addr == undefined">{{errorText}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="btnSection clearfix fixed-button-bottom">
+    <button class="blueBtn fullwidth"  (click)="backToMoreHomePage(placeholder.Name,placeholder.Email)"><span class="button-inner">Save Changes</span><div class="button-effect"></div></button>
+  </div>
+</div>
+<div class="myaddress" *ngIf="isNewAddressVisible">
+
+  <div class="backToHome">
+    <div class="container-fluid">
+      <div class="BacktoHomeLable">
+        <a class="backIcon" (click)="isNewAddressVisible=false;updateUserSavedAddresses()"></a>
+        <span class="pageLabel">{{pagetitle}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="getAddress">
+      <div class="title">Address</div>
+
+      <p>{{_formattedAddress}}</p>
+      <div class="gps" (click)="getCurrentLocation()"><span class="gpsIcon"></span>Get current Location</div>
+
+    </div>
+
+    <div class="addressForm">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="Address1" #housenumber placeholder="House Number / Building">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="Address2" #landmark placeholder="Landmark">
+        </div>
+        <div class="form-group location">
+          <label>Location Type</label>
+          <select [ngModelOptions]="{standalone: true}" [(ngModel)]="UserAddressType" #addressType>
+            <option value="1">Home</option>
+            <option value="2">Office</option>
+            <option value="3">Others</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <button class="blueBtn fixedBottom" (click)="saveUserAddress(Address1,Address2,UserAddressType)">Save my address</button>
+  </div>
+
+ 
+</div>
+

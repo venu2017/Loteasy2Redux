@@ -1,0 +1,47 @@
+<div class="defaultMask" ></div>
+<div class="appbg"></div>
+<div class="homeSection">
+
+    <!--<app-search></app-search>-->
+
+
+    <div class="mainModule">
+        <div class="appusername">Hey, {{userName}} !</div>
+        <div class="appDes">There is a karaoke @ The Fisherman's Wharf tonight, Wanna Join !</div>
+        <div class="appsection" (click)="setAvailability()">
+            <div class="icon friend"></div>
+            <div class="appcontent">
+                <span class="normal">Meet</span>
+                <span class="high">Friends</span>
+                <span class="low">Now!</span>
+                <span class="description text-left">Lorem Ipsum is<br> simply dummy text!</span>
+            </div>
+        </div>
+
+        <div class="appsection" (click)="navigateToLocationDatetime('Funch')">
+
+            <div class="appcontent reverse">
+                <span class="normal">Start a</span>
+                <span class="high">Hangout</span>
+                <span class="low"></span>
+                <span class="description text-right">Lorem Ipsum is<br> simply dummy text!</span>
+            </div>
+            <div class="icon hangout reverse"></div>
+        </div>
+
+        <div class="appsection" (click)="navigateToLocationDatetime('plan')">
+            <div class="icon party "></div>
+            <div class="appcontent ">
+                <span class="normal">It's</span>
+                <span class="high">Party</span>
+                <span class="low">Time!</span>
+
+                <span class="description text-left">Lorem Ipsum is<br> simply dummy text!</span>
+            </div>
+        </div>
+
+        <div class="appsection orderfood" (click)="navigateToOrderFood()">Order Food</div>
+
+    </div>
+
+</div>

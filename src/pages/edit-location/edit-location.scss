@@ -1,0 +1,112 @@
+.editLocation{
+    .locationType{
+        background:#3d3d3d;
+        padding:10px 15px;
+        margin:10px 5px;
+        position: relative;
+        border-radius: 4px;
+        .backIcon{
+            background: url("../assets/images/backarrow.svg") no-repeat center top;
+            position: absolute;
+            left:15px;
+            top:18px;
+            width: 14px;
+            height: 14px;
+
+        }
+        input[type="text"]{
+            display: block;
+            padding: 8px 8px 8px 20px;
+            width: 100%;
+            border: none;
+            background: none;
+            font-size:14px;
+            color:#fff;
+        
+        }
+    }
+    .getlocation{
+        background: url('../assets/images/common/direction icon.svg') no-repeat left top;
+        padding-left:30px;
+        margin:20px 0;
+        line-height: 21px;
+        
+    }
+    .locationList{
+        margin-bottom:30px;
+        border-bottom:1px solid #ccc;
+        .title{
+            font-weight: bold;
+            margin-bottom:0;
+        }
+        .locationItem{
+            border-bottom:1px solid #ccc;
+            padding:15px 0;
+            position: relative;
+            &:last-child{
+                border-bottom: none;
+            }
+            .locTitle{
+                font-weight: bold;
+                margin-bottom:8px;
+            }
+            .address{
+                
+            }
+           .addAddress{
+            background: url('../assets/images/common/Add label icon.svg') no-repeat center top;
+            position: absolute;
+            right:0;
+            top:15px;
+            width:24px;
+            height: 24px;
+           
+           }
+           .savedAddress{
+            position: absolute;
+            right:0;
+            top:15px;
+           }
+        }
+        .noData{
+            padding:15px 0;
+            text-align: center;
+        }
+    }
+
+   
+}
+
+
+
+
+ion-list ion-item>p:first-child {
+    color: blue;
+}
+
+.greyBtn {
+    width: 100px;
+    padding: 10px;
+    background-color: grey;
+}
+
+.no-scroll .scroll-content {
+    overflow: hidden;
+}
+
+.item-md p {
+    margin: 5px 3px 10px;
+}
+
+.list-md {
+    margin: 5px 0 0px;
+}
+
+.item-md {
+    font-weight: 500;
+} // .item-md h3, .item-md h4, .item-md h5, .item-md h6{
+//     margin: 15px 0;
+// }
+[padding] h3:first-child {
+    margin-top: 0.5em;
+}

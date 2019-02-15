@@ -1,0 +1,31 @@
+<!-- <ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Search Restaurant..." ></ion-searchbar>
+   <ion-list>
+     <ion-item *ngIf="showSearchHeading">Recent Searches</ion-item>
+    <ion-item *ngFor="let item of items"  no-lines padding item-left (click)="onSelectItem(item)">
+    <img src="{{(item.item_Type=='dish'?this.itemImage1:this.itemImage2)}}"/> 
+    {{ item.split(':')[0] }}
+     </ion-item>
+  </ion-list>
+</ion-content> -->
+
+
+<div class="searchPage">
+  <div class="container-fluid">
+    <div class="searchFocus">
+      <a class="arrowIcon" (click)="navigateBackToHome()"></a>
+      <input type="text"  class="globalsearch" [(ngModel)]="searchVal" placeholder="Search Restaurant..." 
+        (input)="getItems($event)" />
+      <span class="closeIcon" *ngIf="clearvalue" (click)="_clearvalue()"></span>
+
+
+    </div>
+
+    <div class="topSeachWrapper" *ngIf="inputFocusClass">
+      <div class="heading">Top searches</div>
+      <ul class="searchItems">
+        <li *ngFor="let searchItem of items"><a (click)="onSelectItem(searchItem)"><span class="{{searchItem.split(':')[2]}}"></span><span class="hotelName">{{searchItem.split(':')[0]}}</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

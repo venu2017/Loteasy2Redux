@@ -1,0 +1,13 @@
+ 
+<ion-content padding>
+  <ion-buttons end>
+    <button  icon-only (click)="closeMenuModal()">
+        <ion-icon item-right name="close"></ion-icon>
+    </button>
+</ion-buttons>
+    <ion-slides>
+        <ion-slide *ngFor="let img of restoImages">
+          <img src="{{cloudinaryUrl + img}}">
+        </ion-slide>
+      </ion-slides>
+</ion-content>

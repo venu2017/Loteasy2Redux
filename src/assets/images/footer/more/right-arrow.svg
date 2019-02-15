@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="12px" viewBox="0 0 6 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>right arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" opacity="0.6" stroke-linejoin="round">
+        <g id="more-Styleguide" transform="translate(-2129.000000, -1245.000000)" stroke="#3D3D3D">
+            <g id="Group-34" transform="translate(1825.000000, 882.000000)">
+                <polyline id="right-arrow" points="304 364 310 368.979478 304 374"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

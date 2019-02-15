@@ -1,0 +1,71 @@
+<div class="inviteSearch">
+
+  <div class="BacktoHome">
+    <div class="container-fluid">
+      <div class="col-sm-12">
+        <div class="back">
+          <a class="backIcon" (click)="navtigateToChooseDateTime()"></a>
+          <span class="label">Start a Hangout</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+      <div class="col-sm-12">
+        <div class="moduleSteps">
+          <div class="stepsHeader">choose Invitees</div>
+          <div class="stepstatus step2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+      <div class="col-sm-12">
+        <div class="contactWrapper">
+          <div class="secTitle">Invitees</div>
+          <div class="contactList">
+            <div class="searchbox">
+              <input placeholder="Type name or number" type="text" [(ngModel)]="autocompleteContatcs.input" (input)="onContatsSearch($event)">
+              <div class="searchResults" *ngIf="noMatchFound">
+                <div class="head">No match found in contacts</div>
+                <div class="username">
+                  <input type="text" placeholder="Provide Name (optional)">
+                  <span class="iconright"></span>
+                </div>
+              </div>
+            </div>
+            <div class="inviteMembers">
+              <ul>
+                <li class="memberItem" *ngFor="let contact of autocompleteContacstList">
+                  <div class="memberPhoto"><img [src]="contact.image?contact.image:''"></div>
+                  <div class="memberDetails">
+                    <span>{{contact.displayName}}</span>
+                    <span class="loteasyRegistered"></span>
+                  </div>
+                </li>
+               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+      <div class="col-sm-12">
+        <div class="btnSection clearfix fixed-button-bottom">
+          <button class="blueBtn fullwidth">Proceed</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

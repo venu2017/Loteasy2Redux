@@ -1,0 +1,39 @@
+<div class="backToHome  blackBG">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateBackToMemories()">
+      </a>
+      <div class="memoryName pageLabel">
+        <div class="eventDate">{{Event_date}}</div>
+        <div class="eventName">{{Event_caption}} </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="memoryGallery">
+  <div class="container-fluid">
+    <div class="imgOptions" [ngClass]="options ? 'hideOptions' : 'showOptions'">
+      <div class="controls save" (click)="saveImage()">
+        <span class="icon saveIcon"></span>
+        <span class="label">Save</span>
+      </div>
+      <div class="controls edit" (click)="editImage()">
+        <span class="icon editIcon"></span>
+        <span class="label">Edit</span>
+      </div>
+      <div class="controls delete" (click)="deleteImage()">
+        <span class="icon deleteIcon"></span>
+        <span class="label">Delete</span>
+      </div>
+    </div>
+  </div>
+  <div class="memoryCnt">
+    <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterSlideChanged($event)">
+      <div ngxSlickItem *ngFor="let slide of memoriesSlides" class="slide">
+        <img src="{{ cloudinaryMemoriesPath + slide }}" alt="" width="100%" (click)="hideOptions()">
+      </div>
+    </ngx-slick>
+  </div>
+</div>

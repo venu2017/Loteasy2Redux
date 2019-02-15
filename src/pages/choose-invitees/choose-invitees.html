@@ -1,0 +1,173 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable"> <a class="backIcon" (click)="navtigateToChooseDateTime()"></a> 
+      <span class="pageLabel">{{Title_heading}}</span>
+    </div>
+  </div>
+</div>
+<div class="inviteesMain pageScroll">
+  <div class="section">
+    <div class="container-fluid">
+      <div class="moduleSteps">
+        <div class="stepsHeader">Choose Invitees</div>
+        <div class="stepstatus step2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container-fluid">
+        <div class="contactWrapper">
+          <div class="secTitle">Invitees</div>
+          <div class="contactList">
+            <div class="searchbox"> <input placeholder="Type name or number" type="text" [(ngModel)]="autocompleteContatcs.input" (keyup)="onContatsSearch($event)">
+              <div class="searchResults" *ngIf="noMatchFound">
+                <div class="head">No match found in contacts</div>
+                <div class="username"> <input type="text" [(ngModel)]="AddName" OnlyNumber="true" pKeyFilter="int" placeholder="Provide Number"> <span class="iconright" (click)="addPhoneNumberToList()"></span> </div>
+              </div>
+            </div>
+            <div class="inviteMembers">
+              <div class="inviteTabs" *ngIf="showTabbedView">
+               
+                  <ion-segment [(ngModel)]="testing">
+                    <ion-segment-button class="nav-item selected" value="Accepted" (click)="selectedListContacts()"> <span class="length">{{selectedInvitees.length}}</span> Selected</ion-segment-button>
+                    <ion-segment-button class="nav-item contact" value="Pending" (click)="displayAllContacts()"> <span class="length">{{Phone_contacts_count}}</span> Contacts</ion-segment-button>
+                    <ion-segment-button class="nav-item mybuddies" value="Declined" (click)="displayBuddies()"><span class="length">{{Buddies_count}}</span>  My Buddies</ion-segment-button>
+                  </ion-segment>
+                  <!-- <li class="nav-item"><a class="nav-link  active" data-toggle="tab" (click)="selectedListContacts()" href="#selected" role="tab"><span class="selected">{{selectedInvitees.length}}</span> Selected</a></li>
+                                    <li class="nav-item"><a class="nav-link " data-toggle="tab" (click)="displayAllContacts()" href="#contacts" role="tab"><span class="contact">{{Phone_contacts_count}}</span> Contacts</a></li>
+                                    <li class="nav-item"><a class="nav-link " data-toggle="tab" (click)="displayBuddies()" href="#buddies" role="tab"><span class="mybuddies" >{{Buddies_count}}</span> My Buddies</a></li> -->
+                
+              </div>
+              <div class="tab-content">
+                <div [ngSwitch]="testing" class="inviteCnt">
+                  <div class="inviteslist" *ngIf="showTabbedView==false">
+                      <ul>
+                          <li class="memberItem" *ngFor="let contact of autocompleteContacstList" (click)="onContactSelected(contact)">
+                            <div class="memberPhoto"> 
+                                <span class="loteasyMember" *ngIf="contact.image != 'assets/images/Single Contact Icon.svg'"></span>
+                              <img src="{{contact.image}}" style="width:44px;height:44px"> </div>
+                            <div class="memberDetails"> <span>
+                                          
+                                            {{contact.name}}
+                                          </span> </div>
+                          </li>
+                        </ul>
+                  </div>
+                  
+
+                  <div class="tab-pane" *ngSwitchCase="'Accepted'" ngSelected="selected" role="tabpanel">
+                    
+                    <div *ngIf="showTabbedView==true" class="tab-panel">
+                        <div class="contactsDisplay ionContacts">
+                            <ion-list>
+                              <ion-item-sliding *ngFor="let contact of selectedInvitees;let i=index">
+                                <ion-item class="member">
+                                 
+                                  <ion-label> 
+                                    <div class="userImage">
+                                        <span class="loteasyMember" *ngIf="contact.image != 'assets/images/Single Contact Icon.svg'"></span>
+                                        <img src="{{contact.image}}"> 
+                                    </div>
+                                    <div class="contactDetails">
+                                        <span class="contactName">{{contact.displayName}}</span>
+                                        <span class="contactName">{{contact['phoneNumbers[0].value'].length==10?contact['phoneNumbers[0].value']:''}}</span>
+                                        
+                                    </div>
+                                   
+                                  </ion-label>
+                                </ion-item>
+                                <ion-item-options> <button ion-button color="appYellow" *ngIf="contact.buddy_group!=='Buddy'" (click)="callTheselectedInvitee(contact,i)">
+                                    <ion-icon name="call"></ion-icon>
+                                      Call
+                                    </button> <button ion-button color="appBlue" *ngIf="contact.buddy_group!='Buddy'" (click)="addToBuddyList(contact,i)">
+                                      <ion-icon name="person"></ion-icon>
+                                        Buddy
+                                      </button> <button ion-button color="danger" (click)="removeContact(contact,i)">
+                                  <ion-icon name="trash"></ion-icon>
+                                  Delete
+                                </button> </ion-item-options>
+                              </ion-item-sliding>
+                            </ion-list>
+                          </div>
+                
+                      <p class="noinvitess" *ngIf="NotSelected"> No invitees are selected yet </p>
+                    </div>
+                  </div>
+                  
+                  <div class="tab-pane"  role="tabpanel" *ngSwitchCase="'Pending'">
+
+
+                      <div class="contactsDisplay ionContacts">
+                          <ion-list>
+                            <ion-item-sliding *ngFor="let c of phoneContacts; let i=index">
+                              <ion-item class="member">
+                                  <ion-checkbox (ionChange)="phonecontactselection(c.name,c.phone)" [(ngModel)]="c.checked"></ion-checkbox>
+                                <ion-label> 
+                                  <div class="userImage">
+                                      <img src="{{c.profileimg}}"> 
+                                  </div>
+                                  <div class="contactDetails">
+                                      <span class="contactName">{{c.name}}</span>
+                                      <span class="contactNumber" > {{c.phone}} </span> 
+                                  </div>
+                                 
+                                </ion-label>
+                              </ion-item>
+                              <ion-item-options> <button ion-button color="appYellow" (click)="callTheInvitee(c,i)">
+                                  <ion-icon name="call"></ion-icon>
+                                    Call
+                                  </button> <button ion-button color="appBlue" (click)="addToBuddyList(c,i)">
+                                    <ion-icon name="person"></ion-icon>
+                                      Buddy
+                                    </button> </ion-item-options>
+                            </ion-item-sliding>
+                          </ion-list>
+                        </div>
+
+
+
+           
+                  </div>
+                 
+                  <div class="tab-pane"  role="tabpanel" *ngSwitchCase="'Declined'">
+
+                      <div class="contactsDisplay ionContacts">
+                          <ion-list>
+                            <ion-item-sliding *ngFor="let buddy of buddiesList; let i=index">
+                              <ion-item class="member">
+                                  <ion-checkbox (ionChange)="selectimgfordelettion(buddy.buddy.BuddiesListName,i)" [(ngModel)]="buddy.checked"></ion-checkbox>
+                                <ion-label> 
+                                  <div class="userImage" *ngIf="buddy.buddy.BuddiesListProfilePic!='undefined'">
+                                      <img src="{{cloudinaryPhotoPath + buddy.buddy.BuddiesListProfilePic?cloudinaryPhotoPath+buddy.buddy.BuddiesListProfilePic:'assets/images/new buddies group icon.svg'}}"> 
+                                  </div>
+                                  <div class="userImage" *ngIf="buddy.buddy.BuddiesListProfilePic=='undefined'">
+                                    <img src="assets/images/new buddies group icon.svg"> 
+                                </div>
+                                  <div class="contactDetails">
+                                      <span class="contactName">{{buddy.buddy.BuddiesListName}}</span>
+
+                                  </div>
+                                 
+                                </ion-label>
+                              </ion-item>
+                             <!--  <ion-item-options> <button ion-button color="danger" (click)="addToBuddyList(buddy.buddy.BuddiesListName)">
+                                  <ion-icon name="trash" ></ion-icon>
+                                    Buddy
+                                  </button> </ion-item-options>-->
+                            </ion-item-sliding>
+                          </ion-list>
+                        </div>
+
+                  
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+    </div>
+  </div>
+<div class="btnSection fixedButtons fixed-button-bottom"> <button class="blueBtn fullwidth" [disabled]="allFieldsNotAvailable" (click)="onProceedToRestaurants()">Proceed</button> </div>
+</div>

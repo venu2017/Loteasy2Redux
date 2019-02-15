@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="10px" viewBox="0 0 15 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Card icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="Card-icon" stroke="#3D3D3D">
+            <g id="Page-1">
+                <g id="Artboard-7">
+                    <g id="Group-25">
+                        <g id="Crad-icon">
+                            <path d="M2,0.35 C1.08873016,0.35 0.35,1.08873016 0.35,2 L0.35,8 C0.35,8.91126984 1.08873016,9.65 2,9.65 L13,9.65 C13.9112698,9.65 14.65,8.91126984 14.65,8 L14.65,2 C14.65,1.08873016 13.9112698,0.35 13,0.35 L2,0.35 Z" id="Rectangle-16" stroke-width="0.7"></path>
+                            <path d="M0,3 L14.4473347,3" id="Path-2"></path>
+                            <path d="M2,5 L8,5" id="Path-3" stroke-linecap="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

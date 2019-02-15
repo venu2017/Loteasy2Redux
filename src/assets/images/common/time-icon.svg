@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="18px" viewBox="0 0 17 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>time icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Meet-over-a-meal-Style-Guide" transform="translate(-2068.000000, -490.000000)">
+            <g id="time-icon" transform="translate(2068.000000, 490.000000)">
+                <rect id="Rectangle-31"  x="0" y="0.5" width="17" height="17"></rect>
+                <g id="Group-2" transform="translate(2.000000, 3.000000)">
+                    <circle id="Oval-3" stroke="#5F5F5F" cx="6.40231282" cy="5.83128093" r="5.83128093"></circle>
+                    <path d="M6.40807292,6.11679688 L6.40807292,2.75248037 C6.40807292,2.59161305 6.27766419,2.46120433 6.11679688,2.46120433 L6.11679688,2.46120433 L6.11679688,2.46120433 C6.11670736,2.46120433 6.11661784,2.46120437 6.11652832,2.46120445 C5.95580946,2.46135277 5.82564132,2.59176139 5.82578964,2.75248025 L5.82578964,2.75248025 L5.82943201,6.69934896 L6.11875246,6.69934896 L9.50239374,6.69934896 C9.66326106,6.69934896 9.79366978,6.56894023 9.79366978,6.40807292 L9.79366978,6.40807292 C9.79366978,6.2472056 9.66326106,6.11679688 9.50239374,6.11679688 L9.50239374,6.11679688 L6.40807292,6.11679688 Z" id="Combined-Shape" fill="#5F5F5F"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

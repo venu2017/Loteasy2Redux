@@ -1,0 +1,266 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateToHome()"></a>
+      <span class="pageLabel">Events</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="eventWrapper pageScroll">
+  <div class="eventbox" *ngFor="let Events of Upcoming_Events;let k = index">
+       <div class="eventSection">
+      <div class="container-fluid">
+      
+
+        <div class="heading normal">{{Events.EventsCoduct}}</div>
+        <div class="eventDate">
+          <div class="icon calander">
+            <span class="month">{{Events.EventMonth}}</span>
+            <span class="date">{{Events.EventDate}}</span>
+          </div>
+          <div class="title">{{Events.EventName}}</div>
+          <div class="subTitle">{{Events.Eventtitle}}</div>
+        </div>
+
+        <div class="eventName">{{Events.Eventsummary}}</div>
+        <div class="eventDetails">
+          <div class="eventBlock">
+            <div class="icon locationIcon"></div>
+
+            <div class="content">
+               
+               
+             <span *ngIf="Events.Restname!='Dummy Restuarnt'"> 
+                {{Events.Restname}},
+               </span> 
+              
+                
+                    {{Events.EventVenueAddress?Events.EventVenueAddress:Events.EventAddress}}
+              <div class="getlocaion" (click)="Nvaigate_to_map(Events.Rest_map_lat,Events.Rest_map_long)">Get location</div>
+
+            </div>
+
+
+          </div>
+          <div class="eventBlock">
+            <div class="icon timeIcon"></div>
+            <div class="content">{{Events.EventTime}}</div>
+
+
+          </div>
+
+          <div class="eventBlock">
+            <div class="icon priceIcon"></div>
+            <div class="content">{{Events.Event_cost}} for {{Events.EventMembers+1}} members</div>
+          </div>
+          <div class=" inviteSec">
+
+            <div class="eventBlock">
+                <div class="icon invitesIcon"></div>
+                <div class="content">
+                  <span class="label">Invitees</span>
+                  <span class="inviteAccept">
+                        <span class="activeNumber">{{Events.EventAcceptedcount}}</span>/{{Events.EventMembers}}</span>
+                  <!-- <span class="arrow" data-toggle="collapse" [attr.data-target]="'#' + Events.Eventid"></span> -->
+                  
+                </div>
+                <div class="arrowIcon" text-wrap (click)="toggleGroup(Events.Eventid)"
+                [ngClass]="{active: isGroupShown(Events.Eventid)}">
+                <ion-icon color="success" item-right [name]="isGroupShown(Events.Eventid) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+              </div>
+            </div>
+            
+           
+
+            <div class="inviteMembers" *ngIf="isGroupShown(Events.Eventid)" id={{Events.Eventid}}>
+              <ul *ngFor="let list of Events.Invitess_list">
+                <li class="memberItem">
+                  <div class="memberPhoto">
+                    <img src="{{list.Profilepic}}">
+                  </div>
+                  <div class="memberDetails">
+                    <span>{{list.Name}}</span>
+                    <span class="agree">
+                        <span class="{{list.Userclass}}"></span>{{list.Userstate}}</span>
+                  </div>
+                  <div class="declinestatus">{{list.Decline}}</div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+
+          <div class="btnSection centerAlign">
+            <div *ngIf="Events.EventName=='You'; then truthyTemplate else falsyTemplate"> </div>
+            <ng-template #truthyTemplate>
+              <button (click)="UpdateEventStatus(2,Events.Eventid,Events.EventName,'Cancel Event', Events,k)" class="blueBtn">Cancel Event</button>
+            </ng-template>
+            <ng-template #falsyTemplate>
+              <button (click)="UpdateEventStatus(2,Events.Eventid,Events.EventName,'Exit Event', Events,k)" class="blueBtn">Exit Event</button>
+            </ng-template>
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="oldevents">
+
+
+
+
+    <div class="caption" *ngIf="Earlier_Events.length>0">Earlier Attended Events</div>
+    <div class="eventbox" *ngFor="let Events of Earlier_Events;let i = index">
+      <div class="eventSection">
+        <div class="container-fluid">
+          <div class="eventDate">
+            <div class="icon calander">
+              <span class="month">{{Events.EventMonth}}</span>
+              <span class="date">{{Events.EventDate}}</span>
+            </div>
+            <div class="title">{{Events.EventName}}</div>
+            <div class="subTitle">{{Events.Eventtitle}}</div>
+          </div>
+          <div class="eventName">{{Events.Eventsummary}}</div>
+          <div class="eventDetails">
+            <div class="eventBlock">
+              <div class="icon locationIcon"></div>
+              <div class="content">
+
+                 <span *ngIf="Events.Restname!='Dummy Restuarnt'">
+                    {{Events.Restname}},
+                </span> 
+               
+                 
+                     {{Events.EventVenueAddress?Events.EventVenueAddress:Events.EventAddress}} 
+              </div>
+
+            </div>
+            <div class="eventBlock">
+              <div class="icon timeIcon"></div>
+              <div class="content">{{Events.EventTime}}</div>
+
+            </div>
+
+            <div class="inviteSec">
+              <div class="eventBlock">
+                  <div class="icon invitesIcon"></div>
+                  <div class="content" data-toggle="collapse" [attr.data-target]="'#' + Events.Eventid">
+                    <span class="label">Attendees ( {{Events.EventMembers}} )</span>
+                    <!--   <span class="inviteAccept" >( {{Events.EventMembers}})</span>-->
+                    
+                    <!-- <span class="arrow" data-toggle="collapse" [attr.data-target]="'#' + Events.Eventid"></span> -->
+                  </div>
+                  <div class="arrowIcon" text-wrap (click)="toggleGroup(Events.Eventid)"
+                  [ngClass]="{active: isGroupShown(Events.Eventid)}">
+
+
+                  <ion-icon color="success" item-left [name]="isGroupShown(Events.Eventid) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+
+
+                </div>
+    
+              </div>
+             
+
+
+              <div class="inviteMembers" *ngIf="isGroupShown(Events.Eventid)" id={{Events.Eventid}}>
+
+                <!--*ngIf="Details.Eventid == Events.Eventid"-->
+                <ul *ngFor="let list of Events.Invitess_list">
+                  <li class="memberItem">
+                    <div class="memberPhoto">
+                      <img src="{{list.Profilepic}}">
+                    </div>
+                    <div class="memberDetails">
+                      <span>{{list.Name}}</span>
+                      <span class="agree">
+                            <span class="{{list.Userclass}}"></span>{{list.Userstate}}</span>
+                    </div>
+                    <div class="declinestatus">{{list.Decline}}</div>
+                  </li>
+                </ul>
+
+
+              </div>
+
+              
+            </div>
+            <div class="memories">
+                <div class="memorysec" (click)="Memories(Events.Eventid,Events.Eventphotos,Events.EventConductdate,Events.Eventtitle)">
+                  <div class="label">Memories</div>
+                  <div class="icon plusIcon"></div>
+                </div>
+                <div class="memoryCnt">
+
+                  <div *ngIf="Events.Eventphotos?.length >0;then content else other_content"></div>
+                  <ng-template #content>
+
+                    <ngx-slick *ngIf="Events.Eventphotos?.length >0" class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+
+                      <div ngxSlickItem *ngFor="let slide of Events.Eventphotos" class="slide">
+                        <img src="http://res.cloudinary.com/venu2017/image/upload/v1519915555/root/event_albums/{{ slide.img }}" alt="" width="100%">
+                      </div>
+                    </ngx-slick>
+
+                  </ng-template>
+                  <ng-template #other_content>
+
+
+
+                    No Memories shared images avaliable
+                  </ng-template>
+
+
+
+
+                </div>
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</div>
+
+<p-dialog header="{{Header_title}}" [(visible)]="testRadioOpen" [modal]="true" [responsive]="true" [width]="300">
+    <ng-container *ngIf="showExitEvent; then exitEvent; else CancelEvent">
+    </ng-container>
+
+    <ng-template #exitEvent>
+      <ul>
+        <li *ngFor="let Errors of Event_Errors">
+        <input type="radio" name="radiogroup" [checked]="Errors.checked" [value]="Errors.error" (change)="onSelectionChange(Errors.error)">{{Errors.error}}
+        </li>
+      </ul>
+      <input type="text" [(ngModel)]="Error_text" *ngIf="showOthers">
+    </ng-template>
+    <ng-template #CancelEvent>
+      <ul>
+        <li *ngFor="let Errors of Cancel_Errors; let i=index">
+          <input type="radio" style="padding: 5px" name="radiogroup" [id]="'errorRadio'+i" [checked]="Errors.checked" [value]="Errors.error" (change)="onSelectionChange(Errors.error)">
+          <label style="margin-left: 5px" [for]="'errorRadio'+i">{{Errors.error}}</label>
+        </li>
+      </ul>
+      <input type="text" [(ngModel)]="Error_text" *ngIf="showOthers">
+
+    </ng-template>
+
+    <p-footer>
+      <button type="button" style="width:100px;height:25px;margin-right:10px;background:gray ;color: #fff;padding: 4px;border-radius: 2px" pButton icon="pi pi-check" (click)="testRadioOpen=false" label="Cancel">Cancel</button>
+      <button type="button" style="width:100px;height:25px;background:#159ADC;color: #fff;border-radius: 2px" pButton icon="pi pi-close" (click)="ExecuteEvent()" label="Ok">Ok</button>
+    </p-footer>
+  </p-dialog>
+

@@ -1,0 +1,265 @@
+.backpopup {
+    .backIcon {
+        background: url("../assets/images/footer/backarrow-black.svg") no-repeat left top;
+        display: inline-block;
+        height: 14px;
+        vertical-align: middle;
+        margin-right: 10px;
+        padding-left: 20px;
+        @include font(Proxima_Nova,
+        normal,
+        #5f5f5f,
+        14px);
+    }
+}
+
+.memorySelection {
+    .uploadOptions {
+        margin: 30px 0;
+        .chooseOption {
+            width: 50%;
+            float: left;
+            text-align: center;
+            .icon {
+                width: 32px;
+                height: 32px;
+                display: block;
+                margin: 0 auto 5px;
+                &.cameraIcon {
+                    background: url("../assets/images/footer/camera-icon-memory.svg") no-repeat center top;
+                }
+                &.galleryIcon {
+                    background: url("../assets/images/footer/gallery-icon.svg") no-repeat center top;
+                }
+            }
+            .optionText {
+                @include font($font-proxima,
+                normal,
+                #5F5F5F,
+                14px);
+            }
+        }
+    }
+    .eventItem {
+        .item {
+            border-bottom: 1px solid rgba(61, 61, 61, 0.4);
+            padding: 14px 0;
+            &:last-child {
+                border-bottom: none;
+            }
+            span {
+                display: block;
+            }
+            .eventInfo{
+                margin-bottom: 15px;
+                .eventDate {
+                    @include font($font-proxima-semibold,
+                    normal,
+                    $text-color-default,
+                    12px);
+                    float: left;
+                    letter-spacing: 0.66px;
+                }
+                .eventTime {
+                    @include font($font-proxima-semibold,
+                    normal,
+                    $text-color-default,
+                    12px);
+                    float: right;
+                }
+            }
+           
+            .moduleName {
+                @include font($font-proxima,
+                normal,
+                #606060,
+                15px);
+                margin-bottom: 4px;
+                letter-spacing: 1.07px;
+            }
+            .eventName {
+                @include font($font-proxima,
+                normal,
+                #159ADC,
+                14px);
+                letter-spacing: 0.77px;
+            }
+        }
+    }
+    .heading {
+        @include font($font-proxima,
+        normal,
+        #5F5F5F,
+        16px);
+        margin-bottom: 20px;
+    }
+    .searchmemory {
+        margin-bottom:18px;
+        input {
+            border-width: 0;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+            padding-bottom: 8px; // background: url("../assets/images/footer/Drop-Down-icon.svg") no-repeat right 5px;
+        }
+    }
+    .btnSection {
+        .cancel {
+            margin-right: 15px;
+        }
+        .blueBtn {
+            margin-left: 15px;
+        }
+    }
+}
+
+/*
+.memoryblock {
+    margin: 0 5px;
+    .uploadEvents {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 43px;
+        height: 43px;
+        .uploadIcon {
+            background: url("../assets/images/memories/upload-icon.svg") no-repeat center top;
+            display: block;
+            width: 43px;
+            height: 43px;
+        }
+    }
+    .memoryItem {
+        margin-bottom: 32px;
+        .memoryName {
+            @include font($font-proxima,
+            normal,
+            #5F5F5F,
+            12px);
+            margin-bottom: 8px;
+            position: relative;
+            .share {
+                position: absolute;
+                right: 5px;
+                bottom: 0;
+                .icon {
+                    width: 17px;
+                    height: 17px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 5px;
+                    &.imageIcon {
+                        background: url("../assets/images/memories/image-icon.svg") no-repeat center top;
+                    }
+                    &.shareIcon {
+                        background: url("../assets/images/memories/members-icon.svg") no-repeat center top;
+                    }
+                }
+                .totalPhotos {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 20px;
+                }
+                .sharefriends {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+        .memoryPoster {
+            height: 150px;
+            border-radius: 6px;
+            overflow: hidden;
+            .bigposter {
+                width: 70%;
+                height: 100%;
+                &.add {
+                    float: left;
+                    border-right: 1px solid #fff;
+                }
+                &.even {
+                    float: right;
+                    border-left: 1px solid #fff;
+                }
+                img {
+                    width: 100%;
+                    height: 100%
+                }
+            }
+            .smallposter {
+                width: 30%;
+                img {
+                    width: 100%;
+                    height: 75px;
+                    &:first-child {
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+                &.add {
+                    float: left;
+                }
+                &.even {
+                    float: right;
+                }
+            }
+        }
+        .memoryCaption {
+            margin-top: 8px;
+            @include font($font-proxima,
+            normal,
+            #3D3D3D,
+            12px);
+            .noteIcon {
+                width: 13px;
+                height: 18px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 5px;
+                background: url("../assets/images/memories/note-icon.svg") no-repeat center top;
+            }
+        }
+    }
+}
+*/
+
+.newmember {
+    margin-bottom: 10px;
+}
+
+/*
+#sharewith {
+    .contacts {
+        margin-top: 30px;
+        .member {
+            position: relative;
+            margin-bottom: 20px;
+            .image {
+                width: 45px;
+                height: 45px;
+                display: inline-block;
+                margin-right: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 4px;
+                }
+            }
+            .name {
+                display: inline-block;
+                vertical-align: top;
+                line-height: 40px;
+            }
+            .check {
+                position: absolute;
+                right: 0;
+                width: 10px;
+                height: 10px;
+                top: 15px;
+            }
+        }
+    }
+}
+
+page-memories-selection .modal {
+    display: block !important;
+}*/

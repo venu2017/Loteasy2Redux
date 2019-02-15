@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Meeting icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="3.09933542 9.3278151 4 9 4 14 3 14"></polygon>
+        <polygon id="path-2" points="12.999462 8.99694913 14.0173023 9.3674127 13.999462 13.9969491 12.999462 13.9969491"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-7" transform="translate(-31.000000, -476.000000)">
+            <g id="Meeting-icon" transform="translate(31.000000, 476.000000)">
+                <rect id="Rectangle" stroke="#979797" stroke-width="0.7" x="0.35" y="0.35" width="16.3" height="9.3"></rect>
+                <g id="Rectangle-2" transform="translate(3.500000, 11.500000) rotate(20.000000) translate(-3.500000, -11.500000) ">
+                    <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#979797" stroke-width="0.7" d="M3.44416401,9.57476998 L3.35752045,13.65 L3.65,13.65 L3.65,9.4998518 L3.44416401,9.57476998 Z"></path>
+                </g>
+                <g id="Rectangle-2" transform="translate(13.508382, 11.496949) rotate(-20.000000) translate(-13.508382, -11.496949) ">
+                    <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <path stroke="#979797" stroke-width="0.7" d="M13.349462,9.49680093 L13.349462,13.6469491 L13.6508082,13.6469491 L13.6663567,9.61214114 L13.349462,9.49680093 Z"></path>
+                </g>
+                <path d="M2.32104492,7.31445312 C4.49677989,6.8202052 5.64536764,6.51910428 5.76680818,6.41115036 C5.88824871,6.30319644 6.54512505,5.51873128 7.73743719,4.05775487 C9.05465546,5.6266852 9.81730492,6.41115036 10.0253855,6.41115036 C10.2334662,6.41115036 11.8904503,5.11711782 14.9963379,2.52905273" id="Path-17" stroke="#979797" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

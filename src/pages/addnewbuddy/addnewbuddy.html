@@ -1,0 +1,39 @@
+<div class="mybuddies">
+  <div class="container-fluid">
+    <div class="col-sm-12">
+      <div class="BacktoHomeLable">My Buddies</div>
+
+      <div  class="imgOptions">
+          <div class="searchbox">
+              <input placeholder="Search Buddies" type="text" 
+              [(ngModel)]="buddysearch" >
+             
+            </div>
+        </div>
+
+      <div class="favourite">
+       <ul class="contactsComponent">
+          <li class="member"  (click)="onBuddySelected(buddy)" *ngFor="let buddy of buddyList | search:'name':buddysearch">
+              <span class="image">
+              <img  src="{{buddy.profile_img}}">
+              </span>
+            <span class="customCheckbox">
+                <ion-checkbox (ionChange)="phonecontactselection(buddy)" [(ngModel)]="buddy.checked"></ion-checkbox>
+             
+          </span>
+            <span class="buddieName">{{buddy.name}}</span>
+            </li>
+           </ul>
+        </div>
+        <div class="cancel-submit-btns fixed-button-bottom">
+          <button ion-button color="light" (click)="navigateBackToChooseInvitees()">Cancel</button>
+          <button ion-button color="primary" (click)="saveContactToBuddyList()">OK</button>
+        </div>
+    </div>
+  </div>
+
+  
+</div>
+
+
+<!-- [class]="itemSelected?'backgroundGrey':'backgroundWhite'" -->

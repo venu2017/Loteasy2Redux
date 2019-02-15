@@ -1,0 +1,44 @@
+
+    
+    .orderfood{
+        margin:70px 0 0;
+        text-align: center;
+        .chooseOption{
+            border-bottom:2px solid #ccc;
+            padding-bottom:30px;
+            margin-bottom:30px;
+            .icon {
+                width:30px;
+                height: 30px;
+                border-radius: 30px;
+                background: #ff0000;
+                margin: 0 auto 5px;
+            }
+            .header{
+                @include font($font-proxima-semibold,
+                normal,
+                #5F5F5F,
+                18px);
+                margin-bottom:12px;
+                .subHead{}
+            }
+            .lightHead{
+                @include font($font-proxima-semibold,
+                normal,
+                #5F5F5F,
+                12px);
+                opacity: 0.6;
+                margin-bottom:2px;
+            }
+            .subHead{
+                @include font($font-proxima-semibold,
+                normal,
+                #5F5F5F,
+                14px);
+            }
+            &:last-child{
+                border: none;
+            }
+        }
+    }
+

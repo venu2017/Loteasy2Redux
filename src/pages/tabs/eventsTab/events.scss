@@ -1,0 +1,718 @@
+.eventWrapper .eventbox .memories .memoryCnt .slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.eventSection.inviteSec .eventBlock {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 4px;
+}
+
+.eventSection.inviteSec .eventBlock .label {
+    padding-right: 30px;
+}
+
+
+
+
+
+
+.eventSection .eventBlock {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 18px;
+}
+
+.eventSection .eventBlock .icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    left: 0;
+}
+
+.eventSection .eventBlock .icon.locationIcon {
+    background: url("../assets/images/footer/map-restaurant-icon.svg") no-repeat center top;
+}
+
+.eventSection .eventBlock .icon.priceIcon {
+    background: url("../assets/images/common/rupee-icon.svg") no-repeat center top;
+}
+
+.eventSection .eventBlock .icon.timeIcon {
+    background: url("../assets/images/common/opening-hours-icon.svg") no-repeat center top;
+}
+
+
+
+
+
+.eventSection .eventBlock .content .getlocaion {
+    margin-top: 5px;
+    font-family: "Proxima_Nova";
+    font-weight: normal;
+    color: #549428;
+    font-size: 12px;
+}
+
+.fade.show {
+    display: block;
+}
+
+
+
+
+.eventWrapper {
+    .oldevents {
+        background:rgba(109, 116, 122, 0.05);
+        padding-top: 20px;
+        .caption {
+            @include font($font-proxima-semibold,
+            normal,
+            $text-color-default,
+            14px);
+            padding:0 15px;
+        }
+    }
+    .eventbox {
+        border-bottom: 1px solid #e5e5e5;
+        padding: 18px 0;
+        &:first-child{
+            padding-top:0;
+        }
+        .eventSection {
+            .eventDetails{
+                .inviteSec{
+                    margin-bottom:18px;
+                    .eventBlock{
+                        border-bottom: 1px dashed #ccc;
+                        padding-bottom: 4px;
+                        margin-bottom:0;
+                    }
+                    .arrowIcon{
+                        position: absolute;
+                        right: 0;
+                        top:5px;
+                        transform: rotate(0deg);
+                        line-height: 0;
+                        background: url("../assets/images/common/drop-down-icon.svg") no-repeat left top;
+                        width: 10px;
+                        height: 6px;
+                        &.active{
+                            transform: rotate(-180deg);
+                        }
+                        .icon{
+                            position: inherit;
+                            width: auto;
+                            height: auto;
+                            left: inherit;
+                            &::before{
+                                display: none;
+                            }
+                        }
+                    }
+                     .inviteAccept {
+                        @include font($font-proxima,
+                        normal,
+                        $text-color-default,
+                        12px);
+                        .activeNumber {
+                            @include font($font-proxima-semibold,
+                            normal,
+                            #81a200,
+                            14px);
+                            
+                        }
+                    }
+                    
+                   
+                    .inviteMembers{
+                        background: #f8f8f8;
+                        margin:0 -15px;
+                        .memberItem{
+                            border-bottom: 1px solid #ebebeb;
+                            padding: 15px 0;
+                            margin: 0 15px;
+                            &:last-child{
+                                // border-bottom: none;
+                            }
+                            .memberPhoto {
+                                width: 44px;
+                                height: 44px;
+                                display: inline-block;
+                                vertical-align: top;
+                                margin-right: 8px;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 6px; 
+                                }
+                            }
+                            .memberDetails {
+                                display: inline-block;
+                                vertical-align: top;
+                               
+                                 .agree {
+                                    display: block;
+                                    margin-top: 5px;
+                                    @include font($font-proxima-semibold,
+                                    normal,
+                                    $text-color-dark,
+                                    14px);
+                                    .icon {
+                                        width: 20px;
+                                        height: 20px;
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        margin-right: 6px;
+                                        &.pending {
+                                            background: url("../assets/images/common/pending-icon.svg") no-repeat center top;
+                                        }
+                                        &.decline {
+                                            background: url("../assets/images/common/decline-icon.svg") no-repeat center top;
+                                        }
+                                        &.Accepted {
+                                            background: url("../assets/images/common/Selection icon.svg") no-repeat center top;
+                                        }
+                                    }
+                                }
+                            }
+                            .declinestatus{
+                                @include font($font-proxima-semibold,
+                                normal,
+                                $text-color-dark,
+                                14px);
+                                margin-top:10px;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        border-bottom: 1px solid #e5e5e5;
+        padding: 18px 0;
+        .heading {
+            margin-bottom: 18px;
+            &.bold {
+                @include font($font-proxima-semibold,
+                normal,
+                $text-color-default,
+                14px)
+            }
+            &.normal {
+                @include font($font-proxima-semibold,
+                normal,
+                $text-color-default,
+                12px);
+                letter-spacing:0.66px
+            }
+        }
+        .eventName {
+            @include font($font-proxima-semibold,
+            normal,
+            $text-color-default,
+            14px);
+            margin-bottom: 18px;
+        }
+        .eventDate {
+            position: relative;
+            padding-left: 54px;
+            margin-bottom: 18px;
+            .icon {
+                position: absolute;
+                width: 44px;
+                height: 54px;
+                left: 0;
+                &.calander {
+                    background: url("../assets/images/footer/Calender-Icon.svg") no-repeat center top;
+                }
+                .month {
+                    @include font($font-proxima,
+                    normal,
+                    #fff,
+                    12px);
+                    display: block;
+                    text-align: center;
+                    margin: 14px 0 5px;
+                    text-transform: uppercase;
+                }
+                .date {
+                    @include font($font-proxima-semibold,
+                    normal,
+                    #159ADC,
+                    18px);
+                    display: block;
+                    text-align: center;
+                }
+            }
+            .title {
+                @include font($font-proxima,
+                normal,
+                $text-color-default,
+                18px);
+                margin-bottom: 0;
+                line-height: 29px;
+            }
+            .subTitle {
+                @include font($font-proxima-semibold,
+                normal,
+                #3d3d3d,
+                12px);
+                letter-spacing: 0.66px;
+                background: rgba(255, 193, 0, 0.6);
+                padding: 5px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+        .eventBlock {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 22px;
+            .content {
+                @include font($font-proxima,
+                normal,
+                $text-color-default,
+                12px);
+                letter-spacing: 0.87px;
+                line-height: 18px;
+            }
+            .icon {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                left: 0;
+                &.locationIcon {
+                    background: url("../assets/images/footer/map-restaurant-icon.svg") no-repeat center top;
+                }
+                &.priceIcon {
+                    background: url("../assets/images/common/rupee-icon.svg") no-repeat center top;
+                }
+                &.timeIcon {
+                    background: url("../assets/images/common/opening-hours-icon.svg") no-repeat center top;
+                }
+                &.invitesIcon {
+                    background: url("../assets/images/common/invitees-icon.svg") no-repeat center -4px / 100% 100%;
+                }
+            }
+            .content {
+                .getlocaion {
+                    margin-top: 5px;
+                    @include font($font-proxima,
+                    normal,
+                    #549428,
+                    12px);
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            
+        }
+        .btnSection {
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+                width: 140px;
+            }
+            .cancel {
+                margin-top: 10px;
+            }
+            button {
+                padding: 10px 20px;
+                background: #159ADC;
+            }
+        }
+        .memories {
+            .memorysec {
+                margin-bottom:10px;
+                .label {
+                    @include font($font-proxima-semibold,
+                    normal,
+                    #3D3D3D,
+                    14px);
+                    display: inline-block;
+                }
+                .icon {
+                    background: url(../assets/images/footer/more/new-address-icon.svg) no-repeat left top;
+                    width: 17px;
+                    height: 18px;
+                    display: inline-block;
+                    margin-left:10px;
+                    vertical-align: middle;
+                }
+            }
+            .memoryCnt {
+                .slide {
+                    width: 44px;
+                    height: 44px;
+                    margin-right: 10px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .slick-prev, .slick-next{
+                   border-radius: inherit;
+                    
+                }
+                .slick-prev{
+                    background: url(../assets/images/footer/more/right-arrow.svg) no-repeat left top;
+                    height: 14px;
+                    width: 10px;
+                    left:-15px;
+                    transform: rotate(180deg);
+                }
+                .slick-next{
+                    right: -15px;
+                    background: url(../assets/images/footer/more/right-arrow.svg) no-repeat left top;
+                    height: 14px;
+                    width: 10px;
+                }
+            }
+        }
+    }
+
+   
+    p-footer button[label='Ok']{
+        width: 80px;
+        height: 30px;
+        padding: 10px;
+        border-radius: 3px;
+        background-color: #159ADC
+        }
+}
+
+
+.fakeEventWrapper {
+    .oldevents {
+        background:rgba(109, 116, 122, 0.05);
+        padding-top: 20px;
+        .caption {
+            @include font($font-proxima-semibold,
+            normal,
+            $text-color-default,
+            14px);
+            padding:0 15px;
+        }
+    }
+    .eventbox {
+        border-bottom: 1px solid #e5e5e5;
+        padding: 18px 0;
+        &:first-child{
+            padding-top:0;
+        }
+        .eventSection {
+            .eventDetails{
+                .inviteSec{
+                    margin-bottom:18px;
+                    .eventBlock{
+                        border-bottom: 1px dashed #ccc;
+                        padding-bottom: 4px;
+                        margin-bottom:0;
+                    }
+                    .arrowIcon{
+                        position: absolute;
+                        right: 0;
+                        top:5px;
+                        transform: rotate(0deg);
+                        line-height: 0;
+                        width: 10px;
+                        height: 6px;
+                        &.active{
+                            transform: rotate(-180deg);
+                        }
+                        .icon{
+                            position: inherit;
+                            width: auto;
+                            height: auto;
+                            left: inherit;
+                            &::before{
+                                display: none;
+                            }
+                        }
+                    }
+                     .inviteAccept {
+                        @include font($font-proxima,
+                        normal,
+                        $text-color-default,
+                        12px);
+                        .activeNumber {
+                            @include font($font-proxima-semibold,
+                            normal,
+                            #81a200,
+                            14px);
+                            
+                        }
+                    }
+                    
+                   
+                    .inviteMembers{
+                        background: #f8f8f8;
+                        margin:0 -15px;
+                        .memberItem{
+                            border-bottom: 1px solid #ebebeb;
+                            padding: 15px 0;
+                            margin: 0 15px;
+                            &:last-child{
+                                // border-bottom: none;
+                            }
+                            .memberPhoto {
+                                width: 44px;
+                                height: 44px;
+                                display: inline-block;
+                                vertical-align: top;
+                                margin-right: 8px;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 6px; 
+                                }
+                            }
+                            .memberDetails {
+                                display: inline-block;
+                                vertical-align: top;
+                               
+                                 .agree {
+                                    display: block;
+                                    margin-top: 5px;
+                                    @include font($font-proxima-semibold,
+                                    normal,
+                                    $text-color-dark,
+                                    14px);
+                                    .icon {
+                                        width: 20px;
+                                        height: 20px;
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        margin-right: 6px;
+                                       
+                                    }
+                                }
+                            }
+                            .declinestatus{
+                                @include font($font-proxima-semibold,
+                                normal,
+                                $text-color-dark,
+                                14px);
+                                margin-top:10px;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        border-bottom: 1px solid #e5e5e5;
+        padding: 18px 0;
+        .heading {
+            margin-bottom: 18px;
+            &.bold {
+                @include font($font-proxima-semibold,
+                normal,
+                $text-color-default,
+                14px)
+            }
+            &.normal {
+                @include font($font-proxima-semibold,
+                normal,
+                $text-color-default,
+                12px);
+                letter-spacing:0.66px
+            }
+        }
+        .eventName {
+            @include font($font-proxima-semibold,
+            normal,
+            $text-color-default,
+            14px);
+            margin-bottom: 18px;
+        }
+        .eventDate {
+            position: relative;
+            padding-left: 54px;
+            margin-bottom: 18px;
+            .icon {
+                position: absolute;
+                width: 44px;
+                height: 54px;
+                left: 0;
+              
+                .month {
+                    @include font($font-proxima,
+                    normal,
+                    #fff,
+                    12px);
+                    display: block;
+                    text-align: center;
+                    margin: 14px 0 5px;
+                    text-transform: uppercase;
+                }
+                .date {
+                    @include font($font-proxima-semibold,
+                    normal,
+                    #159ADC,
+                    18px);
+                    display: block;
+                    text-align: center;
+                }
+            }
+            .title {
+                @include font($font-proxima,
+                normal,
+                $text-color-default,
+                18px);
+                margin-bottom: 0;
+                line-height: 29px;
+            }
+            .subTitle {
+                @include font($font-proxima-semibold,
+                normal,
+                #3d3d3d,
+                12px);
+                letter-spacing: 0.66px;
+                background: rgba(255, 193, 0, 0.6);
+                padding: 5px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+        .eventBlock {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 22px;
+            .content {
+                @include font($font-proxima,
+                normal,
+                $text-color-default,
+                12px);
+                letter-spacing: 0.87px;
+                line-height: 18px;
+            }
+            .icon {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                left: 0;
+               
+            }
+            .content {
+                .getlocaion {
+                    margin-top: 5px;
+                    @include font($font-proxima,
+                    normal,
+                    #549428,
+                    12px);
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            
+        }
+        .btnSection {
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+                width: 140px;
+            }
+            .cancel {
+                margin-top: 10px;
+            }
+            button {
+                padding: 10px 20px;
+                background: #159ADC;
+            }
+        }
+        .memories {
+            .memorysec {
+                margin-bottom:10px;
+                .label {
+                    @include font($font-proxima-semibold,
+                    normal,
+                    #3D3D3D,
+                    14px);
+                    display: inline-block;
+                }
+                .icon {
+                   width: 17px;
+                    height: 18px;
+                    display: inline-block;
+                    margin-left:10px;
+                    vertical-align: middle;
+                }
+            }
+            .memoryCnt {
+                .slide {
+                    width: 44px;
+                    height: 44px;
+                    margin-right: 10px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .slick-prev, .slick-next{
+                   border-radius: inherit;
+                    
+                }
+                .slick-prev{
+                   height: 14px;
+                    width: 10px;
+                    left:-15px;
+                    transform: rotate(180deg);
+                }
+                .slick-next{
+                    right: -15px;
+                    height: 14px;
+                    width: 10px;
+                }
+            }
+        }
+    }
+
+   
+    p-footer button[label='Ok']{
+        width: 80px;
+        height: 30px;
+        padding: 10px;
+        border-radius: 3px;
+        background-color: #159ADC
+        }
+        
+        .caption,.eventbox,.eventSection,.eventDetails,.inviteSec,.eventBlock,.arrowIcon,.icon,.inviteAccept,
+        .activeNumber,.inviteMembers,.memberItem,.memberPhoto,.memberDetails,.agree,.icon,
+        .heading,.eventName,.eventDate,.icon,.title,.subTitle,.eventBlock,.content,.icon,.content,
+        .btnSection,button,.memories,.memoryCnt,.slick-prev {
+            background-color: lightgrey;
+            opacity: 0.5;
+            height: 1em;
+            margin-top: 10px;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 700ms linear infinite;
+            
+            &:after {
+              position: absolute;
+              display: block;
+              content: '';
+              right: 0;
+              bottom: 0;
+              top: 0;
+              background-color: white;
+            }
+        
+        }
+    
+}
+
+

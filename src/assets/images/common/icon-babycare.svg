@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="23px" viewBox="0 0 18 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>baby care icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="'Fun'ch-with-friends-Style-Guide" transform="translate(-4123.000000, -2688.000000)" stroke="#3D3D3D">
+            <g id="Group-55" transform="translate(3961.000000, 2589.000000)">
+                <g id="Group-30" transform="translate(142.000000, 100.000000)">
+                    <g id="baby-care-icon" transform="translate(21.000000, 0.000000)">
+                        <g id="Group-5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8,16 C3.581722,16 0,12.418278 0,8 L16,8 C16,12.418278 12.418278,16 8,16 Z M16,8 L8,8 L8,-3.55271368e-15 C12.418278,-3.55271368e-15 16,3.581722 16,8 Z" id="Combined-Shape"></path>
+                        </g>
+                        <circle id="Oval-14" cx="3" cy="19" r="2"></circle>
+                        <circle id="Oval-14" cx="13" cy="19" r="2"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,101 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateBackToMore()"></a>
+      <span class="pageLabel">Favourites</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="favourites pageScroll">
+  <div class="container-fluid">
+
+
+
+
+    <div class="favouriteTabls">
+
+      <ul class="nav nav-tabs" role="tablist">
+        <!-- <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Contacts</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#profile"
+            role="tab">Restaurants</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane" id="home" role="tabpanel">
+
+          <ul class="contactsComponent">
+            <li class="member" *ngFor="let buddies of faviourties_buddies"
+              (click)="Buddy_details()">
+              <div *ngIf="buddies.BuddiesListProfilePic=='NULL'; then
+                truthyTemplate else falsyTemplate"> </div>
+              <ng-template #truthyTemplate>
+                <span class="image">
+                  <img src="assets/images/homebanner.jpg">
+                </span>
+              </ng-template>
+              <ng-template #falsyTemplate>
+                <span class="image">
+
+
+                  <img
+                    src="https://res.cloudinary.com/venu2017/image/upload/v1517981740/root/profile_pics/{{buddies.BuddiesListProfilePic}}">
+                </span>
+              </ng-template>
+              <span class="name">{{buddies.BuddiesListName}}</span>
+              <span class="onlineMode"><span class="dot"></span> Available</span>
+            </li>
+
+
+
+
+          </ul>
+        </div>
+        <div class="tab-pane active" id="profile" role="tabpanel">
+
+
+          <ul class="contactsComponent">
+            <li class="member" *ngFor="let rest of faviourties_rest"
+              (click)="Rest_details(rest.Restid)">
+
+              <div *ngIf="rest.Thaumnam=='NULL'; then truthyTemplate else
+                falsyTemplate"> </div>
+              <ng-template #truthyTemplate>
+                <span class="image">
+
+
+                  <img src="assets/images/homebanner.jpg">
+
+                </span>
+              </ng-template>
+              <ng-template #falsyTemplate>
+                <span class="image">
+
+
+                  <img
+                    src="http://res.cloudinary.com/venu2017/image/upload/v1519915555/root/resto_logo/{{rest.Thaumnam}}">
+                </span>
+              </ng-template>
+
+              <span class="name">{{rest.RestName}}<br>{{rest.Address.split(',')[2]
+                + ',' +rest.Address.split(',')[5] }}</span>
+
+            </li>
+
+
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

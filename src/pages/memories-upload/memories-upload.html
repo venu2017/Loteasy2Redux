@@ -1,0 +1,43 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateToHome()">
+        <span class="pageLabel">Memories</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="memoryUpload pageScroll">
+  <div class="memoriesPhotos">
+    <div class="container-fluid">
+
+      <div class="memoryName">
+        <div class="eventDate">{{Event_date}}</div>
+        <div class="eventName">{{Event_title}}</div>
+        <!-- <div class="more">
+          <span class="moreIcon"></span>
+        </div> -->
+      </div>
+
+      <div class="photoWrapper">
+        <ng-container *ngFor="let img of imagesToUpload | slice:0:8;let i=index">
+          <div class="imgCnt">
+            <img src="{{img}}">
+          </div>
+          <div class="imgCnt imageCount" *ngIf="i>=7" style="font-size:24px;">+{{imagesToUpload.length>8?imagesToUpload.length-8:0}}</div>
+        </ng-container>
+      </div>
+      <div class="caption" *ngIf="memory_state">
+        <input type="text" [(ngModel)]="memory_caption" placeholder="Write a caption(optional)" style="height:20px;padding:20px;border-bottom:1px solid grey;border-right:none;border-left:none;border-top:none;width:100%"
+          #memoriesCaption>
+      </div>
+      <div class="btnSection centerAlign fixedButtons fixed-button-bottom">
+        <button class="cancelBtn left" width="100px" (click)="navigateToSelection()">Cancel</button>
+        <button class="blueBtn right" width="100px" (click)="navigateToMemories()">Upload</button>
+      </div>
+
+    </div>
+  </div>
+</div>

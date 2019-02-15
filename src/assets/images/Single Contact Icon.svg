@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Single Contact Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="Single-Contact-Icon" stroke="#3D3D3D">
+            <g>
+                <rect id="Mask" x="0.5" y="0.5" width="43" height="43" rx="6"></rect>
+                <g id="Group" transform="translate(7.000000, 7.000000)">
+                    <ellipse id="Oval-13" cx="15" cy="7.5" rx="7.75862069" ry="7.5"></ellipse>
+                    <path d="M0.583575151,29.5 L29.4165136,29.5 C28.2084962,22.6425369 22.0474689,17.5 15.0194237,17.5 C7.98362649,17.5 1.79249193,22.649545 0.583575151,29.5 Z" id="Rectangle-29"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

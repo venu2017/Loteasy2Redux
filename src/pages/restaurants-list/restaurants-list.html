@@ -1,0 +1,245 @@
+<div class="backToHome withscroll" *ngIf="restaurantItems && rest_count > 0">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateBackToSearchOrInvitees()">
+        <span>{{title_heading}}</span>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- skeleton screen -->
+<div class="fakeBacktoHome" *ngIf="!restaurantItems || rest_count < 1">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon">
+        <span></span>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- skeleton screen -->
+
+<div class="funchRestaurant pageScroll" *ngIf="restaurantItems && rest_count > 0">
+  <div class="section">
+    <div class="container-fluid">
+
+      <div class="moduleSteps">
+        <div class="stepsHeader">Decide a Place</div>
+        <div class="stepstatus step3"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+      <div class="nearPlace">
+        <div class="secTitle">places near</div>
+        <div class="location">{{locationChosen}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+        <div class="filterRestaurant">
+          <span class="searchIcon"></span>
+          <!-- (input)="onSearchInputChange(searchword.value)" -->
+          <input class="globalsearch" #searchword placeholder="Search Restaurant..." type="text" [(ngModel)]="searchKeyword"
+            (input)="filterRestuarnts(searchword.value)">
+          <span class="filterIcon" (click)="showDialog()"></span>
+        </div>
+        <div class="resCount">{{rest_count}} results found</div>
+    </div>
+  </div>
+  <div class="mapviewBtn">
+    <img (click)="showRestuarnts('mapview')" src="assets/images/map_view.svg" *ngIf="Restaurantshow" />
+    <img (click)="showRestuarnts('mapview')" src="assets/images/List_View.svg" *ngIf="!Restaurantshow" />
+  </div>
+
+  <div class="section" *ngIf="Restaurantshow">
+    <div class="container-fluid">
+      <div class="restaurantList">
+        <div class="listWrapper">
+          <div class="restaurantInfo" *ngFor="let restaurant of
+            restaurantItems; index as i; first as isFirst; last as isLast">
+            <div class="vendorImage">
+              <span class="rating"><span class="text">5.0</span></span><img
+                alt="poster"
+                src="{{restaurant.resto.HeroImg?cloudinaryHeroUrl+restaurant.resto.HeroImg:'assets/images/loteasy.svg'}}"></div>
+            <!--
+              src="{{restaurant.resto.HeroImg?restaurant.resto.HeroImg:restaurant.resto.RestaurantType==1?'assets/images/common/non-veg-icon.svg':'assets/images/common/veg-icon.svg'}}"
+              -->
+
+            <div class="vendorDetials">
+              <h1 class="vendorTitle">{{restaurant.resto.Name}}</h1>
+              <div class="vendorCuisines">{{restaurant.resto.Tagline}}</div>
+              <div class="itemDish"><span class="veg"><img alt="veg"
+                    src="assets/images/common/veg-icon.svg"></span><span
+                  class="nonveg" *ngIf="restaurant.resto.RestaurantType==1"><img
+                    alt="Non veg" src="assets/images/common/non-veg-icon.svg"></span></div>
+              <div class="specs"><span class="icon icon-cost"></span>{{restaurant.resto.CostForTwo}}
+                for Two</div>
+              <div class="specs"><span class="icon icon-time"></span>{{restaurant.resto.OpenHours}}</div>
+              <div class="specs"><span class="icon icon-location"></span>{{restaurant.resto.Address.split(',')[2]}},{{restaurant._distance}}km</div>
+              <div class="specs" *ngIf="restaurant.resto.HappyHours.split('|~|').length>0"><span class="icon icon-happyhours"></span>Happy
+                hrs({{restaurant.resto.HappyHours}})</div>
+              <div class="description">**{{restaurant.resto.RecommendedBy?restaurant.resto.RecommendedBy:0}}
+                and
+                {{restaurant.resto.RecommendedBy?restaurant.resto.RecommendedBy.split(',').length-1:0}}
+                more friends recommend this</div>
+              <div class="buttonSec">
+                <span class="moreDetails"
+                  (click)="navigateToRestaurantDetails(restaurant.resto)">...</span>
+                <button class="whiteBtn"
+                  (click)="navigateToInviteSummary(restaurant.resto)">Select</button>
+                
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+ 
+
+  <!-- <div style="position: relative;float: right;z-index: 99999;bottom: 8px;" *ngIf="isFirst">
+
+    <img (click)="showRestuarnts('mapview')" src="assets/images/Map View.svg" style="width:44px;height:44px">
+  </div> -->
+
+
+ 
+
+</div>
+
+<!-- skeleton screen start -->
+<div class="fakeFunchRestaurant" *ngIf="!restaurantItems || rest_count < 1">
+  <div class="section">
+    <div class="container-fluid">
+
+      <div class="moduleSteps">
+        <div class="stepsHeader" style="width: 40%"></div>
+        <div class="stepstatus"  style="width: 40%"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+      <div class="nearPlace">
+        <div class="secTitle" style="width: 50%"></div>
+        <div class="location" style="width: 80%"></div>
+        <div class="location" style="width: 80%"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+        <div class="filterRestaurant">
+          <!-- (input)="onSearchInputChange(searchword.value)" -->
+         <div class="inputsearch" style="width:90%"></div>
+          </div>
+        <div class="resCount" style="width:50%"></div>
+    </div>
+  </div>
+  <div class="mapviewBtn">
+  
+  </div>
+
+  <div class="section">
+    <div class="container-fluid">
+      <div class="restaurantList">
+        <div class="listWrapper">
+          <div class="restaurantInfo" *ngFor="let fakerestaurant of
+            fakeRestaurantItems">
+            <div class="vendorImage">
+              <span class="rating"><span class="text"></span></span></div>
+            <!--
+              src="{{restaurant.resto.HeroImg?restaurant.resto.HeroImg:restaurant.resto.RestaurantType==1?'assets/images/common/non-veg-icon.svg':'assets/images/common/veg-icon.svg'}}"
+              -->
+
+            <div class="vendorDetials">
+              <h1 class="vendorTitle" style="width: 50%"></h1>
+              <div class="vendorCuisines" style="width: 80%"></div>
+              <div class="itemDish" style="width: 40%"></div>
+              <div class="specs" style="width: 40%"><span class="icon icon-cost"></span>
+                </div>
+              <div class="specs" style="width: 40%"><span class="icon icon-time"></span></div>
+              <div class="specs" style="width: 40%"><span class="icon icon-location"></span></div>
+              <div class="specs" style="width: 40%"><span class="icon icon-happyhours"></span></div>
+              <div class="description">
+               </div>
+              <div class="buttonSec">
+               
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+ 
+
+  <!-- <div style="position: relative;float: right;z-index: 99999;bottom: 8px;" *ngIf="isFirst">
+
+    <img (click)="showRestuarnts('mapview')" src="assets/images/Map View.svg" style="width:44px;height:44px">
+  </div> -->
+
+
+ 
+
+</div>
+<!-- skeleton  screen end -->
+
+
+<div class="customOverlay full" *ngIf="isSearchActive">
+  <div class="filterWrapper">
+    <div class="filterHeader">
+      <div class="title">Filter</div>
+      <div class="close-icon-white" (click)="isSearchActive=false"></div>
+    </div>
+
+    <div class="filterCnt clearfix">
+      <div class="menu float-left">
+        <ul class="menuItems">
+          <li class="item active" *ngFor="let filter of userFilters | ObjNgFor">{{filer.key}}</li>
+          <!-- <li class="item">Price</li>
+          <li class="item"> Amenities</li>
+          <li class="item">Type of Place</li>
+          <li class="item">Location </li>
+          <li class="item">Trends</li>
+          <li class="item">Ambience</li>
+          <li class="item">Allergic to</li> -->
+        </ul>
+      </div>
+      <div class="options float-left">
+        <ul class="optionItems">
+          <li class="item"><input type="radio" name="cuisines" value="Chinese"
+              id="Chinese"><label class="optLable" for="Chinese">Chinese</label></li>
+          <li class="item"><input type="radio" name="cuisines" value="Mexican"
+              id="Mexican"><label class="optLable" for="Mexican">Mexican</label></li>
+          <li class="item"><input type="checkbox" name="cuisines" id="cuisines"><label
+              class="optLable" for="cuisines">Chinese</label></li>
+
+
+        </ul>
+      </div>
+    </div>
+    <div class="filterFooter">
+      <span class="icon-refresh"></span>
+      <button class="blueBtn">Apply</button>
+    </div>
+  </div>
+
+</div>

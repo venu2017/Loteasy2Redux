@@ -1,0 +1,145 @@
+
+    .customOverlay.full{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        background: #fff;
+    }
+    
+    .restaurantList{
+        margin-top:18px;
+    }
+    
+    
+    .filterWrapper{
+        background:rgba(255, 192, 1, 0.5);
+        height:100%;
+        overflow: hidden;
+        .filterHeader{
+            background: #3e3e3e;
+            padding:15px;
+            position: relative;
+            position: fixed;
+            width:100%;
+            top:0;
+            .title{
+                color: #fff;
+                font-size: 18px;
+            }
+            .close-icon-white{
+                position: absolute;
+                right: 15px;
+                top:18px;
+                background: url(../assets/images/common/close-icon-white.svg) no-repeat left top;
+                width:12px;
+                height:12px;
+    
+            }
+        }
+        .filterCnt{
+            margin:50px 0 0;
+            position: relative;
+            height: 100%;
+           
+            .menu{
+               width:40%;
+               .menuItems{
+                    .item{
+                        color:#5F5F5F;
+                        font-size:14px;
+                        padding:15px;
+                        
+                        &.active{
+                            color:#3D3D3D;
+                            font-family: 'proxima_nova_semibold';
+                            background: #FEA541;
+                        }
+                    }
+               }
+            }
+            .options{
+                width:60%;
+                background: #fff;
+                right: 0;
+                position:absolute;
+                top:0;
+                height: 100%;
+                .optionItems{
+                    .item{
+                        color:#5F5F5F;
+                        font-size:14px;
+                        padding:15px;
+                        border-bottom:1px solid #ccc;
+                        margin-left:8px;
+                        input{
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 17px;
+                            height: 17px;
+                            &[type='radio']{
+                                &::before{
+                                    content: "";
+                                    background:#fff  url(../assets/images/common/radio-unselected.svg) no-repeat left top;
+                                    width: 17px;
+                                    height: 17px;
+                                    display: inline-block;
+                                }
+                                &:checked{
+                                    &::before{
+                                        background:#fff  url(../assets/images/common/radio-selected.svg) no-repeat left top;   
+                                    }
+                                }
+                            }
+                            &[type='checkbox']{
+                                &::before{
+                                    content: "";
+                                    background:#fff  url(../assets/images/common/checkbox-unselect.svg) no-repeat left top;
+                                    width: 17px;
+                                    height: 17px;
+                                    display: inline-block;
+                                }
+                                &:checked{
+                                    &::before{
+                                        background:#fff  url(../assets/images/common/checkbox-select.svg) no-repeat left top;   
+                                    }
+                                }   
+                            }
+                            }
+                        .optLable{
+                            margin-left:10px;
+                            display: inline-block
+                        }
+                        
+                    }
+               }
+            }
+        }
+        .filterFooter{
+            padding:15px;
+            position: relative;
+            position: fixed;
+            width:100%;
+            bottom:0;
+            text-align: center;
+            background: #fff;
+            .icon-refresh{
+                background: url(../assets/images/common/close-icon-white.svg) no-repeat left top;
+                width:12px;
+                height:12px;
+            }
+            button{
+                color: #fff;
+            }
+        }
+    
+       
+    }
+    
+    .filterIcon{
+     background: url(../assets/images/common/filter-icon.svg) no-repeat;       
+    }
+    
+

@@ -1,0 +1,58 @@
+<ion-content padding>
+  <div class="mainWrapper text-center">
+    <div class="container-fluid">
+    <div class="fullLogo">Logo</div>
+    
+    <section class="loginSec">
+      
+      <div class="formControls">
+        <div class="formField"> 
+          
+          <input type="tel" maxlength="10"  placeholder="{{placeholder}}"
+           required [(ngModel)]="val"   #phoneNumber (input)="onInputChange(val)"></div> 
+          <button  ion-button block  [disabled]="!isEnabled" 
+            (click)="_btnText=='Login'?showOTPView(phoneNumber.value):onSubmit(phoneNumber.value)" >{{_btnText}}</button>
+      </div>
+      <div class="secFooter text-left" *ngIf="_showOtpView">
+        <span (click)="resendOtp()">Resed OTP</span>
+        <a   class="register" (click)="_showOtpView=false;_btnText='Login';placeholder='Phone number';val=''">Back</a>
+      </div>
+    </section>
+  
+    <!-- <section class="otpSection">
+        <div class="formControls">
+            <div class="formField"> 
+              <input type="text" placeholder="Please enter the OTP">
+            </div>
+            <button class="blueBtn" data-target="#syncContact" data-toggle="modal">Submit</button>
+        </div>
+        <div class="secFooter text-left">
+          <span><strong>Resend OTP</strong></span>
+          <span><strong>Back</strong></span>
+        </div>
+      </section> -->
+  
+   
+  
+  
+      <!-- <div class="modal fade" id="syncContact" tabindex="-1" role="dialog">
+          <div class="modal-dialog v-center" role="document">
+            <div class="modal-content text-left">
+              
+              <div class="modal-body">
+                  <div class="title globalTitle">Sync Contacts</div>
+                <p> Would you like to sync your contacts with Loteasy?</p>
+              </div>
+              <div class="modal-footer text-center">
+                <button type="button" class=" mx-auto" data-dismiss="modal">Cancel</button>
+                <button type="button" class="blueBtn mx-auto">Sync</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    
+  
+  </div>
+  </div>
+  
+</ion-content>

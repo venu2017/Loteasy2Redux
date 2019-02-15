@@ -1,0 +1,33 @@
+<div class="nofifyMask" *ngIf="showNotifyMask"></div>
+<div class="notificationWrapper" *ngIf="showNotifyMask">
+<div class="notifyblock">
+    <div class="closeIcon" (click)="closenotification(index)"></div>
+    <div class="arrowDown"></div>
+    <div class="notifytime">{{currentTime}}</div>
+    <div class="conent" *ngIf="funchOrPlanInvite">{{msgBody}} </div>
+    <div class="conent" *ngIf="declinedInvite">{{msgBody}} </div>
+    <div class="conent" *ngIf="acceptedInvite">{{msgBody}} </div>
+    <div class="conent" *ngIf="nofriendsInVicinity">{{"Your friends are not available in the vicinity. Increase the distance and try."}} </div>
+    <div class="content" *ngIf="catchupInvite&&isWithinRange">{{msgBody}}</div>
+    <div class="content" *ngIf="notWithinRange">{{msgBody}}</div>
+    <div class="conent" *ngIf="cancelledInvite">{{msgBody}} </div>
+    <div class="conent" *ngIf="confirmedInvite">{{msgBody}} </div>
+    <div class="conent" *ngIf="excludedFromEvent">{{msgBody}} </div>
+    <div class="conent" *ngIf="exitedEvent">{{msgBody}} </div>
+    <div class="conent" *ngIf="joinedbackEvent">{{msgBody}} </div>
+    <div class="conent" *ngIf="venueChanged">{{msgBody}} </div>
+    <div class="invitemodule">
+        <span class="moduleName">{{eventName}}</span>
+        <span class="divider"></span>
+        <span class="plantime">{{eventDateTime}}</span>
+    </div>
+    <div  class="btnSection text-center clearfix" *ngIf="funchOrPlanInvite">
+            <span  class="cancel" (click)="declineInvite(notification)">{{notification.type=='catchupInvite'?'Not Interested':'Decline'}}</span>
+            <button class="blueBtn" (click)="acceptInvite(notification)">{{notification.type=='catchupInvite'?'Interested':'Accept'}}</button>
+    </div>
+    <div  class="btnSection text-center clearfix" *ngIf="catchupInvite && isWithinRange==1">
+        <span  class="cancel" (click)="declineInvite(notification)">{{notification.type=='catchupInvite'?'Not Interested':'Decline'}}</span>
+        <button class="blueBtn" (click)="acceptInvite(notification)">{{notification.type=='catchupInvite'?'Interested':'Accept'}}</button>
+</div>
+</div>
+</div>

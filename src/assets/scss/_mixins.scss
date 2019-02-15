@@ -1,0 +1,20 @@
+
+@mixin button($bg-color, $text-color, $font-size, $font-weight, $button-family) {
+    background:$bg-color;
+    color: $text-color;
+    font-size:$font-size;
+    font-weight: $font-weight;
+    font-family:$button-family;
+}
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+     -ms-border-radius: $radius;
+         border-radius: $radius;
+}
+@mixin font($font-family, $font-weight, $font-color, $font-size) {
+    font-family:$font-family;
+    font-weight: $font-weight;
+    color:$font-color;
+    font-size:$font-size;
+}

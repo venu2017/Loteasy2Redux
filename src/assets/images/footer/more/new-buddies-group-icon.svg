@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="59px" viewBox="0 0 95 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>new buddies group icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="more-Styleguide" transform="translate(-1527.000000, -1628.000000)" fill="#3D3D3D">
+            <g id="Group-35" transform="translate(1415.000000, 1566.000000)">
+                <g id="new-buddies-group-icon" transform="translate(112.000000, 62.000000)">
+                    <ellipse id="Oval-13" cx="48.6409888" cy="14.4872764" rx="14.5639286" ry="14.4872764"></ellipse>
+                    <ellipse id="Oval-13" cx="79.225239" cy="21.7309146" rx="10.1947501" ry="10.1410935"></ellipse>
+                    <ellipse id="Oval-13" cx="15.1439529" cy="21.7309146" rx="10.1947501" ry="10.1410935"></ellipse>
+                    <path d="M19.5131315,58.5329892 C21.3793935,44.9190992 33.7028605,34.7694633 47.5154407,34.7694633 C61.3280209,34.7694633 73.5790606,44.9190992 75.4453226,58.5329892" id="Rectangle-29"></path>
+                    <path d="M0,51.6419426 C1.04712967,44.0034072 7.9622402,38.3086093 15.7116467,38.3086093 C20.2116443,38.3086093 23.7272042,39.6325257 26.2583265,42.2803585 C24.7918548,43.5341729 23.5262936,44.9757093 22.461643,46.6049677 C21.3969924,48.2342262 20.6234223,49.9132178 20.1409324,51.6419426" id="Rectangle-29"></path>
+                    <path d="M68.5831795,51.7253703 C69.6303092,44.0868349 76.5454197,38.392037 84.2948263,38.392037 C88.7948238,38.392037 92.3103837,39.7159534 94.841506,42.3637862 C93.3750343,43.6176006 92.1094731,45.059137 91.0448226,46.6883954 C89.980172,48.3176539 89.2066018,49.9966455 88.724112,51.7253703" id="Rectangle-29" transform="translate(81.712343, 45.058704) scale(-1, 1) translate(-81.712343, -45.058704) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="15px" viewBox="0 0 19 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Family icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="Artboard-7" transform="translate(-30.000000, -502.000000)" stroke="#3D3D3D">
+            <g id="Family-icon" transform="translate(31.000000, 503.000000)">
+                <ellipse id="Oval-12" stroke-width="0.7" cx="5.5079277" cy="2.84250811" rx="2.77819797" ry="2.84250811"></ellipse>
+                <ellipse id="Oval-12" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" cx="12.6430628" cy="4.8334991" rx="2.77819797" ry="2.84250811"></ellipse>
+                <path d="M5.32432432,7.3003003 C2.45841427,7.3003003 0.135135135,9.82592522 0.135135135,12.9414414" id="Oval-8" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                <g id="Group-16" transform="translate(4.000000, 6.000000)" stroke-width="0.700000048">
+                    <g id="Group-17" transform="translate(0.494288, 0.148174)">
+                        <ellipse id="Oval-12" cx="3.49595275" cy="1.53058129" rx="1.49595275" ry="1.53058129"></ellipse>
+                        <path d="M6.72748963,7.0344412 C6.72748963,5.35685554 5.18079898,3.99690366 3.63761665,3.99690366 C2.09443431,3.99690366 0.520423094,5.35685554 0.520423094,7.0344412" id="Oval-8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+                <path d="M16.8710938,12.7943207 C16.2136349,10.4987981 14.7874816,9.29129129 12.4594595,9.29129129 C11.8524027,9.29129129 11.2696926,9.40461018 10.7282521,9.612851" id="Oval-8" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

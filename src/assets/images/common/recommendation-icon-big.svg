@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Recommendation icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Recommendation-icon">
+            <g id="Recommendation-icon-1" transform="translate(11.000000, 9.000000)" stroke="#FFFFFF">
+                <polygon id="Combined-Shape" points="3.42893219 3.42893219 3.42893219 7.27817459 0.707106781 10 3.42893219 12.7218254 3.42893219 16.5710678 7.27817459 16.5710678 10 19.2928932 12.7218254 16.5710678 16.5710678 16.5710678 16.5710678 12.7218254 19.2928932 10 16.5710678 7.27817459 16.5710678 3.42893219 12.7218254 3.42893219 10 0.707106781 7.27817459 3.42893219"></polygon>
+                <circle id="Oval-23" stroke-linecap="round" stroke-linejoin="round" cx="10" cy="10" r="4"></circle>
+                <path d="M3.85278809,17.2269419 L3.61032998,23.9349219 C4.13038105,23.5688879 4.68651685,23.2731369 5.27805951,23.0483111 L5.4556957,22.9807975 L5.63333189,23.0483111 C6.24928684,23.2824152 6.82685222,23.5934193 7.36526273,23.9805984 L7.6091095,17.2269419" id="Rectangle-47" transform="translate(5.609720, 20.603770) scale(-1, 1) rotate(-20.000000) translate(-5.609720, -20.603770) "></path>
+                <path d="M12.5896412,17.1831695 L12.3831722,23.9426287 C12.9032233,23.5765947 13.4593591,23.2808437 14.0509017,23.0560179 L14.2285379,22.9885043 L14.4061741,23.0560179 C15.0221291,23.290122 15.5996944,23.6011261 16.1381049,23.9883052 L16.3459626,17.1831695 L16.3347141,17.5213376" id="Rectangle-47" transform="translate(14.364567, 20.585737) rotate(-20.000000) translate(-14.364567, -20.585737) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,46 @@
+
+    .mainWrapper{
+        margin: 60px auto;
+        width:90%;
+        .formControls{
+            margin: 60px 0;
+            .formField{
+                margin-bottom:60px;
+                position: relative;
+                input{
+                    display: block;
+                    padding:8px 0;
+                    border: none;
+                    border-bottom:1px solid #ccc;
+                    width:100%;
+                
+                    color:#646464;
+                }
+        }
+            button{
+                width:100%;
+            }
+        }
+        .secFooter{
+            span{
+                display: block;
+                margin-bottom:8px;
+            }
+            .register{
+                font-family: proxima_nova_semibold;
+                color:#549428;
+                opacity:0.8;
+            }
+        }
+    }
+    .title{
+        margin-bottom:15px;
+    }
+
+    .loginerrormessage{
+        font-size: 10px;
+        color:rgb(196, 44, 44);
+        padding: 2px;
+        
+    }
+

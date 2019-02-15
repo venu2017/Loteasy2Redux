@@ -1,0 +1,53 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="backpage()"></a>
+      <span class="pageLabel">My Buddies</span>
+    </div>
+  </div>
+</div>
+
+<div class="mybuddies pageScroll" *ngIf="!isNewBuddiesViewVisible">
+  <div class="container-fluid">
+
+      <div class="searchBuddy">
+    
+          <input placeholder="Type or select" [(ngModel)]="searchText" maxlength="10" type="text" (input)="onMemberChanged($event.target.value)">
+        </div>
+    <div class="favourite">
+        <ion-list class="contactsComponent">
+          <ion-item-sliding (click)="buddiesDetails(buddy)" *ngFor="let buddy of buddyList  | search:'BuddiesListName':searchText">
+            <ion-item class="member">
+              <div *ngIf="buddy.BuddiesListProfilePic=='assets/images/new buddies group icon.svg'; then truthyTemplate else falsyTemplate">
+              </div>
+              <ng-template #truthyTemplate>
+                <span class="image">
+                    <img src="{{buddy.BuddiesListProfilePic}}">
+                  </span>
+              </ng-template>
+              <ng-template #falsyTemplate>
+                <span class="image">
+                      <img *ngIf="buddy.BuddiesListProfilePic=='undefined'" src="assets/images/new buddies group icon.svg">
+                  <img *ngIf="buddy.BuddiesListProfilePic!='undefined'" src="{{cloudImagePath + buddy.BuddiesListProfilePic}}">
+                </span>
+              </ng-template>
+              <span class="buddieName">{{buddy.BuddiesListName}}</span>
+            </ion-item>
+            <ion-item-options>
+              <button ion-button color="appYellow" (click)="EditBuddies(buddy)">
+                      <ion-icon name="person"></ion-icon>
+                        Edit
+                      </button>
+
+              <button ion-button color="danger" (click)="removeBuddy(buddy.BuddiesListId,buddy.UserId,buddy.BuddiesListName)">
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                  </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+
+      </div>
+   
+  </div>
+</div>

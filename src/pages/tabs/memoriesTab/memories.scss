@@ -1,0 +1,199 @@
+.memoriesWrapper {
+    .memoryblock {
+        margin: 0 5px;
+        .uploadEvents {
+            position: fixed;
+            bottom: 65px;
+            right: 35px;
+            width: 43px;
+            height: 43px;
+            .uploadIcon {
+                background: url("../assets/images/memories/upload-icon.svg") no-repeat center top;
+                display: block;
+                width: 43px;
+                height: 43px;
+            }
+        }
+        .memoryItem {
+            margin-bottom: 35px;
+            .memoryName {
+                @include font($font-proxima,
+                normal,
+                $text-color-default,
+                12px);
+                margin-bottom: 8px;
+                position: relative;
+                .share {
+                    position: absolute;
+                    right: 5px;
+                    bottom: 0;
+                    .icon {
+                        width: 17px;
+                        height: 17px;
+                        display: inline-block;
+                        vertical-align: bottom;
+                        margin-right: 2px;
+                        &.imageIcon {
+                            background: url("../assets/images/memories/image-icon.svg") no-repeat center top;
+                        }
+                        &.shareIcon {
+                            background: url("../assets/images/memories/members-icon.svg") no-repeat center top;
+                        }
+                    }
+                    .totalPhotos {
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 20px;
+                    }
+                    .sharefriends {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+                .eventDate {
+                    @include font($font-proxima,
+                    normal,
+                    $text-color-default,
+                    10px);
+                    margin-bottom: 3px;
+                    position: relative;
+                }
+                .eventName {
+                    @include font($font-proxima,
+                    normal,
+                    $text-color-default,
+                    10px);
+                    margin-bottom: 6px;
+                    position: relative;
+                }
+            }
+            .memoryPoster {
+                height: 150px;
+                border-radius: 6px;
+                overflow: hidden;
+                .bigposter {
+                    width: 70%;
+                    height: 100%;
+                    &.add {
+                        float: left;
+                        border-right: 1px solid #fff;
+                    }
+                    &.even {
+                        float: right;
+                        border-left: 1px solid #fff;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        // object-fit: none;
+                        // object-position: 50% 100%;
+                    }
+                }
+                .smallposter {
+                    width: 30%;
+                    img {
+                        height: 75px;
+                        object-fit: cover;
+                        // object-fit: none;
+                        // object-position: center;
+                        width: 100%;
+                        &:first-child {
+                            border-bottom: 1px solid #fff;
+                        }
+                    }
+                    &.add {
+                        float: left;
+                    }
+                    &.even {
+                        float: right;
+                    }
+                }
+            }
+            .memoryCaption {
+                margin-top: 8px;
+                @include font($font-proxima,
+                normal,
+                #3D3D3D,
+                12px);
+                .noteIcon {
+                    width: 13px;
+                    height: 18px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 5px;
+                    background: url("../assets/images/memories/note-icon.svg") no-repeat center top;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.newmember {
+    margin-bottom: 10px;
+}
+
+.modal-dialog {
+    border: 5px solid #333;
+    .heading {
+        @include font($font-proxima,
+        normal,
+        #5F5F5F,
+        16px);
+        margin-bottom: 20px;
+    }
+    .searchmemorie {
+        input {
+            border-width: 0;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+            padding-bottom: 10px;
+            background: url("../assets/images/footer/drop-down-icon.svg") no-repeat right 5px;
+        }
+    }
+    .btnSection {
+        .cancel {
+            margin-right: 15px;
+        }
+        .blueBtn {
+            margin-left: 15px;
+        }
+    }
+}
+
+#sharewith {
+    .contacts {
+        margin-top: 30px;
+        .member {
+            position: relative;
+            margin-bottom: 20px;
+            .image {
+                width: 45px;
+                height: 45px;
+                display: inline-block;
+                margin-right: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 4px;
+                }
+            }
+            .name {
+                display: inline-block;
+                vertical-align: top;
+                line-height: 40px;
+            }
+            .check {
+                position: absolute;
+                right: 0;
+                width: 10px;
+                height: 10px;
+                top: 15px;
+            }
+        }
+    }
+}

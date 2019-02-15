@@ -1,0 +1,58 @@
+<div class="BacktoHome">
+    <div class="container-fluid">
+      <div class="col-sm-12">
+        <div class="back"><a class="backIcon" (click)="navigateBackToAddressLabels()"></a> <span class="label">Add New Label</span></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="newaddress moduleBlock">
+    <div class="container-fluid">
+      <form #addressForm = "ngForm" (ngSubmit) = "onAddressFormSubmit(addressForm.value)" >
+        <div class="form-group">
+          <input type="text" class="form-control" name="labelname" id="labelname" required ngModel>
+          <label for="labelname">Label Name</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="phonenumber" id="phonenumber" required ngModel>
+          <label for="phonenumber">Phone Number</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="state" id="state" required ngModel>
+          <label for="state">State</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="city" id="city" required ngModel>
+          <label for="city">City</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="area" id="area" required ngModel>
+          <label for="area">Area</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="locality" id="locality" required ngModel>
+          <label for="locality">Locality</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="address" id="address" required ngModel>
+          <label for="address">Address</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="landmark" id="landmark" required ngModel>
+          <label for="landmark">Landmark (optional)</label>
+        </div>
+  
+        <div class="btnSection clearfix fixed-button-bottom">
+            <button type="submit" class="blueBtn fullwidth">Save</button>
+          </div>
+  
+      </form>
+    </div>
+  </div>

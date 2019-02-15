@@ -1,0 +1,190 @@
+
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="Navigate_status()">
+      
+      </a>
+      <span class="pageLabel">{{Title_heading}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="inviteStatus pageScroll">
+
+  <div class="section">
+    <div class="container-fluid">
+        <div class="moduleSteps">
+          <div class="stepsHeader">Status of Invites</div>
+        </div>
+
+        <div class="evetDate">On {{Event_date}} {{Event_month}}, {{Event_time}}</div>
+        <div *ngIf="Rest_name!='Dummy Restuarnt'; then truthyTemplate else falsyTemplate"> </div>
+        <ng-template #truthyTemplate>
+          <span class="eventPlace">@ {{Rest_name}}  {{Address}}</span>  
+        </ng-template>
+        <ng-template #falsyTemplate>
+          <div class="eventPlace" > {{Dummy_address}} </div>
+        </ng-template>
+     
+      <div class="eventPlace">{{InviteSummaryDesc}}</div>
+    </div>
+  </div>
+ 
+  <div class="inviteMembers">
+    <div class="container-fluid">
+        <div class="inviteTabs">
+    <ion-segment [(ngModel)]="testing">
+      <ion-segment-button class="nav-item accepted" value="Accepted">    <span class="length">{{Accepted_count}}  </span>    Accepted</ion-segment-button>
+      <ion-segment-button class="nav-item pending" value="Pending">    <span class="length">{{Pending_count}}</span>     Pending</ion-segment-button>
+      <ion-segment-button class="nav-item rejected" value="Declined">    <span class="length"> {{Rejected_count}}  </span>    Declined</ion-segment-button>
+    </ion-segment>
+ 
+  <div [ngSwitch]="testing" class="inviteCnt">
+    <ion-list  class="tab-pane" *ngSwitchCase="'Accepted'" ngSelected="selected">
+     <ul>
+        <ion-item *ngFor="let user of Accepted_array">
+          <li class="memberItem">
+            <div class="memberPhoto" >
+              <span class="loteasyMember" *ngIf="user.Profilepic != 'assets/images/profile.jpg'"></span>
+                <img src="{{user.Profilepic}}">
+            </div>
+            <div class="memberDetails">
+              <span *ngIf="user.Name=='No Name' then truthyTemplate else falsyTemplate"></span>
+
+              <ng-template #truthyTemplate >
+                <span>{{user.MobileNumber}}</span>
+              </ng-template>
+               
+              <ng-template #falsyTemplate>
+                <span>{{user.Name}}</span>
+              </ng-template>
+              <span class="agree">
+                <span class="icon accepted">
+
+                </span>Accepted</span>
+            </div>
+            <span class="time">{{user.EstdTime}}</span>
+          </li>
+        </ion-item>
+      </ul>
+     
+   </ion-list>
+<ion-list *ngSwitchCase="'Pending'">
+  <ul>
+  <ion-item *ngFor="let user of Pending_array">
+    <li class="memberItem">
+      <div class="memberPhoto">  <span class="loteasyMember" *ngIf="user.Profilepic != 'assets/images/profile.jpg'"></span> <img src="{{user.Profilepic}}"></div>
+      <div class="memberDetails">
+          <span *ngIf="user.Name=='No Name' then truthyTemplate else falsyTemplate"></span>
+
+          <ng-template #truthyTemplate >
+            <span>{{user.MobileNumber}}</span>
+          </ng-template>
+           
+          <ng-template #falsyTemplate>
+            <span>{{user.Name}}</span>
+          </ng-template>
+        <span class="agree"><span class="icon pending"></span>Pending</span>
+      </div>
+      <span class="time">{{user.EstdTime}}</span>
+
+    </li>
+
+  </ion-item>
+</ul>
+
+   </ion-list>
+   <ion-list *ngSwitchCase="'Declined'">
+     <ul>
+
+    <ion-item *ngFor="let user of Rejected_array">
+      <li class="memberItem">
+        <div class="memberPhoto"><span class="loteasyMember" *ngIf="user.Profilepic != 'assets/images/profile.jpg'"></span>
+            <img src="{{user.Profilepic}}">
+        </div>
+        <div class="memberDetails">
+            <span *ngIf="user.Name=='No Name' then truthyTemplate else falsyTemplate"></span>
+            <ng-template #truthyTemplate >
+              <span>{{user.MobileNumber}}</span>
+            </ng-template>
+             <ng-template #falsyTemplate>
+              <span>{{user.Name}}</span>
+            </ng-template>
+          <span class="agree"><span class="icon decline"></span>decline</span>
+        </div>
+        <div class="reason clearfix">{{user.Decline}}</div>
+        <span class="time">{{user.EstdTime}}</span>
+
+      </li>
+    </ion-item>
+  </ul>
+
+     </ion-list>
+</div>
+          
+            <!-- <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#accepted" role="tab" aria-expanded="true"><span  class="selected">{{Accepted_count}}</span> Accepted</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#pending" role="tab" aria-expanded="false"><span  class="pending">{{Pending_count}}</span> Pending</a></li>
+            <li class="nav-item"><a class="nav-link " data-toggle="tab" href="#declined" role="tab"><span  class="declined">{{Rejected_count}}</span> Declined</a></li> -->
+         
+        </div>
+
+      
+     
+    </div>
+  </div>
+
+  <div class="confirmEvent">
+    <div class="container-fluid">
+      <div class="col-sm-12">
+        <div class="paymentInfo clearfix"  *ngIf="Rest_name!='Dummy Restuarnt'">
+          <span class="des">Payable amount
+          for {{Estimated_members}} members</span>
+          <span class="line"></span>
+          <span class="amount">{{Estmated_cost}}  </span>
+        
+        </div>
+        <div class="btnSection clearfix" *ngIf="titleHeadingRaw=='startahangout'">
+            <span class="cancel"  (click)="showDialog('cancelEvent')">Cancel</span>
+            <button class="blueBtn" (click)="EventStatusChange(1)" >Confirm Event</button>
+     </div>
+     <div class="btnSection clearfix" *ngIf="titleHeadingRaw=='itspartytime'">
+            <span class="cancel"  (click)="showDialog('cancelEvent')">Cancel</span>
+            <button class="blueBtn" (click)="navigateToOrderFoodPage()"  >Want to order food?</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<p-dialog  [(visible)]="cancelEvent" [showHeader]="false"  dismissableMask="true" modal="modal">
+    <div class="dialogMask">
+      <div class="header">Reason of Cancelling Event</div>
+    
+          <div  class="options customRadio">
+              <ul  class="optionItems">
+                <li  class="item">
+                  <input  id="reason1" name="reason" type="radio">
+                  <label  class="optLable" for="reason1">Reason 1</label></li>
+                <li  class="item">
+                  <input  id="reason2" name="reason" type="radio">
+                  <label  class="optLable" for="reason2">Reason 2</label></li>
+                <li  class="item">
+                  <input  id="reason3" name="reason" type="radio">
+                  <label  class="optLable" for="reason3">Reason 3</label></li>
+              </ul>
+            </div>
+
+            <div class="otherReason">
+              <span class="label">Others</span>
+              <input type="text" placeholder="Type your reason">
+            </div>
+     
+      <div  class="btnSection  clearfix fixed-button-bottom">
+        <a  class="cancelBtn left" (click)="cancelEvent=false">Cancel</a>
+        <button  class="blueBtn right" (click)="EventStatusChange(2)" routerLink="/">Done</button>
+      </div>
+    </div>
+  </p-dialog>

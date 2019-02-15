@@ -1,0 +1,113 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateBackToRestaurant()">
+
+      </a>
+      <span class="pageLabel">{{Title_heading}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="inviteSummery pageScroll">
+  <div class="section">
+    <div class="container-fluid">
+      <div class="moduleSteps">
+        <div class="stepsHeader">Invites Summary</div>
+      </div>
+
+      <div class="summerySec">
+        <div class="innerSec time">
+          <div class="header"><span class="title">Time</span><span class="edit"
+              (click)="navigateToLocationDateTime()">Edit</span></div>
+          <div class="subHeader">{{isInviteDateToday?'Today':inviteDayName}},
+            {{inviteDate}} {{inviteMonth}}</div>
+          <div class="description bold">{{_time}} </div>
+        </div>
+
+        <div class="innerSec restaurant">
+          <div class="header"><span class="title">{{type_place}}</span><span
+              class="edit" *ngIf="type_place=='Restaurant'"
+              (click)="navigateToRestaurants()">Edit</span></div>
+
+
+          <div *ngIf="Rest_name!='Dummy Restuarnt'" class="subHeader">{{Rest_name}}</div>
+          <div class="address">{{Rest_Address?Rest_Address:location}}</div>
+        </div>
+
+        <div class="innerSec invitees">
+          <div class="header"><span class="title">Invitees</span><span
+              class="edit" (click)="navigateToInvitees()">Edit</span></div>
+          <div class="inviteMembers">
+            <div class="memberPhoto" (click)="showCallDialog(invitee)"
+              *ngFor="let invitee of inviteesList; let i=index">
+              <div *ngIf="invitee.image=='assets/images/new buddies group
+                icon.svg'; then truthyTemplate else falsyTemplate"> </div>
+              <ng-template #truthyTemplate>
+                <img src="assets/images/new buddies group icon.svg"
+                  style="width:44px;height:44px">
+              </ng-template>
+              <ng-template #falsyTemplate>
+                <img src="{{invitee.image}}" style="width:44px;height:44px">
+                <span class="loteasyMember"></span>
+
+              </ng-template>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="innerSec occassion" *ngIf="showOccassion">
+          <div class="header" (click)="navigateToLocationDateTime()"><span
+              class="title">Occassion</span><span class="edit">Edit</span></div>
+          <div class="subHeader">{{Event_occasion}}</div>
+        </div>
+
+        <div class="selectbox">
+          <input placeholder="Description (Optional)" #eventdescr type="text">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="btnSection fixedButtons fixed-button-bottom">
+    <div class="estimated" *ngIf="estimated">
+      Estimated Cost Rs {{Estimated_cost}}
+    </div>
+    <button class="blueBtn fullwidth" (click)="showSendInviteDialog()" [disabled]="!inviteDate || !inviteMonth || !_time || !invitees || !(Rest_Address|| location)">Send Invites</button>
+  </div>
+  <p-dialog [(visible)]="invitepopup" [showHeader]="false" width="300"
+    height="150" appendTo="body" dismissableMask="false"
+    modal="true" responsive="true">
+    <div class="dialogMask">
+      <div class="header">Invites Sent Successfully!</div>
+      <div class="subHeader">Your Invitees will confirm their presence soon.
+        Please wait.</div>
+      <div class="btnSection clearfix">
+        <a class="cancelBtn left" (click)="navigateToHome()">Home</a>
+        <button class="blueBtn right" (click)="navigateToViewStatus()">View Status</button>
+      </div>
+    </div>
+  </p-dialog>
+
+  <p-dialog [(visible)]="callpopup" [showHeader]="false" width="300" height="120"
+    appendTo="body" dismissableMask="true" modal="true"
+    responsive="true">
+    <div class="dialogMask">
+      <div class="memberItem">
+        <div class="memberPhoto"><img src={{Profile_img}}><span
+            class="loteasyMember"></span></div>
+        <div class="memberDetails">
+          <span class="name">{{name}}</span>
+          <span class="phone">{{mobilenumber}}</span>
+        </div>
+        <div class="userOptions">
+          <span class="call" (click)="callInviteeUsingDialer()"></span>
+          <span class="line">|</span>
+          <span class="chat"></span>
+        </div>
+      </div>
+
+    </div>
+  </p-dialog>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>share</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.599999964">
+        <g id="share" transform="translate(-1.000000, -3.000000)" stroke="#3D3D3D">
+            <g id="memories-flow">
+                <g id="Group-19">
+                    <g id="Group-15">
+                        <g id="share">
+                            <g id="Group" transform="translate(7.709533, 7.183438) rotate(15.000000) translate(-7.709533, -7.183438) translate(2.209533, 1.683438)">
+                                <g id="Group-2">
+                                    <g id="Group-17" transform="translate(5.649463, 5.117747) rotate(45.000000) translate(-5.649463, -5.117747) translate(3.649463, 0.117747)">
+                                        <path d="M-0.701983155,6.28733166 L5.08837773,6.28733166 C5.0076014,6.28733166 4.94211923,6.2218495 4.94211923,6.14107316 C4.94211923,6.06029682 5.0076014,5.99481466 5.08837773,5.99481466 L-0.701983155,5.99481466 C-0.621206815,5.99481466 -0.555724652,6.06029682 -0.555724652,6.14107316 C-0.555724652,6.2218495 -0.621206815,6.28733166 -0.701983155,6.28733166 Z" id="Rectangle-22" transform="translate(2.193197, 6.494815) scale(-1, 1) rotate(90.000000) translate(-2.193197, -6.494815) "></path>
+                                        <circle id="Oval-3" cx="1.89999998" cy="1.89999998" r="1.39999998"></circle>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Group" transform="translate(7.609363, 13.034426) scale(-1, 1) rotate(-165.000000) translate(-7.609363, -13.034426) translate(2.109363, 7.534426)">
+                                <g id="Group-2">
+                                    <g id="Group-17" transform="translate(5.753166, 5.117747) rotate(45.000000) translate(-5.753166, -5.117747) translate(3.753166, 0.117747)">
+                                        <path d="M-0.880589043,6.46593755 L4.90977185,6.46593755 C4.82899551,6.46593755 5.16374201,6.16218792 5.24451835,6.16218792 L-0.880589043,6.17342055 C-0.799812703,6.17342055 -0.73433054,6.23890271 -0.73433054,6.31967905 C-0.73433054,6.40045539 -0.799812703,6.46593755 -0.880589043,6.46593755 Z" id="Rectangle-22" transform="translate(2.181965, 6.662188) scale(-1, 1) rotate(90.000000) translate(-2.181965, -6.662188) "></path>
+                                        <circle id="Oval-3" cx="1.89999998" cy="1.89999998" r="1.39999998"></circle>
+                                    </g>
+                                </g>
+                            </g>
+                            <circle id="Oval-7" cx="2.91781558" cy="9.92365726" r="1.39999998"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

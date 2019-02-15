@@ -1,0 +1,100 @@
+<ion-content>
+
+  <div class="backToHome withscroll">
+    <div class="container-fluid">
+      <div class="BacktoHomeLable">
+        <a class="backIcon" (click)="backToMoreHomePage()"></a>
+        <span class="pageLabel">My Preferences</span>
+      </div>
+    </div>
+  </div>
+  <div class="preferences pageScroll">
+    <div class="container-fluid">
+
+      <div class="caption">Set your preferences and help us enhance your experience</div>
+
+      <div class="section">
+        <div class="secTitle">Food</div>
+        <div class="options customRadio">
+          <ul class="optionItems">
+            <li class="item">
+              <input type="radio" [(ngModel)]="checkedFoodType" value="veg" [checked]="savedFoodType=='veg'" name="foodtype" id="Pure-Veg"
+                (change)="onPreferenceSelectionChanged('veg', $event.target.checked)">
+              <label class="optLable" for="Pure-Veg">Veg</label>
+            </li>
+            <li class="item">
+              <input type="radio" [(ngModel)]="checkedFoodType" value="nonveg" [checked]="savedFoodType=='nonveg'" name="foodtype" id="Pure-Veg"
+                (change)="onPreferenceSelectionChanged('nonveg', $event.target.checked)">
+              <label class="optLable" for="Pure-Veg">Non Veg</label>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="section">
+        <div class="secTitle">Amenities</div>
+        <div class="options customCheckbox">
+          <ul class="optionItems">
+            <li class="item" *ngFor="let amenity of amenities;let i=index">
+              <input type="checkbox" [(ngModel)]="checkedAmenities[i]" [value]="amenity.val" [checked]="_amenities.indexOf(amenity.val)>-1"
+                name="amenities" [id]="'Indian'+i">
+              <label class="optLable" [for]="'Indian'+i">{{amenity.val}}</label>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="section">
+        <div class="secTitle">Friends Recommended</div>
+        <div class="options customCheckbox">
+          <ul class="optionItems">
+            <li class="item">
+              <input type="checkbox" [(ngModel)]="recommended" name="recommended" [value]="recommended" [checked]="savedRecommended==1"
+                id="Continental" (change)="onFriendRecommed('recommended', $event.target.checked)">
+              <label class="optLable" for="Continental">Recommended</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="secTitle">Food Choices</div>
+        <div class="options customCheckbox">
+          <ul class="optionItems">
+            <li class="item" *ngFor="let choice of foodChoices;let i=index">
+              <input type="checkbox" [(ngModel)]="checkedChoices[i]" [value]="choice" [checked]="_foodChoices.indexOf(choice.val)>-1" name="foodChoices"
+                [id]="'foodChoices'+i" (change)="onPreferenceSelectionChanged()">
+              <label class="optLable" [for]="'foodChoices'+i">{{choice.val}}</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="secTitle">Price</div>
+        <div class="options">
+          <div class="optionItems">
+            <ion-range [(ngModel)]="priceValue" min="0" max="2000" step="50" color="default" pin="true">
+              <ion-label range-left>&#8377; {{minvalue}}</ion-label>
+              <ion-label range-right> &#8377; {{ maxvalue}}</ion-label>
+           
+            </ion-range>
+          </div>
+        </div>
+
+        <!-- <ul class="priceRange clearfix">
+          <li> &#8377; 0</li>
+          <li> &#8377; 500</li>
+          <li> &#8377; 2000+</li>
+        </ul> -->
+
+      </div>
+
+      <div class="btnSection clearfix fixed-button-bottom">
+        <button class="blueBtn fullwidth" (click)="SaveOrUpdateUserPreferences()">Save My Preferences</button>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

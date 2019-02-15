@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>upload picture icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M2,1.91177698 L4.11667247,1.91177698 L4.55605594,1.07243573 L4.55605594,1.07243573 C4.90118057,0.413154372 5.58380202,1.36698594e-16 6.32795451,0 L8.69234295,0 L8.69234295,-1.55431223e-15 C9.4483063,-1.69318045e-15 10.1396702,0.426238794 10.4792303,1.10164946 L10.8865187,1.91177698 L13,1.91177698 L13,1.91177698 C14.1045695,1.91177698 15,2.80720748 15,3.91177698 L15,11 L15,11 C15,12.1045695 14.1045695,13 13,13 L2,13 L2,13 C0.8954305,13 1.3527075e-16,12.1045695 0,11 L0,3.91177698 L3.55271368e-15,3.91177698 C3.41744293e-15,2.80720748 0.8954305,1.91177698 2,1.91177698 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="more-Styleguide" transform="translate(-1446.000000, -1701.000000)">
+            <g id="Group-35" transform="translate(1415.000000, 1566.000000)">
+                <g id="upload-picture-icon" transform="translate(31.000000, 135.000000)">
+                    <circle id="Oval" fill="#3D3D3D" opacity="0.200000003" cx="15.5" cy="15.5" r="15.5"></circle>
+                    <g id="Group-17" transform="translate(8.000000, 9.000000)" opacity="0.4">
+                        <g id="Group-24">
+                            <g id="Rectangle-2">
+                                <use fill="#3D3D3D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                <path stroke="#3D3D3D" stroke-width="1" d="M2,2.41177698 C1.17157288,2.41177698 0.5,3.08334985 0.5,3.91177698 L0.5,11 C0.5,11.8284271 1.17157288,12.5 2,12.5 L13,12.5 C13.8284271,12.5 14.5,11.8284271 14.5,11 L14.5,3.91177698 C14.5,3.08334985 13.8284271,2.41177698 13,2.41177698 L10.5782593,2.41177698 L10.0325084,1.32623709 C9.77783841,0.819679095 9.25931546,0.5 8.69234295,0.5 L6.32795451,0.5 C5.76984014,0.5 5.25787405,0.809865779 4.99903058,1.3043268 L4.41929581,2.41177698 L2,2.41177698 Z"></path>
+                            </g>
+                            <rect id="Rectangle-4" fill="#FFFFFF" x="2" y="3" width="1" height="1"></rect>
+                            <circle id="Oval-5" fill="#FFFFFF" cx="8" cy="7" r="3"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>map- restaurant icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="Events-Styleguide" transform="translate(-164.000000, -466.000000)">
+            <g id="Group-8" transform="translate(135.000000, 31.000000)">
+                <g id="map--restaurant-icon" transform="translate(29.000000, 435.000000)">
+                    <rect id="Rectangle-20" fill="#FFFFFF" x="0" y="0" width="21" height="21"></rect>
+                    <g id="Group-16" transform="translate(3.500000, 1.750000)" stroke="#3D3D3D">
+                        <path d="M6.7996988,17.5 C11.3328313,13.0336903 13.5993976,9.51963408 13.5993976,6.95783133 C13.5993976,3.11512719 10.7297371,0 6.7996988,0 C2.86966048,0 0,3.11512719 0,6.95783133 C0,9.51963408 2.26656627,13.0336903 6.7996988,17.5 Z" id="Oval-5"></path>
+                        <path d="M6.92708333,2.91666667 C4.71219137,2.91666667 2.91666667,4.71219137 2.91666667,6.92708333" id="Oval-9" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

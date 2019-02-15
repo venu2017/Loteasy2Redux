@@ -1,0 +1,89 @@
+
+    .mybuddies{
+        .title{
+            @include font(proxima_nova_semibold,
+            normal,
+            #5f5f5f,
+            14px); 
+        }
+        .other{
+            background: #f8f8f8;
+            padding:10px 0;
+        }
+    }
+    
+    .mybuddies .imgOptions{
+        margin-bottom: 20px;
+        position: relative;
+        .controls{
+            margin-right:15px;
+            display: inline-block;
+            vertical-align: top;
+            a{
+                display: block;
+            }
+            .icon{
+                display: block;
+                width:15px;
+                height: 15px;
+                margin: 0 auto 5px;
+                &.searchIcon{
+                    background: url("../assets/images/common/search-icon.svg") no-repeat center top;
+                }
+                &.addnewIcon{
+                    background: url("../assets/images/common/addnew-icon.svg") no-repeat center top;
+                }
+                &.editIcon{
+                    background: url("../assets/images/common/edit-icon.svg") no-repeat center top;
+                }
+                &.deleteIcon{
+                    background: url("../assets/images/common/delete-icon.svg") no-repeat center top;
+                }
+            }
+    
+            .label{
+                display: block;
+                text-align: center;
+                @include font($font-proxima,
+                normal,
+                #5F5F5F,
+                10px);
+            }
+        }
+    }
+    
+    .searchbox {
+        position: relative;
+        input[type='text'] {
+            border-width: 0;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+            padding-bottom: 10px;
+            background-image: url('../assets/images/Search.svg');
+            background-repeat: no-repeat;
+            background-position: right;
+           
+        }
+    }
+    
+    .cancel-submit-btns button{
+    display: inline-block;
+    width: 60px;
+    margin-right: 30px;
+    }
+    
+    .cancel-submit-btns{
+        text-align: center;
+    }
+    
+
+
+// .backgroundGrey{
+    
+// background-color:#5f5f5f;
+      
+// }
+
+// .backgroundWhite{
+// background-color: #fff;
+// }

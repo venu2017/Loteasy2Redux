@@ -1,0 +1,47 @@
+.memoryUpload {
+    .memoriesPhotos {
+        .memoryName {
+            margin-bottom: 24px;
+            position: relative;
+            .eventDate {
+                @include font($font-proxima, normal, $text-color-default, 10px);
+                margin-bottom: 3px;
+                position: relative;
+                letter-spacing: 0.37px;
+            }
+            .eventName {
+                @include font($font-proxima, normal, $text-color-default, 10px);
+                margin-bottom: 8px;
+                position: relative;
+                letter-spacing: 0.37px;
+            }
+            .more {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                .moreIcon {
+                    padding: 5px;
+                    background: url("../assets/images/memories/more-icon.svg") no-repeat center top;
+                    height: 13px;
+                    width: 13px;
+                }
+            }
+        }
+    }
+    .photoWrapper {
+        .imgCnt {
+            width: 28%;
+            height: 70px;
+            display: inline-block;
+            position: relative;
+            margin: 0 10px 10px 0;
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

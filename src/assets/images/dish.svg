@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="17px" viewBox="0 0 22 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 17</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.8">
+        <g id="dish" transform="translate(-1.000000, -4.000000)" stroke="#5F5F5F">
+            <g id="Group-5">
+                <g id="Group-17" transform="translate(1.000000, 5.000000)">
+                    <path d="M21.4402039,13.3720749 L0.602130584,13.3720749 C0.602130584,7.50315076 5.26689218,2.74544769 11.0211672,2.74544769 C16.7754423,2.74544769 21.4402039,7.50315076 21.4402039,13.3720749 Z M10.7042948,2.40591782 C10.0528974,2.40591782 9.52483558,1.86733477 9.52483558,1.20295891 C9.52483558,0.53858305 10.0528974,0 10.7042948,0 C11.3556921,0 11.8837539,0.53858305 11.8837539,1.20295891 C11.8837539,1.86733477 11.3556921,2.40591782 10.7042948,2.40591782 Z" id="Combined-Shape" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M2.82832885,10.5707184 C3.63614796,8.07418761 5.04269546,6.42796609 7.04797135,5.6320539" id="Path-9" stroke-linecap="round" transform="translate(4.938150, 8.101386) rotate(1.000000) translate(-4.938150, -8.101386) "></path>
+                    <rect id="Rectangle-24" x="0.5" y="15.5" width="21" height="1" rx="0.5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

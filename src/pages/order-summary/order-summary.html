@@ -1,0 +1,97 @@
+<div class="BacktoHome">
+  <div class="container-fluid">
+    <div class="col-sm-12">
+      <div class="back"><a class="backIcon" (click)="EditOrder()" ></a> <span class="label">Order Summary</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="orderSummary">
+  <div class="addressDetails">
+    <div class="container-fluid">
+      <div class="col-sm-12">
+        <div class="shippingAddress">
+           
+          <span class="name">Gayatri Rao</span>
+          <span class="address"> {{addressOne + addressTwo}}
+              {{city}}</span>
+          <span class="phone"> +919869667984</span>
+        </div>
+        <div class="vendorAddress">
+          <span class="name">{{vendor_name}}</span>
+          <span class="phone"> {{vendor_cell}}</span>
+          <div class="totalorder">
+            <span class="item">Total Item {{numberofitems}}</span>
+            <span class="editOrder" (click)="EditOrder()">Edit Order</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="col-sm-12">
+      <div class="orderDetails">
+        <div class="itemDetails" *ngFor="let items of Order_items;let i=index" >
+          <div class="dishitem veg">
+            <div class="itemName">{{items.item_name}}</div>
+            <div class="quantity">
+              <span class="number">Qty- {{items.quantity}}</span>  
+
+              <div  *ngIf="items.price==items.strikeprice_cutoff then truthyTemplate else falsyTemplate">  </div>
+                                            <ng-template #truthyTemplate >
+                                             
+                                         
+                                              <span class="cost">&#8377; {{items.strikeprice_cutoff}} </span>
+                                            </ng-template>  
+                                          <ng-template #falsyTemplate> 
+                                            <div class="discount">
+                                                <span class="cost strikeprice">&#8377; {{items.price}}   </span>
+                                                <span class="cost discountdiv">&#8377;  {{items.discount_div}}  </span>
+                                            </div>    
+                                            
+                                              <span class="cost discountvalue" >&#8377; {{items.strikeprice_cutoff}} </span>
+
+            </ng-template>
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+        <div class="pricingDetails">
+            <div class="pricerow flexWrapper" *ngFor="let tax of tax_details">
+              <span class="label left">{{tax.name}}</span>
+              <span class="cost right">&#8377; {{tax.value}}</span>
+            </div>
+           
+           
+            <div class="pricerow flexWrapper">
+              <span class="label left">Grand Total</span>
+              <span class="cost right"> {{ this.Grand_total | currency:"&#8377;"}}</span>
+            </div>
+          </div>
+    
+          <div class="commentSec">
+            <input type="text" [(ngModel)]="txt_comments" placeholder="Write Comments">
+            <p>By clicking on confirm order I agree to the <a href="#">Terms &amp; conditions.</a></p>
+          </div>
+    
+          <div class="btnSection centerAlign clearfix">
+            <a href="#" class="cancel left" (click)="CancelOrder()">cancel</a>
+            <button class="blueBtn right" (click)="ConformOrder()">Confirm Order</button>
+          </div>
+
+
+
+
+      </div>
+
+    
+
+    </div>
+  </div>
+</div>

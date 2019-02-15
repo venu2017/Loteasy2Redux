@@ -1,0 +1,89 @@
+
+.BacktoHome {
+    padding: 15px 0;
+    .backIcon {
+        background: url("../assets/images/footer/backarrow-black.svg") no-repeat center top;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        vertical-align: top;
+        margin-right: 10px;
+    }
+}
+
+.myaddressBlock{
+    margin-top:30px;
+    .noAddress{
+        text-align: center;
+        margin-bottom:30px;
+        .description{
+            @include font($font-proxima-semibold,
+            normal,
+            #5F5F5F,
+            12px);
+            opacity: 0.7;
+            margin-bottom:8px;
+        }
+        .subhead{
+            @include font($font-proxima-semibold,
+            normal,
+            #5F5F5F,
+            14px);
+        }
+    }
+    .addressList{
+        margin-bottom:32px;
+        ul li{
+            position: relative;
+            padding:8px 0 8px  15px;
+            border-bottom:1px solid #ccc;
+            background: url("../assets/images/common/show-less-icon.svg") no-repeat left 13px;
+            .icon{
+                position: absolute;
+                top:5px;
+                width:17px;
+                height:17px;
+
+                &.edit{
+                    background: url("../assets/images/common/edit-icon.svg") no-repeat center top;
+                  
+                    right:25px;
+                }
+                &.delete{
+                    right: 0;
+                    background: url("../assets/images/common/delete-icon.svg") no-repeat center top;
+                }
+            }
+        }
+    }
+    .addAddress{
+        .icon{
+            &.add{
+                //background: url("../../../assets/images/new_address_icon.svg") no-repeat left top; 
+            }
+        }
+    }
+    
+}
+
+[data-toggle="collapse"] .fa:before {   
+    content: "\f139";
+  }
+  
+  [data-toggle="collapse"].collapsed .fa:before {
+    content: "\f13a";
+  }
+
+/deep/ .ui-dialog{
+    width:95% !important;
+    height:  auto !important;
+    margin: 0 10px !important;
+    left: inherit !important;
+    box-shadow: none;
+}
+/deep/ .ui-corner-all{
+    border-radius: 0;
+}
+/deep/ .ui-widget-content{
+    border:none;
+}

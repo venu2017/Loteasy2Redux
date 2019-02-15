@@ -1,0 +1,479 @@
+<!-- <div class="catchuppage">
+  <div class="defaultMask" *ngIf="notifypopup || showCancelEventDialog"></div>
+  </div> -->
+  <div class="backToHome withscroll">
+    <div class="container-fluid">
+      <div class="BacktoHomeLable" (click)="backtoHomeScreen()"> <a class="backIcon"></a> <span
+        class="pageLabel">Meet Friends Now</span> </div>
+    </div>
+  </div>
+  <div class="catchupmeal pageScroll">
+    <div class="section">
+      <div class="container-fluid">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" (click)="setavablity()"> <a class="nav-link active"
+            data-toggle="tab" href="#setavilable" role="tab" #setavablityactive>Set Availability </a> </li>
+          <li class="nav-item" (click)="showUser()"> <a class="nav-link"
+            data-toggle="tab" href="#catchup" role="tab" #setcatchactive>Catch-up Status </a> </li>
+        </ul>
+      </div>
+      <div class="tab-content">
+        <div class="tab-pane active" id="setavilable" role="tabpanel" #setavablie>
+          <div class="setAvailability">
+            <div class="container-fluid">
+              <div class="mealcaption">{{catchupstateDesc}}</div>
+              <div class="mealdate" *ngIf="CatchstateStatus">{{currentDate}},
+                {{currentTime}} 
+              </div>
+              <div *ngIf="CatchstateStatus">
+                <div class="moduleLocation">
+                  <div class="icon locationIcon"></div>
+                  <div class="address">
+                    <span class="city">{{city}}</span>
+                    {{formattedAddress}} 
+                    <span class="fakeCity" *ngIf="!city"></span>
+                    <p class="fakeFormattedAddress" *ngIf="!formattedAddress"></p>
+                    <p class="fakeFormattedAddress" *ngIf="!formattedAddress"></p>
+                    <p class="fakeFormattedAddress" *ngIf="!formattedAddress"></p>
+                  </div>
+                  <div class="editaddress" (click)="navigateToLocationEdit()">
+                    <span class="editIcon"></span> Edit
+                  </div>
+                </div>
+              </div>
+              <div class="secTitle" *ngIf="CatchstateStatus">Invitees</div>
+              <div class="contactList" *ngIf="CatchstateStatus">
+                <div class="searchbox">
+                  <input placeholder="Type name or number" type="text"
+                  [(ngModel)]="autocompleteContatcs"
+                  (keyup)="onContatsSearch($event)">
+                </div>
+              </div>
+              <div class="inviteMembers" *ngIf="CatchstateStatus">
+                <div class="inviteTabs">
+                  <ion-segment [(ngModel)]="testing">
+                  <ion-segment-button class="nav-item selected" value="Accepted"
+                    (click)="selectedListContacts()"> <span class="length">{{selectedInvitees.length}}</span>
+                    Selected
+                  </ion-segment-button>
+                  <ion-segment-button class="nav-item contact" value="Pending"
+                    (click)="displayAllContacts()"> <span class="length">{{Phone_contacts_count}}</span>
+                    Contacts
+                  </ion-segment-button>
+                  <ion-segment-button class="nav-item mybuddies"
+                    value="Declined" (click)="displayBuddies()"><span
+                    class="length">{{Buddies_count}}</span> My Buddies</ion-segment-button>
+                  </ion-segment>
+                </div>
+                <div class="tab-content">
+                  <div [ngSwitch]="testing" class="inviteCnt">
+                    <div class="inviteslist" *ngIf="showTabbedView==false">
+                      <ul>
+                        <li class="memberItem" *ngFor="let contact of
+                        autocompleteContacstList"
+                        (click)="onContactSelected(contact)">
+                        <div class="memberPhoto"> 
+                            <span class="loteasyMember" *ngIf="contact.image != 'assets/images/Single Contact Icon.svg'"></span>
+                          <img src="{{contact.image}}" style="width:44px;height:44px"> </div>
+                        <div class="memberDetails"> 
+                          <span>{{contact.name}}</span>
+                          <span>{{contact.phone}}</span>
+                        </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-pane" *ngSwitchCase="'Accepted'"
+                      ngSelected="selected" role="tabpanel">
+                      <div class="contactsDisplay ionContacts">
+                        <ion-list>
+                          <ion-item-sliding  *ngFor="let contact of
+                            selectedInvitees;let i=index">
+                            <ion-item class="member">
+                              <ion-label>
+                                <div class="userImage">
+                                  <img src="{{contact.image}}">
+                                </div>
+                                <div class="contactDetails">
+                                  <span class="contactName">{{contact.displayName}}</span>
+                                  <span class="contactName" *ngIf="contact?(contact.buddy_group?(contact.buddy_group!='Buddy'):false):false">
+                                    {{contact["phoneNumbers[0].value"]}}</span>
+                                </div>
+                              </ion-label>
+                            </ion-item>
+                            <ion-item-options>
+                              <button ion-button color="appBlue"
+                              *ngIf="contact?(contact.buddy_group?(contact.buddy_group!='Buddy'):false):false"
+                              (click)="addToBuddyList(contact,i)">
+                              <ion-icon name="person"></ion-icon>
+                              Buddy
+                              </button> 
+                              <button ion-button color="danger"
+                                (click)="removeContact(contact,i)">
+                                <ion-icon name="trash"></ion-icon>
+                                Delete
+                              </button>
+                            </ion-item-options>
+                          </ion-item-sliding>
+                        </ion-list>
+                      </div>
+                      <p class="noinvitess" *ngIf="selectedInvitees.length<1"> No
+                        invitees are selected yet 
+                      </p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel"
+                      *ngSwitchCase="'Pending'">
+                      <div class="contactsDisplay ionContacts">
+                        <ion-list>
+                          <ion-item-sliding  *ngFor="let c of phoneContacts;
+                            let i=index">
+                            <ion-item class="member">
+                              <ion-checkbox
+                              (ionChange)="phonecontactselection(c.name,c.phone)"
+                              [(ngModel)]="c.checked"></ion-checkbox>
+                              <ion-label>
+                                <div class="userImage">
+                                  <img src="{{c.profileimg}}">
+                                </div>
+                                <div class="contactDetails">
+                                  <span class="contactName">{{c.name}}</span>
+                                  <span class="contactNumber"> {{c.phone}} </span>
+                                </div>
+                              </ion-label>
+                            </ion-item>
+                            <ion-item-options>
+                              <button ion-button color="appBlue"
+                                (click)="addToBuddyList(c,i)">
+                                <ion-icon name="person"></ion-icon>
+                                Buddy
+                              </button>
+                            </ion-item-options>
+                          </ion-item-sliding>
+                        </ion-list>
+                      </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel"
+                      *ngSwitchCase="'Declined'">
+                      <div class="contactsDisplay ionContacts">
+                        <ion-list>
+                          <ion-item class="member" *ngFor="let buddy of buddiesList; let i=index">
+                            <ion-checkbox
+                            (ionChange)="selectimgfordelettion(buddy.buddy.BuddiesListName,i)"
+                            [(ngModel)]="buddy.checked"></ion-checkbox>
+                            <ion-label>
+                              <div class="userImage"
+                                *ngIf="buddy.buddy.BuddiesListProfilePic!='undefined'">
+                                <img src="{{cloudinaryPhotoPath + buddy.buddy.BuddiesListProfilePic?cloudinaryPhotoPath+buddy.buddy.BuddiesListProfilePic:'assets/images/new buddies group icon.svg'}}">
+                              </div>
+                              <div class="userImage"
+                                *ngIf="buddy.buddy.BuddiesListProfilePic=='undefined' || buddy.buddy.BuddiesListProfilePic==null">
+                                <img src="assets/images/new buddies group icon.svg">
+                              </div>
+                              <div class="contactDetails">
+                                <span class="contactName">{{buddy.buddy.BuddiesListName}}</span>
+                              </div>
+                            </ion-label>
+                          </ion-item>
+                          <!-- <ion-item-options> <button ion-button color="danger" (click)="addToBuddyList(buddy.buddy.BuddiesListName)">
+                            <ion-icon name="trash" ></ion-icon>
+                              Buddy
+                            </button> </ion-item-options>-->
+                        </ion-list>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="notifyFriends">
+              <div class="victinitySec" *ngIf="showrangehide && selectedInvitees.length>0">
+                <div class="distanceslider">
+                  <div class="slider">
+                    <div class="section fixed-button-bottom">
+                      <div class="options">
+                        <div class="optionItems">
+                          <ion-range [(ngModel)]="rangeValues"
+                          (ionChange)="handleChange()" min="5" max="50"
+                          color="default" pin="true">
+                          <ion-label range-left>5 km</ion-label>
+                          <ion-label range-right>50 km</ion-label>
+                          </ion-range>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <button class="blueBtn fixedBottom" [disabled]="selectedInvitees.length<1" (click)="onNotify()">Notify my Friends</button> -->
+              <button *ngIf="showrangehide && selectedInvitees.length>0"
+              class="blueBtn fullwidth fixed-button-bottom"
+              [disabled]="selectedInvitees.length<1 && formattedAddress"
+              (click)="onNotify()">Notify my Friends</button>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="catchup" role="tabpanel" #catchup>
+          <div class="catchupstatus">
+            <div class="container-fluid">
+              <div class="victinitySec">
+                <div class="subcnt" *ngIf="List_of_catchupEvents?(List_of_catchupEvents.length?(List_of_catchupEvents.length==0):false):false">
+                  You have not set or receieved any "Meet Friends Now" yet.
+                </div>
+              </div>
+              <div *ngFor="let events of List_of_catchupEvents; let i=index"
+              class="landscreen" [ngClass]="{'greyBackground':!events.Delted_state}">
+              <div *ngIf="!events.EventDeletedByUser">
+                <div class="Event_name"> {{events.EventUserName}}
+                  <span class="deleteIconForLapsedEvent" *ngIf="!events.Delted_state" (click)="deleteLapsedEvent(events,i)"></span>
+                </div>
+                <div class="eventDate">{{events.Event_date}}
+                  {{events.EventMonth}}
+                  ({{events.Rounded}}-{{events.ExpireTime}})
+                </div>
+                <div class="eventLocation">
+                  Catch-up near
+                  <div *ngIf="events.Eventcreated=='sender' &&
+                    events.Restname=='Dummy Restuarnt'">
+                    @ {{events.RestAddress}}
+                  </div>
+                  <div *ngIf="events.Eventcreated=='sender' &&
+                    events.Restname!='Dummy Restuarnt'">
+                    @ {{events.Restname}} {{events.EventAddress}}
+                  </div>
+                  <div *ngIf="events.Eventcreated!='sender' &&
+                    events.Restname=='Dummy Restuarnt'">
+                    @ {{events.RestAddress}}
+                  </div>
+                  <div *ngIf="events.Eventcreated!='sender' &&
+                    events.Restname!='Dummy Restuarnt'">
+                    @ {{events.Restname}} {{events.EventAddress}}
+                  </div>
+                  <div class="editaddress" *ngIf="events.Delted_state &&
+                  events.Eventcreated=='sender'"
+                  (click)="LocationEdit(events.Eventid)">
+                  <div class="moduleLocation icon locationIcon"></div>
+                  <span class="editIcon"></span> Edit
+                </div>
+                <!-- <div *ngIf="events.EventAddress!='undefined'">
+                  {{events.EventAddress}}
+                  </div> -->
+            </div>
+            <div *ngIf="events.Delted_state" class="moreDetails" text-wrap
+            (click)="toggleGroup(events.Eventid)" [ngClass]="{active:
+            isGroupShown(events.Eventid)}">
+            <span> {{isGroupShown(events.Eventid) ? 'Collapse' :
+            'Expand'}}
+            <ion-icon color="success" item-right
+              [name]="isGroupShown(events.Eventid) ? 'arrow-dropup' :
+              'arrow-dropdown'"></ion-icon>
+            </span>
+          </div>
+          <!-- <p-toggleButton  data-toggle="collapse" *ngIf="events.Invitess_list.length>0"  [attr.data-target]="'#' + events.Eventid" onLabel="Iconfirm" offLabel="I reject" [style]="{'width':'150px'}"></p-toggleButton> -->
+          <!-- <div class="expand" data-toggle="collapse" [attr.data-target]="'#' + events.Eventid">Expand</div> -->
+          <div class="inviteMembers" *ngIf="isGroupShown(events.Eventid)"
+            class="inviteMembers" id={{events.Eventid}} #skillImg>
+          <div class="victinitySec" *ngIf="events.Delted_state">
+          <div class="subcnt" *ngIf="events.Invitess_list<0 &&
+            events.Eventcreated=='sender'">Seems that no one is
+          available in the vicinity. Please increase the distance
+          and try.</div>
+          <div class="distanceslider"
+            *ngIf="events.Eventcreated=='sender' &&
+            events.Event_state!='1'">
+          <!-- <div class="header">Within {{rangeValues}} kms</div> -->
+          <div class="slider">
+          <div class="section">
+          <div class="options">
+          <div class="optionItems">
+          <ion-range [(ngModel)]="rangeValues"
+          (ionChange)="handleChange($event)" min="5"
+          max="50" color="default" pin="true">
+          <ion-label range-left>5 km</ion-label>
+          <ion-label range-right>50 km</ion-label>
+          </ion-range>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="inviteMembers" *ngIf="events.Delted_state">
+          <div class="inviteTabs">
+          <ion-segment
+          [ngClass]="(events.Eventcreated=='sender')?'my-class1':'my-class2'"
+          [(ngModel)]="testing">
+          <ion-segment-button class="nav-item interested"
+            value="interested"> <span class="length">{{events.AcceptedUsers}}</span>
+          Interested</ion-segment-button>
+          <ion-segment-button
+            [hidden]="events.Eventcreated!='sender'"
+            class="nav-item available" value="available"> <span
+            class="length">{{availableInvitees.length}}</span> Available</ion-segment-button>
+          <ion-segment-button
+            [hidden]="events.Eventcreated!='sender'"
+            class="nav-item sendto" value="sendto"><span
+            class="length">{{events.CompleteInviteelist.length}}</span>
+          sent to</ion-segment-button>
+          </ion-segment>
+          </div>
+          <div class="tab-content inviteCnt"
+          *ngIf="events.Delted_state" [ngSwitch]="testing">
+          <div class="contactsDisplay ionContacts-catchuptab"
+            *ngSwitchCase="'interested'">
+          <ion-list>
+          <ng-template ngFor let-users
+          [ngForOf]="events.Invitess_list" let-i="index"
+          [ngForTrackBy]="trackByFn">
+          <a ion-item class="member" detail-none
+            *ngIf="users.status_state
+            == '1'">
+          <ion-checkbox *ngIf="events.Eventcreated=='sender'
+          && events.Event_state!='1'"
+          (ionChange)="Interestedcontactselection(users.Name,users.phone,events.Eventid)"
+          type="checkbox" [(ngModel)]="users.state"></ion-checkbox>
+          <ion-label>
+          <div class="userImage">
+          <img src="{{users.Profilepic}}">
+          </div>
+          <div class="contactDetails">
+          <span class="contactName">{{users.Name}}</span>
+          <span class="time">{{users.phone}}</span>
+          <!-- <span class="time">{{users.Time}}</span> -->
+          </div>
+          </ion-label>
+          </a>
+          </ng-template>
+          </ion-list>
+          </div>
+          <div class="contactsDisplay ionContacts-catchuptab"
+            *ngSwitchCase="'available'">
+          <ion-list>
+          <ng-template ngFor let-users
+          [ngForOf]="availableInvitees"
+          let-i="index" [ngForTrackBy]="trackByFn">
+          <a ion-item detail-none class="member">
+          <!-- <ion-checkbox (ionChange)="Interestedcontactselection(users.Name,users.phone,events.Eventid)" type="checkbox" [(ngModel)]="users.state"></ion-checkbox> -->
+          <ion-label>
+          <div class="userImage">
+          <img src="{{cloudinaryUrl + users.UserProfileImg}}">
+          </div>
+          <div class="contactDetails">
+          <span class="contactName">{{users.UserName}}</span>
+          <span class="time">{{users.InviteePhoneNumber}}</span>
+          <!-- <span class="time">{{users.Time}}</span> -->
+          </div>
+          </ion-label>
+          </a>
+          </ng-template>
+          </ion-list>
+          </div>
+          <div class="contactsDisplay ionContacts-catchuptab"
+            *ngSwitchCase="'sendto'">
+          <ion-list>
+          <ng-template ngFor let-users
+          [ngForOf]="events.CompleteInviteelist"
+          let-i="index" [ngForTrackBy]="trackByFn">
+          <a ion-item detail-none class="member">
+          <!-- <ion-checkbox (ionChange)="Interestedcontactselection(users.Name,users.phone,events.Eventid)" type="checkbox" [(ngModel)]="users.state"></ion-checkbox> -->
+          <ion-label>
+          <div class="userImage">
+              <span class="loteasyMember" *ngIf="users.Profilepic != 'assets/images/Single Contact Icon.svg'"></span>
+          <img src="{{users.Profilepic}}">
+          </div>
+          <div class="contactDetails">
+          <span class="contactName">{{users.Name}}</span>
+          <span class="time">{{users.phone}}</span>
+          <!-- <span class="time">{{users.Time}}</span> -->
+          </div>
+          </ion-label>
+          </a>
+          </ng-template>
+          </ion-list>
+          </div>
+          </div>
+          </div>
+          <div class="col-sm-12" *ngIf="events.Delted_state">
+            <div class="btnSection clearfix"
+              *ngIf="events.Eventcreated=='sender' &&
+              events.Event_state=='1'">
+              <span class="cancel"
+                (click)="invokeCancelEventDialog(events.Eventid,'owner')">Cancel
+              </span>
+            </div>
+            <div class="btnSection clearfix"
+              *ngIf="events.Eventcreated=='invitee' &&
+              !events.Initial_state_user">
+              <span class="cancel"
+                (click)="confirm1(events.Eventid,'invitee',events.EventinviteeButton,events)">{{events.EventinviteeButton}}
+              </span>
+            </div>
+            <div class="btnSection clearfix"
+              *ngIf="events.Eventcreated=='invitee' &&
+              events.Initial_state_user">
+              <!--&& flow_from=='catchup' <span class="cancel" (click)="Interested(events.Eventid,'Intrested')" href="#">Intrested </span>
+                <span class="cancel" (click)="Interested(events.Eventid,'Not Intrested')" href="#">Not Intrested </span> -->
+              <button cd="" class="blueBtn"
+                (click)="Interested(events.Eventid,'Intrested')">Interested</button>
+              <button cd="" class="blueBtn"
+                (click)="Interested(events.Eventid,'Not Intrested')">Not
+              interested</button>
+            </div>
+            <div class="btnSection clearfix"
+              *ngIf="events.Eventcreated=='sender' &&
+              events.Event_state!='1'">
+              <span class="cancel"
+                (click)="invokeCancelEventDialog(events.Eventid,'owner')">Cancel
+              </span>
+              <!-- <p-confirmDialog></p-confirmDialog> -->
+              <button cd="" class="blueBtn"
+              *ngIf="button_status=='ResendNotifications'"
+              (click)="Navigate_rest(events.Eventid)">Resend Notifications</button>
+              <button cd="" type="button" class="blueBtn"
+              *ngIf="events.AcceptedUsers>0 &&
+              button_status!='ResendNotifications'"
+              (click)="conformEvent(events,'withoutRest')">Confirm Event with {{events.AcceptedUsers > 1?events.AcceptedUsers +' members':events.AcceptedUsers +' member'}}  </button>
+            </div>
+            <!-- <div class="btnSection clearfix" *ngIf="events.Eventcreated=='sender' && events.AcceptedUsers>0 && flow_from=='restaurantList' &&  Booking_type=='Booking' && !isKeyboardOpen">
+              <span class="cancel" (click)="CancelEvent(events.Eventid,'owner')" href="#">Cancel </span>
+              <button cd="" class="blueBtn" (click)="conformEvent(events.Eventid,'withRest')">Confirm with {{Estimated_members}} members</button>
+              </div> -->
+          </div>
+          <div class="confirmEvent">
+            <div class="container-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <p-dialog [(visible)]="notifypopup" [showHeader]="false"
+  [dismissableMask]="true" modal="true" width="300" height="150">
+  <div class="dialogMask">
+    <div class="header">Notification Sent!</div>
+    <div class="subHeader">Your availability is notified to
+      {{inviteesOfEvent}} friends in the vicinity.
+    </div>
+  </div>
+  </p-dialog>
+  <p-confirmDialog modal="true"
+    dismissableMask="true"
+    closeOnEscape="true"
+    responsive="true"
+    closable="true" ></p-confirmDialog>
+  <p-dialog [(visible)]="showCancelEventDialog" 
+  modal="true" appendTo="body" [responsive]="true" width="300" height="150">
+  <p-header>
+    Cancel the Event
+  </p-header>
+  Are you sure to cancel the Event?
+  <p-footer>
+    <div style="text-align: center">
+      <button (click)="cancelEvent()" class="cancelEventBtn">Yes</button>
+      <button (click)="dismissCancelEventDialog()" class="dismissBtn">No</button>
+    </div>
+  </p-footer>
+  </p-dialog>

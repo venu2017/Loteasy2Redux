@@ -1,0 +1,62 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="navigateToHome()">
+        
+      </a>
+      <span class="pageLabel">Select your event</span>
+    </div>
+  </div>
+</div>
+
+<div class="memorySelection pageScroll">
+
+  <div class="searchmemory">
+    <div class="container-fluid">
+      <input type="text" [(ngModel)]="query" placeholder="Search your event here...">
+    </div>
+  </div>
+
+  <ul class="eventItem">
+    <li class="item" *ngFor="let ev of listOfEvenets | search:'Event_Title,RestName':query">
+
+      <div class="container-fluid" (click)="showCameraGalleryPopup(ev.Eventid,ev.Event_date,ev.Event_Title)">
+
+        <div class="eventInfo clearfix">
+          <span class="eventDate">{{ev.Event_date}}</span>
+          <span class="eventTime">{{ev?.Event_time}}</span>
+        </div>
+        <div class="moduleName">{{ev.Event_Title}}</div>
+        <div class="eventName">@ {{ev?.RestName}}</div>
+
+      </div>
+
+    </li>
+
+  </ul>
+</div>
+
+
+
+<p-dialog [(visible)]="showCameraOrGallery" [showHeader]="false" width="300" height="150" dismissableMask="false" appendTo="body"
+  modal="true" responsive="true">
+
+  <div class="backpopup">
+    <a class="backIcon" (click)="closeCameraOrGalleryPopup()">
+      <span class="label">Add Memories</span>
+    </a>
+
+  </div>
+
+  <div class="uploadOptions clearfix">
+    <div class="chooseOption" (click)="openCamera()">
+      <span class="icon cameraIcon"></span>
+      <span class="optionText">Camera</span>
+    </div>
+
+    <div class="chooseOption" (click)="openGallery()">
+      <span class="icon galleryIcon"></span>
+      <span class="optionText">Gallery</span>
+    </div>
+  </div>
+</p-dialog>

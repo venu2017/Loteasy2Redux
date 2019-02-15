@@ -1,0 +1,59 @@
+<div class="searchLocation">
+        <div class="locationType">
+                <ion-searchbar placeholder="Type or Select" name="autocomplete"
+                        [(ngModel)]="autocomplete"
+                        (ionInput)="updateSearchResults()">
+                </ion-searchbar>
+        </div>
+
+        <div class="locationCnt">
+                <div class="searchResults" *ngIf="!showCurrentLocation">
+                        <ul [hidden]="autocompleteItems.length == 0">
+                                <li *ngFor="let item of autocompleteItems"
+                                        (click)="selectSearchResult(item)">
+                                        <p class="address">{{
+                                                item.description.split(',')[0]
+                                                }}</p>
+                                        <p class="address">{{
+                                                item.description.split(',')[1]
+                                                }},{{
+                                                item.description.split(',')[2]
+                                                }},{{
+                                                item.description.split(',')[3]}}
+                                        </p>
+                                </li>
+                        </ul>
+                </div>
+
+                <div class="addressInfo">
+
+
+                        <div *ngIf="isKeyPadOpen" style="padding:5px"> Name
+                                Place & Point on map ?
+                                <ion-toggle style="float: right;"
+                                        (ionChange)="updateItem()"
+                                        [(ngModel)]="Toggle_value"></ion-toggle></div>
+                        <div *ngIf="selectedAddr" class="selectedAddr">
+                                {{selectedAddr}}
+                        </div>
+                </div>
+
+                <div class="mapview">
+                        <div class="mapinfo"> Tap to point on the map for better
+                                understanding </div>
+                        <p-gmap #gmap
+                                (onOverlayClick)="handleOverlayClick($event)"
+                                [options]="options" [overlays]="overlays"
+                                (onMapClick)="handleMapClick($event)" (onMapReady)="setMap($event)"
+                                [style]="{'width':'100%','height':'320px'}"></p-gmap>
+                                <!-- <agm-map [latitude]="lat" [longitude]="lng">
+                                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                                </agm-map> -->
+                        <div class="mapviewBtn fixed-button-bottom">
+                                <img (click)="showRestuarnts()"
+                                        src="assets/images/List_View.svg" />
+                        </div>
+                </div>
+        </div>
+        <div class="btnSection fixed-button-bottom"> <button class="blueBtn fullwidth" [disabled]="!selectedAddr || (!Toggle_value && !enableProceedBtn)" (click)="slected_place()">Proceed</button></div>
+</div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="257px" height="4px" viewBox="0 0 257 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Step 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="'Fun'ch-with-friends-Flow" transform="translate(-2870.000000, -933.000000)">
+            <g id="Group-44" transform="translate(2839.000000, 847.000000)">
+                <g id="Group-2" transform="translate(1.000000, 0.000000)">
+                    <g id="Step-3" transform="translate(30.000000, 86.000000)">
+                        <path d="M2,2.64519205e-20 L83,0 L83,4 L2,4 L2,4 C0.8954305,4 1.3527075e-16,3.1045695 0,2 L0,2 L0,2 C-1.3527075e-16,0.8954305 0.8954305,4.2495073e-16 2,2.22044605e-16 Z" id="Rectangle-6" fill="#1496D6"></path>
+                        <polygon id="Rectangle-6" fill="#1496D6" points="87 -2.22003947e-16 170 5.42101086e-20 170 4 87 4"></polygon>
+                        <path d="M174,-2.22139473e-16 L255,-5.39390581e-18 L255,-4.4408921e-16 C256.104569,-6.46997646e-16 257,0.8954305 257,2 L257,2 L257,2 C257,3.1045695 256.104569,4 255,4 L174,4 L174,-2.22139473e-16 Z" id="Rectangle-6" fill="#159ADC"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,57 @@
+<div class="backToHome withscroll">
+  <div class="container-fluid">
+    <div class="BacktoHomeLable">
+      <a class="backIcon" (click)="backpage()"></a>
+      <span class="pageLabel">Edit Buddies</span>
+    </div>
+  </div>
+</div>
+
+<div class="buddiesDetails pageScroll">
+  <div class="container-fluid">
+    <div class="buddiesHeader">
+      <div class="heading">Group Name</div>
+      <input disabled [(ngModel)]="searchText" maxlength="10" type="text">
+    </div>
+    <div class="section">
+      <div class="title">
+        Members ({{Buddies_count}})
+      </div>
+      <div class="addnew" (click)="AddNewMembers()">
+        Add New Members
+      </div>
+      <ion-list class="contactsComponent editBuddies">
+        <ion-item-sliding *ngFor="let buddy of buddiesListWithPhotos;let
+          i=index">
+          <ion-item class="member">
+            <span class="image">
+              <img src="{{buddy.profileImg?buddy.profileImg:'assets/images/Single Contact Icon.svg'}}"></span>
+              <span class="buddieName">{{buddy.name}}</span> 
+              <span class="buddieName">{{buddy.phone}}</span>
+            </ion-item>
+
+          <ion-item-options>
+            <button ion-button color="danger" (click)="removeContact(buddy.name,buddy.phone,buddy.BuddiesListId)">
+              <ion-icon name="trash"></ion-icon>
+              Delete
+            </button>
+          </ion-item-options>
+
+        </ion-item-sliding>
+      </ion-list>
+
+      <div class="buddyactions">
+        <div class="deleteGroup">
+          <span class="cancel" (click)="deleteBuddygroup(buddy.BuddiesListId,buddy.UserId)">Delete
+            Group</span>
+        </div>
+        
+      </div>
+
+      <div class="btnSection fixedButtons fixed-button-bottom">
+          <button class="blueBtn fullwidth" (click)="savebuddylist(buddy.BuddiesListId)">Save changes</button>
+        </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,146 @@
+
+
+<div class="mybuddies pageScroll" *ngIf="!isNewBuddiesViewVisible">
+  <div class="backToHome withscroll">
+    <div class="container-fluid">
+      <div class="BacktoHomeLable">
+        <a class="backIcon" (click)="backToMoreHomepge()">
+          <span>My Buddies</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="imgOptions">
+      <div class="controls addnew">
+        <a (click)="changeViewToAddNew()">
+          <span class="icon addnewIcon"></span>
+          <span class="label">Add New</span>
+        </a>
+      </div>
+      <div class="controls search" (click)="searchBuddies()">
+        <span class="icon searchIcon"></span>
+        <span class="label">Search</span>
+      </div>
+
+    </div>
+
+    <div class="favourite">
+      <div class="title">
+        Favourites
+      </div>
+      <ion-list class="contactsComponent" text-wrap>
+        <ion-item-sliding *ngFor="let buddy of buddyList">
+          <ion-item class="member">
+            <div *ngIf="buddy.BuddiesListProfilePic=='assets/images/Single Contact Icon.svg'; then truthyTemplate else falsyTemplate"> </div>
+            <ng-template #truthyTemplate>
+              <span class="image">
+                <img src="{{buddy.BuddiesListProfilePic}}">
+              </span>
+            </ng-template>
+            <ng-template #falsyTemplate>
+              <span class="image">
+                <img *ngIf="buddy.BuddiesListProfilePic=='undefined'"
+                  src="assets/images/new buddies group icon.svg">
+                <img *ngIf="buddy.BuddiesListProfilePic!='undefined'"
+                  src="{{cloudImagePath + buddy.BuddiesListProfilePic}}">
+              </span>
+            </ng-template>
+
+           <span (click)="buddiesDetails(buddy)" class="buddieName">{{buddy.BuddiesListName}}</span>
+          </ion-item>
+          <ion-item-options>
+            <button ion-button color="appYellow"
+              (click)="EditbuddiesDetails(buddy)">
+              <ion-icon name="person"></ion-icon>
+              Edit
+            </button>
+
+            <button ion-button color="danger"
+              (click)="removeBuddy(buddy.BuddiesListId,buddy.UserId,buddy.BuddiesListName)">
+              <ion-icon name="trash"></ion-icon>
+              Delete
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
+    </div>
+  </div>
+
+</div>
+<div class="addbuddies pageScroll" *ngIf="isNewBuddiesViewVisible">
+  <div class="backToHome withscroll">
+    <div class="container-fluid">
+      <div class="BacktoHomeLable">
+        <a class="backIcon" (click)="isNewBuddiesViewVisible=false">
+          <span>Add New Buddies</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="buddiesProfile">
+    <img [src]="_groupPic && (_groupPic != undefined || _groupPic !=
+      null)?_groupPic:groupPicIcon">
+  </div>
+  <div class="cameraSec">
+    <div class="container-fluid">
+
+      <div class="camera">
+        <span class="cameraIcon" (click)="promptToChooseSourceOption()"></span>
+      </div>
+
+      <div class="buddyform">
+
+        <div class="formField">
+          <span class="input-label">Group Name</span>
+          <input type="text" #groupname [readonly]="buddyeditname"
+            [(ngModel)]="txt_groupname" placeholder="eg. Friends Forever !"
+            (input)="onGroupnameChanged($event.target.value)"
+            [value]="(groupName != null || groupName != undefined) &&
+            isCreateNew==false? groupName:''"
+            class="inputfloating" required>
+
+        </div>
+        <div class="formField">
+          <span class="input-label">Add Members</span>
+          <div class="selectbox">
+            <input placeholder="Type or select" [(ngModel)]="searchText"
+              maxlength="10" #memberselected type="text"
+              (input)="onMemberChanged($event.target.value)">
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="contactsDisplay" *ngIf="memberInputChange">
+    <ion-list>
+      <ion-item *ngFor="let contact of User_list_contacts |
+        search:'Name':searchText" text-wrap>
+        <ion-checkbox (ionChange)="phonecontactselection(contact.Name,contact)"
+          [(ngModel)]="contact.state"></ion-checkbox>
+        <ion-label>
+          <img width="44" height="44" src="{{contact.profile?contact.profile:'assets/images/Single Contact Icon.svg'}}">
+          
+          {{contact.Name}}
+          {{contact.phone}}
+
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="btnSection clearfix fixed-button-bottom">
+    <button ion-button class="blueBtn fullwidth"
+      [color]="selectedInvitees.length>0?'primary':'light'"
+      (click)="CreateOrModifyNewBuddyList()">Add new</button>
+  </div>
+
+</div>

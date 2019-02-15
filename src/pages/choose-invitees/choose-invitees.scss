@@ -1,0 +1,229 @@
+.inviteesMain {
+    padding-bottom: 70px;
+    overflow-y: auto;
+    .inviteMembers {
+        margin: 25px 0 0;
+        border-top: 1px dashed #ccc;
+        padding-top: 0;
+        .inviteTabs {
+            padding: 25px 0 15px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            .nav-item {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 12px;
+                border-color: #fff;
+                @include font($font-proxima, normal, #5F5F5F, 12px);
+                height: inherit;
+                line-height: inherit;
+                padding: 0 0 4px 0;
+                let
+                &:last-child {
+                    margin-right: 0;
+                }
+                &.selected {
+                    color:#3E3E3E;
+                    .length {
+                        color: #81a200;
+                        font-size: 22px;
+                        font-weight: normal;
+
+                    }
+                    &.segment-activated {
+                        border-color: #81a200;
+                    }
+                }
+                &.contact {
+                    .length {
+                        color: #ffc001;
+                        font-size: 22px;
+                        font-weight: normal;
+                    }
+                    &.segment-activated {
+                        border-color: #ffc001;
+                    }
+                }
+                &.mybuddies {
+                    .length {
+                        color: #f5460D;
+                        font-size: 22px;
+                        font-weight: normal;
+                    }
+                    &.segment-activated {
+                        border-color: #f5460D;
+                    }
+                }
+               
+            }
+        }
+        .inviteCnt {
+            height:210px;
+            overflow: auto;
+            .noinvitess {
+                @include font($font-proxima, normal, #5f5f5f, 12px);
+                margin: 15px 0;
+                text-align: center;
+            }
+            .inviteslist{
+               
+            }
+            // .tab-pane{
+            //     height:160px;
+            //     overflow: auto;
+            // }
+            .memberItem {
+                border-bottom: 1px solid #ccc;
+                padding: 8px 30px;
+                margin:0;
+                &.nocheckbox{
+                    padding: 8px 0;
+                }
+                .customCheckbox {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                    position: absolute;
+                    left: 0 !important;
+                    top: 33px !important;
+                }
+                .memberPhoto {
+                    width: 44px;
+                    height: 44px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 15px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 6px;
+                    }
+                }
+                .memberDetails {
+                    display: inline-block;
+                    vertical-align: top;
+                    line-height: 38px;
+                    .agree {
+                        display: block;
+                        margin-top: 5px;
+                        .icon {
+                            width: 20px;
+                            height: 20px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+                .declinestatus {
+                    margin-top: 5px;
+                    display: block;
+                }
+            }
+        }
+    }
+   
+}
+
+.secTitle {
+    @include font($font-proxima-semibold, normal, #159ADC, 12px);
+    margin-bottom: 12px;
+}
+
+.loteasyMember {
+    background: url("../assets/images/common/loteasy-icon.svg") no-repeat left top;
+    position: absolute;
+    right: -8px;
+    bottom: 0;
+    width: 20px;
+    height: 16px;
+}
+
+.searchbox {
+    position: relative;
+    input[type='text'] {
+        border-width: 0;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    .searchResults {
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        padding: 20px;
+        z-index: 1;
+        -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.21);
+        -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.21);
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.21);
+        .head {
+            @include font($font-proxima,
+            normal,
+            $text-color-default,
+            14px);
+            margin-bottom: 15px;
+        }
+        .username {
+            position: relative;
+            input {
+                width: 88%;
+            }
+            .iconright {
+                width: 22px;
+                height: 22px;
+                background: url("../assets/images/common/blue-tick-icon.svg") no-repeat left top;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                display: block;
+            }
+        }
+        .memberItem {
+            border-bottom: 1px solid #ccc;
+            padding: 8px 10px;
+            .memberPhoto {
+                width: 22px;
+                height: 22px;
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4px;
+                }
+            }
+            .memberDetails {
+                display: inline-block;
+                vertical-align: top;
+                @include font($font-proxima,
+                normal,
+                #5f5f5f,
+                10px);
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+.item-md,
+.item-ios {
+    font-size: 1em !important;
+    font-weight: 400;
+}
+
+ion-item ion-label span {
+    font-size: 1em !important;
+    font-weight: 400 !important;
+}
+
+div.item-left>img {
+    width: 44px !important;
+    height: 44px !important;
+}
+

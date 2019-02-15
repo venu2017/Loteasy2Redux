@@ -1,0 +1,47 @@
+<div class="modal"   id="sharewith" #shareModal>
+  <div class="modal-dialog full-dialog">
+    <div class="modal-content">
+      <div class="header">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="heading">Share with ({{buddy_count}})</div>
+            <div class="searchmemorie">
+              <div class="newmember">Add New Member</div>
+              <!-- <p-autoComplete [(ngModel)]="brand" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)" [size]="30"
+    [minLength]="1" placeholder="Type a name/number or select"  [multiple]="true" [dropdown]="true">
+    <ng-template let-brand pTemplate="item">
+        <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+            
+            <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{brand}}</div>
+        </div>
+    </ng-template>
+</p-autoComplete> -->
+              <input type="text" [(ngModel)]="query" placeholder="Type a name/number or select" #searchContact>
+            </div>
+            <ul class="contacts">
+              <li class="member" *ngFor="let buddy of userDetailsArray | search:'UserName,Phone':query" (click)="Buddy_contactselecte(buddy.Phone)">
+                <span  class="image"> 
+                   
+                       
+                        <img  src="{{buddy.UserProfileImg}}">
+                    
+                 
+                
+                
+                </span>
+                <span  class="name" >{{buddy.UserName}}</span>
+                <span class="check"><input type="checkbox" [(ngModel)]="buddy.isChecked"></span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="btnSection text-center clearfix">
+        <span class="cancel" (click)="navigateBackToMemories()">cancel</span>
+        <button class="blueBtn" id="mymodal" [disabled]="HideSubmitt" (click)="sharePhotosToBuddies()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

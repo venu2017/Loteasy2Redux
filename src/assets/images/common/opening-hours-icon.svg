@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="18px" viewBox="0 0 17 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Opening hours icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="Artboard-7" transform="translate(-165.000000, -213.000000)">
+            <g id="Opening-hours-icon" transform="translate(165.000000, 214.000000)">
+                <circle id="Oval-3" stroke="#3D3D3D" cx="8.53641709" cy="7.77504124" r="7.77504124"></circle>
+                <path d="M8.5461721,8.15788708 L8.5461721,3.67042736 C8.5461721,3.45568713 8.37209075,3.28160577 8.15735051,3.28160577 L8.15735051,3.28160577 L8.15735051,3.28160577 C8.15723088,3.28160577 8.15711124,3.28160583 8.1569916,3.28160594 C7.94244977,3.28180416 7.76868995,3.45588536 7.76888817,3.67042719 L7.76888817,3.67042719 L7.77303426,8.15788708 L7.7704181,8.15788708 L7.7704181,8.93462319 L12.6720162,8.93462319 C12.886506,8.93462319 13.0603843,8.76074489 13.0603843,8.54625514 L13.0603843,8.54625514 C13.0603843,8.33176538 12.886506,8.15788708 12.6720162,8.15788708 L8.5461721,8.15788708 Z" id="Combined-Shape" fill="#3D3D3D"></path>
+            </g>
+        </g>
+    </g>
+</svg>

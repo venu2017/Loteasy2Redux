@@ -1,0 +1,13 @@
+.searchBuddy {
+    margin: 15px 0;
+    input {
+     border-width: 0;
+     border-bottom: 1px solid #ccc;
+     width: 100%;
+     padding-bottom: 10px;
+     background-image: url('../assets/images/Search.svg');
+     background-repeat: no-repeat;
+     background-position: right;
+        @include font($font-proxima, normal, #5F5F5F, 14px);
+    }
+}

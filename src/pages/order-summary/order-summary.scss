@@ -1,0 +1,152 @@
+
+
+    
+    .orderSummary {
+        .addressDetails {
+            border-bottom:1px solid #ccc;
+            padding-bottom:10px;
+            margin-bottom:10px;
+            .name {
+                @include font($font-proxima-semibold,
+                normal,
+                #5F5F5F,
+                14px);
+                margin-bottom: 5px;
+                display: block;
+            }
+            .phone {
+                @include font($font-proxima,
+                normal,
+                #898989,
+                14px);
+                display: block;
+                background: url("../assets/images/common/phone-icon.svg") no-repeat left top;
+                padding-left: 20px;
+                
+            }
+            .shippingAddress {
+                margin-bottom:25px;
+                .address {
+                    @include font($font-proxima,
+                    normal,
+                    #898989,
+                    14px);
+                    margin-bottom: 5px;
+                    display: block;
+                }
+            }
+            .vendorAddress {
+                .name {}
+                .phone {}
+                .totalorder {
+                    margin-top:5px;
+                    .item {
+                        margin-right:20px;
+                    }
+                    .editOrder {
+                        margin-left:20px;
+                        padding-left:20px;
+                        border-left:1px solid #ccc;
+                        @include font($font-proxima,
+                        normal,
+                        #549428,
+                        12px);
+                        
+                    }
+                }
+            }
+         
+        }
+    
+        .itemDetails{
+           
+            .dishitem {
+                padding-bottom:10px;
+                border-bottom:1px dashed #ccc;
+                margin-bottom:10px;
+                &.veg{
+                    background: url("../assets/images/common/veg-icon.svg") no-repeat left 5px;
+                   
+                }
+                .itemName{
+                    padding-left:5%;
+                    margin-bottom:5px;
+                }
+                .quantity {
+                    display: flex;
+                    .number{
+                        width:45%;
+                        padding-left:5%;
+                        text-align: left;
+                    }
+                    .cost{
+                        width:50%;
+                        text-align: right; 
+                    }
+                }
+            }
+        }
+        .pricingDetails{
+            .pricerow{
+                margin-bottom:10px;
+                &:last-child{
+                    @include font($font-proxima,
+                    normal,
+                    #5F5F5F,
+                    18px);
+                }
+            }
+        }
+        .commentSec{
+            input{
+                border:none;
+                border-bottom:1px solid #ccc;
+                padding:5px 0;
+                width:100%;
+                margin-bottom:10px;
+            }
+            p{
+                @include font($font-proxima,
+                normal,
+                #5F5F5F,
+                12px); 
+            }
+        }
+    
+        .flexWrapper{
+            display: flex;
+            .left{
+                width:45%;
+                padding-left:5%;
+            }
+            .right{
+                width:50%;
+                text-align: right;
+            }
+        }
+    }
+    .discount{
+
+        width: 70%;
+    position: relative;
+    left: 113px;
+    bottom: 11px;
+    }
+    .discountvalue{
+
+        position: relative;top: 12px;
+    }
+.strikeprice{
+
+    text-decoration: line-through;
+}
+.discountdiv{
+
+    color: red;
+}
+.alert-title{
+
+    font-size: 13px;
+    text-align: center;
+    color: red;
+}

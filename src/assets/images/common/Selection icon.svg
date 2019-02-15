@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Selection icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="memories-styleguide" transform="translate(-1018.000000, -222.000000)">
+            <g id="Selection-icon" transform="translate(1018.000000, 222.000000)">
+                <circle id="Oval-2" fill="#FFFFFF" cx="5" cy="5" r="5"></circle>
+                <path d="M1.89119166,5.36825663 C2.66072844,5.71151934 3.43883391,6.34500731 4.22550805,7.26872054 C4.78152967,6.14571584 6.04046124,4.66423436 8.00230277,2.8242761" id="Path-7" stroke="#81A200" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

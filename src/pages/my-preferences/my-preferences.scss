@@ -1,0 +1,160 @@
+.icon-wifi {
+    background: url(../assets/images/common/icon-wifi.svg) no-repeat center center;
+    width: 22px;
+    height: 18px;
+}
+
+.icon-parking {
+    background: url(../assets/images/common/icon-parking.svg) no-repeat center center;
+    width: 22px;
+    height: 22px;
+}
+
+.icon-smoking {
+    background: url(../assets/images/common/icon-smoking.svg) no-repeat center center;
+    width: 24px;
+    height: 13px;
+}
+
+.icon-babycare {
+    background: url(../assets/images/common/icon-babycare.svg) no-repeat center center;
+    width: 28px;
+    height: 23px;
+}
+
+.preferences {
+    .caption {
+        @include font($font-proxima, normal, $text-color-default, 12px);
+        margin-bottom: 16px;
+        letter-spacing: 0.44px;
+        opacity:0.92;
+    }
+    .section {
+        margin-bottom: 28px;
+        .secTitle {
+            @include font($font-proxima, bold, $text-color-default, 14px);
+            margin-bottom: 14px;
+        }
+        .moreOptions {
+            margin-left: 27px;
+            margin-top: 8px;
+            @include font(proxima_nova_semibold, normal, #549428, 12px);
+            .downarrow {
+                background: url("../assets/images/footer/show-less-icon.svg") no-repeat left top;
+                width: 10px;
+                height: 7px;
+                display: inline-block;
+                vertical-align: baseline;
+                margin-left: 10px;
+            }
+        }
+        .selectbox {
+            input {
+                border-width: 0;
+                border-bottom: 1px solid #ccc;
+                width: 100%;
+                padding-bottom: 10px;
+                background: url("../assets/images/footer/drop-down-icon.svg") no-repeat right 5px;
+            }
+        }
+        .extraAmenities {
+            margin-bottom: 28px;
+            li {
+                margin-right: 2%;
+                width: 23%;
+                float: left;
+                text-align: center;
+                &:last-child {
+                    margin-right: 0;
+                }
+                .icon {
+                    margin: 0 auto;
+                    height: 35px;
+                }
+            }
+        }
+        .dishes {
+            margin: 10px 0 0;
+            ul li {
+                display: inline-block;
+                vertical-align: top;
+                border-right: 1px solid #ccc;
+                margin-right: 10px;
+                @include font(proxima_nova_semibold,
+                bold,
+                #3D3D3D,
+                14px);
+                .closeIcon {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: 0 10px;
+                    width: 12px;
+                    height: 12px;
+                    background: url(../assets/images/common/close-icon3.svg) no-repeat left top;
+                }
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+        .priceRange {
+            margin-top: 5px;
+            li {
+                float: left;
+                vertical-align: top;
+                width: 33.3%;
+                text-align: center;
+                @include font(proxima_nova_semibold,
+                bold,
+                #3D3D3D,
+                12px);
+                &:first-child {
+                    text-align: left
+                }
+                &:last-child {
+                    text-align: right
+                }
+            }
+        }
+    }
+    .btnSection {
+        margin-bottom: 20px;
+    }
+}
+
+.ui-slider-horizontal {
+    background: #5F5F5F;
+    height: 5px;
+    border-radius: 0;
+}
+
+.ui-slider .ui-slider-handle {
+    background: #FFC001;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 12px;
+    top: -4px !important;
+    margin-left: -2px;
+}
+
+.ui-slider .ui-slider-range {
+    background: #FFC001;
+    box-shadow: none;
+}
+
+.range-md .range-pin {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+range-md .range-knob-handle .range-pin {
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.range-md:not(.range-has-pin) .range-knob-handle .range-knob {
+    transform: scale(1);
+}
+
+.range-ios .range-knob-handle .range-pin {
+    transform: translate3d(0, 0, 0) scale(1);
+}
